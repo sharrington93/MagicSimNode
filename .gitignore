@@ -30,4 +30,7 @@ _ReSharper*/
 *.autosave
 FirstCode_ert_rtw
 FirstCode_CAN_Enable_ert_rtw
+FirstCode_Full_CAN_Enable_ert_rtw
+FirstCode_InHardware_CAN_Enable_ert_rtw
+FirstCode_OutHardware_CAN_Enable_ert_rtw
 slprj
