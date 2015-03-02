@@ -1,0 +1,51 @@
+VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/4/%%%/4/'%**4YYY///"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+
+BS_:
+
+BU_:
+
+
+BO_ 0 Control_Input12: 8 Vector__XXX
+ SG_ Throttle_percent : 0|32@1- (1,0) [-1000|1000] "%" Vector__XXX
+ SG_ RPM : 32|32@1- (1,0) [-100000|100000] "rpm" Vector__XXX
+
+BO_ 1 Control_Ouput: 8 Vector__XXX
+ SG_ Motor_Current_percent : 0|32@1- (1,0) [-1000|1000] "%" Vector__XXX
+ SG_ Lookup : 32|32@1- (1,0) [-10000|10000] "" Vector__XXX
+
+BO_ 2 Control_Input3: 8 Vector__XXX
+ SG_ Batt_Temp : 0|32@1- (1,0) [-10000|10000] "C" Vector__XXX
+
+BO_ 3 Control_Output3: 8 Vector__XXX
+ SG_ Batt_Lookup : 0|32@1- (1,0) [-1000|10000] "amps" Vector__XXX
+
+
+SIG_VALTYPE_ 0 Throttle_percent : 1;
+SIG_VALTYPE_ 0 RPM : 1;
+SIG_VALTYPE_ 1 Motor_Current_percent : 1;
+SIG_VALTYPE_ 1 Lookup : 1;
+SIG_VALTYPE_ 2 Batt_Temp : 1;
+SIG_VALTYPE_ 3 Batt_Lookup : 1;
