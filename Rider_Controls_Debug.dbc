@@ -43,10 +43,10 @@ BO_ 3 Control_Output3: 8 Vector__XXX
  SG_ Batt_Lookup : 0|32@1- (1,0) [-1000|10000] "amps" Vector__XXX
 
 BO_ 4 Control_Input4: 8 Vector__XXX
- SG_ EStop : 0|32@1- (1,0) [0|0] "" Vector__XXX
+ SG_ EStop : 0|32@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 5 Control_Output4: 8 Vector__XXX
- SG_ EStop : 0|32@1- (1,0) [0|0] "" Vector__XXX
+ SG_ EStop : 0|32@1+ (1,0) [0|0] "" Vector__XXX
 
 
 SIG_VALTYPE_ 0 Throttle_percent : 1;
@@ -55,5 +55,3 @@ SIG_VALTYPE_ 1 Motor_Current_percent : 1;
 SIG_VALTYPE_ 1 Lookup : 1;
 SIG_VALTYPE_ 2 Batt_Temp : 1;
 SIG_VALTYPE_ 3 Batt_Lookup : 1;
-SIG_VALTYPE_ 4 EStop : 1;
-SIG_VALTYPE_ 5 EStop : 1;
