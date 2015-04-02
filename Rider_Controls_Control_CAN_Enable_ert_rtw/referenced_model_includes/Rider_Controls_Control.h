@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Control'.
  *
- * Model version                  : 1.104
+ * Model version                  : 1.150
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Sun Mar 01 11:58:40 2015
+ * C/C++ source code generated on : Tue Mar 31 21:09:59 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -58,12 +58,17 @@ typedef struct {
 
 #endif                                 /*Rider_Controls_Control_MDLREF_HIDE_CHILD_*/
 
-extern void Rider_Controls_Control(const real32_T *rtu_Throttle, const real32_T *
-  rtu_RPM, const real32_T *rtu_BatteryTempurature, real32_T *rty_MotorCurrent,
-  real32_T *rty_RPM_Lookup, real32_T *rty_Batt_Lookup);
+extern void Rider_Controls_ControlTID0(const real32_T *rtu_Throttle, const
+  real32_T *rtu_RPM, const real32_T rtu_BatteryTempurature[40], const boolean_T *
+  rtu_EStop, const boolean_T *rtu_BIMStatus, real32_T *rty_MotorCurrent,
+  real32_T *rty_RPM_Lookup, real32_T *rty_Batt_Lookup, boolean_T *rty_RPMLimit,
+  boolean_T *rty_BatteryLimit, boolean_T *rty_EStopOut, boolean_T
+  *rty_ThrottleLock);
+extern void Rider_Controls_ControlTID1(void);
 
 /* Model reference registration function */
-extern void Rider_Controls_Contr_initialize(const char_T **rt_errorStatus);
+extern void Rider_Controls_C_initialize(const char_T **rt_errorStatus, const
+  rtTimingBridge *timingBridge, int_T mdlref_TID0, int_T mdlref_TID1);
 
 #ifndef Rider_Controls_Control_MDLREF_HIDE_CHILD_
 
@@ -96,6 +101,7 @@ extern rtDW_Rider_Controls_Control Rider_Controls_Control_DWork;
  * '<S1>'   : 'Rider_Controls_Control/Limit on Battery Temp'
  * '<S2>'   : 'Rider_Controls_Control/Limit on RPM'
  * '<S3>'   : 'Rider_Controls_Control/Saturation Dynamic'
+ * '<S4>'   : 'Rider_Controls_Control/Throttle Validity Check'
  */
 #endif                                 /* RTW_HEADER_Rider_Controls_Control_h_ */
 

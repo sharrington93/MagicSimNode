@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Control_CAN_Enable'.
  *
- * Model version                  : 1.103
+ * Model version                  : 1.123
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Sun Mar 01 11:59:39 2015
+ * C/C++ source code generated on : Tue Mar 31 22:02:55 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000

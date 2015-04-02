@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./js/coder_app.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./rtwreport_utils.js"></script>
+<script type="text/javascript" src="./rtwannotate.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/coder_app.css"/>
+</head>
+<body onload="srcFileOnload();">
+<pre id="code">
+<table class="code" id="codeTbl">
+<tr name="1" id="1">
+<td>1</td><td><span class="pp">#include "DSP2803x_Device.h"</span></td></tr>
+<tr name="2" id="2">
+<td>2</td><td><span class="pp">#include "DSP2803x_Examples.h"</span></td></tr>
+<tr name="3" id="3">
+<td>3</td><td><span class="pp">#include "DSP2803x_GlobalPrototypes.h"</span></td></tr>
+<tr name="4" id="4">
+<td>4</td><td><span class="pp">#include "rtwtypes.h"</span></td></tr>
+<tr name="5" id="5">
+<td>5</td><td><span class="pp">#include "Rider_Controls_InHardware.h"</span></td></tr>
+<tr name="6" id="6">
+<td>6</td><td><span class="pp">#include "Rider_Controls_InHardware_private.h"</span></td></tr>
+<tr name="7" id="7">
+<td>7</td><td></td></tr>
+<tr name="8" id="8">
+<td>8</td><td><span class="kw">void</span> <a id="8c6" class="tk">config_ADC_SOC0</a>()</td></tr>
+<tr name="9" id="9">
+<td>9</td><td><span class="br">{</span></td></tr>
+<tr name="10" id="10">
+<td>10</td><td>  <a id="10c3" class="tk">EALLOW</a>;</td></tr>
+<tr name="11" id="11">
+<td>11</td><td>  <a id="11c3" class="tk">AdcRegs</a>.<a id="11c11" class="tk">ADCCTL2</a>.<a id="11c19" class="tk">bit</a>.<a id="11c23" class="tk">CLKDIV2EN</a> = 0;   <span class="ct">/* Set ADC clock division */</span></td></tr>
+<tr name="12" id="12">
+<td>12</td><td>  <a id="12c3" class="tk">AdcRegs</a>.<a id="12c11" class="tk">ADCCTL2</a>.<a id="12c19" class="tk">bit</a>.<a id="12c23" class="tk">ADCNONOVERLAP</a> = 0;<span class="ct">/* Set ADCNONOVERLAP contorl bit to  Allowed */</span></td></tr>
+<tr name="13" id="13">
+<td>13</td><td>  <a id="13c3" class="tk">AdcRegs</a>.<a id="13c11" class="tk">ADCSOC0CTL</a>.<a id="13c22" class="tk">bit</a>.<a id="13c26" class="tk">CHSEL</a> = 7;    <span class="ct">/* Set SOC0 channel select to ADCINA7*/</span></td></tr>
+<tr name="14" id="14">
+<td>14</td><td>  <a id="14c3" class="tk">AdcRegs</a>.<a id="14c11" class="tk">ADCSOC0CTL</a>.<a id="14c22" class="tk">bit</a>.<a id="14c26" class="tk">TRIGSEL</a> = 0;</td></tr>
+<tr name="15" id="15">
+<td>15</td><td>  <a id="15c3" class="tk">AdcRegs</a>.<a id="15c11" class="tk">ADCSOC0CTL</a>.<a id="15c22" class="tk">bit</a>.<a id="15c26" class="tk">ACQPS</a> = 6;    <span class="ct">/* Set SOC0 S/H Window to 7 ADC Clock Cycles*/</span></td></tr>
+<tr name="16" id="16">
+<td>16</td><td>  <a id="16c3" class="tk">AdcRegs</a>.<a id="16c11" class="tk">ADCINTSOCSEL1</a>.<a id="16c25" class="tk">bit</a>.<a id="16c29" class="tk">SOC0</a> = 0;  <span class="ct">/* SOCx No ADCINT Interrupt Trigger Select.*/</span></td></tr>
+<tr name="17" id="17">
+<td>17</td><td>  <a id="17c3" class="tk">AdcRegs</a>.<a id="17c11" class="tk">ADCSAMPLEMODE</a>.<a id="17c25" class="tk">bit</a>.<a id="17c29" class="tk">SIMULEN0</a> = 0;<span class="ct">/* Single sample mode set for SOC0.*/</span></td></tr>
+<tr name="18" id="18">
+<td>18</td><td>  <a id="18c3" class="tk">AdcRegs</a>.<a id="18c11" class="tk">ADCOFFTRIM</a>.<a id="18c22" class="tk">bit</a>.<a id="18c26" class="tk">OFFTRIM</a> = 0;  <span class="ct">/* Set Offset Error Correctino Value*/</span></td></tr>
+<tr name="19" id="19">
+<td>19</td><td>  <a id="19c3" class="tk">AdcRegs</a>.<a id="19c11" class="tk">ADCCTL1</a>.<a id="19c19" class="tk">bit</a>.<a id="19c23" class="tk">ADCREFSEL</a> = 0 ;  <span class="ct">/* Set Reference Voltage*/</span></td></tr>
+<tr name="20" id="20">
+<td>20</td><td>  <a id="20c3" class="tk">AdcRegs</a>.<a id="20c11" class="tk">ADCCTL1</a>.<a id="20c19" class="tk">bit</a>.<a id="20c23" class="tk">INTPULSEPOS</a> = 0; <span class="ct">/* Late interrupt pulse trips AdcResults latch*/</span></td></tr>
+<tr name="21" id="21">
+<td>21</td><td>  <a id="21c3" class="tk">AdcRegs</a>.<a id="21c11" class="tk">SOCPRICTL</a>.<a id="21c21" class="tk">bit</a>.<a id="21c25" class="tk">SOCPRIORITY</a> = 0;<span class="ct">/* All in round robin mode SOC Priority*/</span></td></tr>
+<tr name="22" id="22">
+<td>22</td><td>  <a id="22c3" class="tk">EDIS</a>;</td></tr>
+<tr name="23" id="23">
+<td>23</td><td><span class="br">}</span></td></tr>
+<tr name="24" id="24">
+<td>24</td><td></td></tr>
+</table>
+</pre>
+</body>
+</html>

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Control_CAN_Enable'.
  *
- * Model version                  : 1.103
+ * Model version                  : 1.123
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Sun Mar 01 11:59:39 2015
+ * C/C++ source code generated on : Tue Mar 31 22:02:55 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -17,22 +17,70 @@
 #include "rtwtypes.h"
 
 volatile int IsrOverrun = 0;
-static boolean_T OverrunFlag = 0;
+boolean_T isRateRunning[2] = { 0, 0 };
+
+boolean_T need2runFlags[2] = { 0, 0 };
+
 void rt_OneStep(void)
 {
-  /* Check for overrun. Protect OverrunFlag against preemption */
-  if (OverrunFlag++) {
+  boolean_T eventFlags[2];
+
+  /* Check base rate for overrun */
+  if (isRateRunning[0]++) {
     IsrOverrun = 1;
-    OverrunFlag--;
+    isRateRunning[0]--;                /* allow future iterations to succeed*/
     return;
   }
 
+  /*
+   * For a bare-board target (i.e., no operating system), the rates
+   * that execute this base step are buffered locally to allow for
+   * overlapping preemption.  The generated code includes function
+   * writeCodeInfoFcn() which sets the rates
+   * that need to run this time step.  The return values are 1 and 0
+   * for true and false, respectively.
+   */
+  Rider_Controls_Control_CAN_Enable_SetEventsForThisBaseStep(eventFlags);
   enableTimer0Interrupt();
-  Rider_Controls_Control_CAN_Enable_step();
+  Rider_Controls_Control_CAN_Enable_step(0);
 
   /* Get model outputs here */
   disableTimer0Interrupt();
-  OverrunFlag--;
+  isRateRunning[0]--;
+  if (eventFlags[1]) {
+    if (need2runFlags[1]++) {
+      IsrOverrun = 1;
+      need2runFlags[1]--;              /* allow future iterations to succeed*/
+      return;
+    }
+  }
+
+  if (need2runFlags[1]) {
+    if (isRateRunning[1]) {
+      /* Yield to higher priority*/
+      return;
+    }
+
+    isRateRunning[1]++;
+    enableTimer0Interrupt();
+
+    /* Step the model for subrate "1" */
+    switch (1)
+    {
+     case 1 :
+      Rider_Controls_Control_CAN_Enable_step(1);
+
+      /* Get model outputs here */
+      break;
+
+     default :
+      break;
+    }
+
+    disableTimer0Interrupt();
+    need2runFlags[1]--;
+    isRateRunning[1]--;
+  }
 }
 
 int main(void)
