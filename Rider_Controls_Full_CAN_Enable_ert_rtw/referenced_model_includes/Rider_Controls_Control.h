@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Control'.
  *
- * Model version                  : 1.157
+ * Model version                  : 1.164
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed Apr 01 18:52:53 2015
+ * C/C++ source code generated on : Thu Apr 16 19:09:37 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -62,7 +62,7 @@ extern void Rider_Controls_Control(const real32_T *rtu_Throttle, const real32_T 
   rtu_RPM, const real32_T rtu_BatteryTempurature[40], const uint16_T *rtu_EStop,
   const uint16_T *rtu_BIMStatus, real32_T *rty_MotorCurrent, real32_T
   *rty_RPM_Lookup, real32_T *rty_Batt_Lookup, uint16_T *rty_RPMLimit, uint16_T
-  *rty_BatteryLimit, uint16_T *rty_EStopOut, uint16_T *rty_ThrottleLock);
+  *rty_BatteryLimit, uint16_T *rty_EStopOut, uint16_T *rty_StatusLock);
 
 /* Model reference registration function */
 extern void Rider_Controls_Contr_initialize(const char_T **rt_errorStatus);

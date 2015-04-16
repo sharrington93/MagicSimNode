@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_InHardware'.
  *
- * Model version                  : 1.136
+ * Model version                  : 1.248
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed Apr 01 18:24:46 2015
+ * C/C++ source code generated on : Thu Apr 16 19:15:19 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -42,12 +42,20 @@ void config_ADC_SOC0 (void);
 # define rtmGetClockTick1()            ( *((Rider_Controls_InH_TimingBridge->clockTick[Rider_Controls_InHard_GlobalTID[1]])) )
 #endif
 
+#ifndef rtmGetClockTick2
+# define rtmGetClockTick2()            ( *((Rider_Controls_InH_TimingBridge->clockTick[Rider_Controls_InHard_GlobalTID[2]])) )
+#endif
+
 #ifndef rtmGetClockTickH0
 # define rtmGetClockTickH0()           ( *(Rider_Controls_InH_TimingBridge->clockTickH[Rider_Controls_InHard_GlobalTID[0]]) )
 #endif
 
 #ifndef rtmGetClockTickH1
 # define rtmGetClockTickH1()           ( *(Rider_Controls_InH_TimingBridge->clockTickH[Rider_Controls_InHard_GlobalTID[1]]) )
+#endif
+
+#ifndef rtmGetClockTickH2
+# define rtmGetClockTickH2()           ( *(Rider_Controls_InH_TimingBridge->clockTickH[Rider_Controls_InHard_GlobalTID[2]]) )
 #endif
 
 #ifndef rtmGetErrorStatus
@@ -74,7 +82,7 @@ extern CAN_DATATYPE CAN_DATATYPE_GROUND;
 extern CAN_DATATYPE CAN_DATATYPE_GROUND;
 extern CAN_DATATYPE CAN_DATATYPE_GROUND;
 extern CAN_DATATYPE CAN_DATATYPE_GROUND;
-extern int_T Rider_Controls_InHard_GlobalTID[2];
+extern int_T Rider_Controls_InHard_GlobalTID[3];
 extern const rtTimingBridge *Rider_Controls_InH_TimingBridge;
 
 #endif                                 /* RTW_HEADER_Rider_Controls_InHardware_private_h_ */

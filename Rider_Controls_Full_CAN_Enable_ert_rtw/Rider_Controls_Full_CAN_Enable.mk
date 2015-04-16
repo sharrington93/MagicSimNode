@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'Rider_Controls_Full_CAN_Enable'. 
 ## 
 ## Makefile     : Rider_Controls_Full_CAN_Enable.mk
-## Generated on : Wed Apr 01 18:57:16 2015
+## Generated on : Thu Apr 16 19:16:04 2015
 ## MATLAB Coder version: 2.7 (R2014b)
 ## 
 ## Build Info:
@@ -228,11 +228,11 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_ = -DMODEL=Rider_Controls_Full_CAN_Enable -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DONESTEPFCN=1 -DTERMFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=1 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTID01EQ=0 -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DRT -DSTACK_SIZE=64
+DEFINES_ = -DMODEL=Rider_Controls_Full_CAN_Enable -DNUMST=3 -DNCSTATES=0 -DHAVESTDIO -DONESTEPFCN=1 -DTERMFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=1 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTID01EQ=0 -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DRT -DSTACK_SIZE=64
 DEFINES_BUILD_ARGS = -DONESTEPFCN=1 -DTERMFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=1 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0
 DEFINES_IMPLIED = -DTID01EQ=0
 DEFINES_SKIPFORSIL = -DRT -DSTACK_SIZE=64
-DEFINES_STANDARD = -DMODEL=Rider_Controls_Full_CAN_Enable -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO
+DEFINES_STANDARD = -DMODEL=Rider_Controls_Full_CAN_Enable -DNUMST=3 -DNCSTATES=0 -DHAVESTDIO
 
 DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_IMPLIED) $(DEFINES_SKIPFORSIL) $(DEFINES_STANDARD)
 
@@ -266,7 +266,7 @@ PREBUILT_OBJS =
 ## LIBRARIES
 ###########################################################################
 
-MODELREF_LIBS = ./Rider_Controls_Control_rtwlib.lib ./Rider_Controls_InHardware_rtwlib.lib ./Rider_Controls_OutHardware_rtwlib.lib
+MODELREF_LIBS = ./Rider_Controls_Control_rtwlib.lib ./Rider_Controls_InHardware_rtwlib.lib
 
 LIBS = $(SHARED_LIB) C:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/src/c28035.cmd C:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/rtlib/IQmath.lib $(MATLAB_ROOT)/toolbox/idelink/extensions/ticcs/c2000/c2803xPeripherals.cmd
 
@@ -430,54 +430,6 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MODELREF_LIBS) $(LIBS) $(MAIN_OBJ)
 
 
 %.obj : $(MATLAB_ROOT)/simulink/src/%.cpp
-	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.cla
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.c
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.asm
-	$(AS) $(ASFLAGS) "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.cpp
-	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.cla
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.c
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.asm
-	$(AS) $(ASFLAGS) "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.cpp
-	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.cla
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.c
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.asm
-	$(AS) $(ASFLAGS) "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.cpp
 	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
 
 

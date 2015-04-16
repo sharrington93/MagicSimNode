@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Full_CAN_Enable'.
  *
- * Model version                  : 1.105
+ * Model version                  : 1.118
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed Apr 01 18:57:08 2015
+ * C/C++ source code generated on : Thu Apr 16 19:15:55 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -17,8 +17,6 @@
 #include "Rider_Controls_Full_CAN_Enable_private.h"
 
 rtTimingBridge Rider_Controls_Ful_TimingBridge;
-const real_T Rider_Controls_Full_CAN_Enable_RGND = 0.0;/* real_T ground */
-const uint16_T Rider_Controls_Full_CAN_Enable_U16GND = 0U;/* uint16_T ground */
 
 /* Block signals (auto storage) */
 BlockIO_Rider_Controls_Full_CAN Rider_Controls_Full_CAN_Enabl_B;
@@ -43,6 +41,7 @@ void Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep(boolean_T
 {
   /* Task runs when its counter is zero, computed via rtmStepTask macro */
   eventFlags[1] = ((boolean_T)rtmStepTask(Rider_Controls_Full_CAN_Enab_M, 1));
+  eventFlags[2] = ((boolean_T)rtmStepTask(Rider_Controls_Full_CAN_Enab_M, 2));
 }
 
 /*
@@ -66,6 +65,12 @@ static void rate_monotonic_scheduler(void)
   Rider_Controls_Full_CAN_Enab_M->Timing.RateInteraction.TID0_1 =
     (Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[1] == 0);
 
+  /* tid 1 shares data with slower tid rate: 2 */
+  if (Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[1] == 0) {
+    Rider_Controls_Full_CAN_Enab_M->Timing.RateInteraction.TID1_2 =
+      (Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[2] == 0);
+  }
+
   /* Compute which subrates run during the next base time step.  Subrates
    * are an integer multiple of the base rate counter.  Therefore, the subtask
    * counter is reset when it reaches its limit (zero means run).
@@ -73,6 +78,11 @@ static void rate_monotonic_scheduler(void)
   (Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[1])++;
   if ((Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[1]) > 999) {/* Sample time: [0.01s, 0.0s] */
     Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[1] = 0;
+  }
+
+  (Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[2])++;
+  if ((Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[2]) > 99999) {/* Sample time: [1.0s, 0.0s] */
+    Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID[2] = 0;
   }
 }
 
@@ -86,26 +96,13 @@ void Rider_Controls_Full_CAN_Enable_step0(void) /* Sample time: [1.0E-5s, 0.0s] 
   /* ModelReference: '<Root>/InHardware' */
   Rider_Controls_InHardwareTID0();
   Rider_Controls_InHar_UpdateTID0();
-
-  /* Update absolute time */
-  /* The "clockTick0" counts the number of times the code of this task has
-   * been executed. The resolution of this integer timer is 1.0E-5, which is the step size
-   * of the task. Size of "clockTick0" ensures timer will not overflow during the
-   * application lifespan selected.
-   * Timer of this task consists of two 32 bit unsigned integers.
-   * The two integers represent the low bits Timing.clockTick0 and the high bits
-   * Timing.clockTickH0. When the low bit overflows to 0, the high bits increment.
-   */
-  Rider_Controls_Full_CAN_Enab_M->Timing.clockTick0++;
-  if (!Rider_Controls_Full_CAN_Enab_M->Timing.clockTick0) {
-    Rider_Controls_Full_CAN_Enab_M->Timing.clockTickH0++;
-  }
 }
 
 /* Model step function for TID1 */
 void Rider_Controls_Full_CAN_Enable_step1(void) /* Sample time: [0.01s, 0.0s] */
 {
   /* local block i/o variables */
+  uint16_T rtb_Software_o5;
   uint16_T rtb_Software_o6;
   uint16_T rtb_Software_o7;
 
@@ -120,20 +117,252 @@ void Rider_Controls_Full_CAN_Enable_step1(void) /* Sample time: [0.01s, 0.0s] */
   Rider_Controls_Control(&Rider_Controls_Full_CAN_Enabl_B.InHardware_o1,
     &Rider_Controls_Full_CAN_Enabl_B.InHardware_o2,
     &Rider_Controls_Full_CAN_Enabl_B.InHardware_o3[0],
-    &Rider_Controls_Full_CAN_Enabl_B.InHardware_o4, (uint16_T*)
-    &Rider_Controls_Full_CAN_Enable_U16GND,
+    &Rider_Controls_Full_CAN_Enabl_B.InHardware_o4,
+    &Rider_Controls_Full_CAN_Enabl_B.InHardware_o5,
     &Rider_Controls_Full_CAN_Enabl_B.Software_o1,
     &Rider_Controls_Full_CAN_Enabl_B.Software_o2,
     &Rider_Controls_Full_CAN_Enabl_B.Software_o3,
-    &Rider_Controls_Full_CAN_Enabl_B.Software_o4,
-    &Rider_Controls_Full_CAN_Enabl_B.Software_o5, &rtb_Software_o6,
-    &rtb_Software_o7);
+    &Rider_Controls_Full_CAN_Enabl_B.Software_o4, &rtb_Software_o5,
+    &rtb_Software_o6, &rtb_Software_o7);
 
-  /* ModelReference: '<Root>/OutHardware' */
-  Rider_Controls_OutHardware(&Rider_Controls_Full_CAN_Enabl_B.Software_o1,
-    &Rider_Controls_Full_CAN_Enabl_B.Software_o4,
-    &Rider_Controls_Full_CAN_Enabl_B.Software_o5, &rtb_Software_o7,
-    &rtb_Software_o6);
+  /* DataTypeConversion: '<Root>/Data Type Conversion' */
+  Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion = rtb_Software_o5;
+
+  /* DataTypeConversion: '<Root>/Data Type Conversion1' */
+  Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion1 =
+    Rider_Controls_Full_CAN_Enabl_B.Software_o4;
+
+  /* DataTypeConversion: '<Root>/Data Type Conversion2' */
+  Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion2 = rtb_Software_o7;
+
+  /* DataTypeConversion: '<Root>/Data Type Conversion3' */
+  Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion3 = rtb_Software_o6;
+
+  /* S-Function (scanpack): '<Root>/CAN Pack' */
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.ID = 483U;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Length = 8U;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Extended = 0U;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Remote = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[1] = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[2] = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[3] = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[4] = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[5] = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[6] = 0;
+  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[7] = 0;
+
+  {
+    /* --------------- START Packing signal 0 ------------------
+     *  startBit                = 1
+     *  length                  = 1
+     *  desiredSignalByteLayout = LITTLEENDIAN
+     *  dataType                = UNSIGNED
+     *  factor                  = 1.0
+     *  offset                  = 0.0
+     *  minimum                 = 0.0
+     *  maximum                 = 1.0
+     * -----------------------------------------------------------------------*/
+    {
+      {
+        real64_T outValue = 0;
+
+        {
+          real64_T result = Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion;
+
+          /* no scaling required */
+          outValue = result;
+        }
+
+        {
+          {
+            uint8_T packedValue;
+            if (outValue > (real64_T)(1)) {
+              packedValue = (uint8_T) 1;
+            } else if (outValue < (real64_T)(0)) {
+              packedValue = (uint8_T) 0;
+            } else {
+              packedValue = (uint8_T) (outValue);
+            }
+
+            {
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] | (uint8_T)
+                  ((uint8_T)((uint8_T)(packedValue & (uint8_T)(((uint8_T)(1)) <<
+                      0)) >> 0)<<1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* --------------- START Packing signal 1 ------------------
+     *  startBit                = 2
+     *  length                  = 1
+     *  desiredSignalByteLayout = LITTLEENDIAN
+     *  dataType                = UNSIGNED
+     *  factor                  = 1.0
+     *  offset                  = 0.0
+     *  minimum                 = 0.0
+     *  maximum                 = 1.0
+     * -----------------------------------------------------------------------*/
+    {
+      {
+        real64_T outValue = 0;
+
+        {
+          real64_T result = Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion1;
+
+          /* no scaling required */
+          outValue = result;
+        }
+
+        {
+          {
+            uint8_T packedValue;
+            if (outValue > (real64_T)(1)) {
+              packedValue = (uint8_T) 1;
+            } else if (outValue < (real64_T)(0)) {
+              packedValue = (uint8_T) 0;
+            } else {
+              packedValue = (uint8_T) (outValue);
+            }
+
+            {
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] | (uint8_T)
+                  ((uint8_T)((uint8_T)(packedValue & (uint8_T)(((uint8_T)(1)) <<
+                      0)) >> 0)<<2);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* --------------- START Packing signal 2 ------------------
+     *  startBit                = 3
+     *  length                  = 1
+     *  desiredSignalByteLayout = LITTLEENDIAN
+     *  dataType                = UNSIGNED
+     *  factor                  = 1.0
+     *  offset                  = 0.0
+     *  minimum                 = 0.0
+     *  maximum                 = 0.0
+     * -----------------------------------------------------------------------*/
+    {
+      {
+        real64_T outValue = 0;
+
+        {
+          real64_T result = Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion2;
+
+          /* no scaling required */
+          outValue = result;
+        }
+
+        {
+          {
+            uint8_T packedValue;
+            if (outValue > (real64_T)(1)) {
+              packedValue = (uint8_T) 1;
+            } else if (outValue < (real64_T)(0)) {
+              packedValue = (uint8_T) 0;
+            } else {
+              packedValue = (uint8_T) (outValue);
+            }
+
+            {
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] | (uint8_T)
+                  ((uint8_T)((uint8_T)(packedValue & (uint8_T)(((uint8_T)(1)) <<
+                      0)) >> 0)<<3);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* --------------- START Packing signal 3 ------------------
+     *  startBit                = 0
+     *  length                  = 1
+     *  desiredSignalByteLayout = LITTLEENDIAN
+     *  dataType                = UNSIGNED
+     *  factor                  = 1.0
+     *  offset                  = 0.0
+     *  minimum                 = 0.0
+     *  maximum                 = 0.0
+     * -----------------------------------------------------------------------*/
+    {
+      {
+        real64_T outValue = 0;
+
+        {
+          real64_T result = Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion3;
+
+          /* no scaling required */
+          outValue = result;
+        }
+
+        {
+          {
+            uint8_T packedValue;
+            if (outValue > (real64_T)(1)) {
+              packedValue = (uint8_T) 1;
+            } else if (outValue < (real64_T)(0)) {
+              packedValue = (uint8_T) 0;
+            } else {
+              packedValue = (uint8_T) (outValue);
+            }
+
+            {
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0] | (uint8_T)
+                  ((uint8_T)((uint8_T)(packedValue & (uint8_T)(((uint8_T)(1)) <<
+                      0)) >> 0)<<0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* S-Function (c280xcanxmt): '<Root>/eCAN Transmit' */
+  {
+    EALLOW;
+    ECanaMboxes.MBOX31.MSGCTRL.bit.DLC =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Length;
+    ECanaMboxes.MBOX31.MSGID.all = Rider_Controls_Full_CAN_Enabl_B.CANPack.ID;
+    ECanaMboxes.MBOX31.MDL.byte.BYTE0 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[3];
+    ECanaMboxes.MBOX31.MDL.byte.BYTE1 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[2];
+    ECanaMboxes.MBOX31.MDL.byte.BYTE2 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[1];
+    ECanaMboxes.MBOX31.MDL.byte.BYTE3 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[0];
+    ECanaMboxes.MBOX31.MDH.byte.BYTE4 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[7];
+    ECanaMboxes.MBOX31.MDH.byte.BYTE5 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[6];
+    ECanaMboxes.MBOX31.MDH.byte.BYTE6 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[5];
+    ECanaMboxes.MBOX31.MDH.byte.BYTE7 =
+      Rider_Controls_Full_CAN_Enabl_B.CANPack.Data[4];
+    ECanaRegs.CANTRS.all = (((uint32_T) 0x00000001) << 31);
+    EDIS;
+  }
+
+  /* DataTypeConversion: '<Root>/Data Type Conversion4' */
+  Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion4 =
+    Rider_Controls_Full_CAN_Enabl_B.Software_o1;
 
   /* S-Function (scanpack): '<Root>/CAN Pack1' */
   Rider_Controls_Full_CAN_Enabl_B.CANPack1.ID = 480U;
@@ -160,6 +389,255 @@ void Rider_Controls_Full_CAN_Enable_step1(void) /* Sample time: [0.01s, 0.0s] */
      *  minimum                 = 0.0
      *  maximum                 = 1.0
      * -----------------------------------------------------------------------*/
+    {
+      {
+        real64_T outValue = 0;
+
+        {
+          real64_T result = Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion4;
+
+          /* no scaling required */
+          outValue = result;
+        }
+
+        {
+          {
+            real32_T typedValue;
+            uint32_T* pInput;
+            uint32_T typedIntValue;
+            typedValue = (real32_T) (outValue);
+            pInput = (uint32_T*) (&typedValue);
+            typedIntValue = *pInput;
+
+            {
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 0)) >> 0)<<0);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 1)) >> 1)<<1);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 2)) >> 2)<<2);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 3)) >> 3)<<3);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 4)) >> 4)<<4);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 5)) >> 5)<<5);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 6)) >> 6)<<6);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 7)) >> 7)<<7);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 8)) >> 8)<<0);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 9)) >> 9)<<1);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 10)) >> 10)<<2);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 11)) >> 11)<<3);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 12)) >> 12)<<4);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 13)) >> 13)<<5);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 14)) >> 14)<<6);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 15)) >> 15)<<7);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 16)) >> 16)<<0);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 17)) >> 17)<<1);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 18)) >> 18)<<2);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 19)) >> 19)<<3);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 20)) >> 20)<<4);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 21)) >> 21)<<5);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 22)) >> 22)<<6);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 23)) >> 23)<<7);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 24)) >> 24)<<0);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 25)) >> 25)<<1);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 26)) >> 26)<<2);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 27)) >> 27)<<3);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 28)) >> 28)<<4);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 29)) >> 29)<<5);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 30)) >> 30)<<6);
+              }
+
+              {
+                Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] =
+                  Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7] | (uint8_T)
+                  ((uint8_T)((uint32_T)(typedIntValue & (uint32_T)(((uint32_T)(1))
+                      << 31)) >> 31)<<7);
+              }
+            }
+          }
+        }
+      }
+    }
 
     /* --------------- START Packing signal 1 ------------------
      *  startBit                = 0
@@ -173,10 +651,10 @@ void Rider_Controls_Full_CAN_Enable_step1(void) /* Sample time: [0.01s, 0.0s] */
      * -----------------------------------------------------------------------*/
     {
       {
-        real32_T outValue = 0;
+        real64_T outValue = 0;
 
         {
-          real32_T result = Rider_Controls_Full_CAN_Enabl_B.Software_o1;
+          real64_T result = 5000.0;
 
           /* no scaling required */
           outValue = result;
@@ -425,44 +903,38 @@ void Rider_Controls_Full_CAN_Enable_step1(void) /* Sample time: [0.01s, 0.0s] */
   /* S-Function (c280xcanxmt): '<Root>/eCAN Transmit1' */
   {
     EALLOW;
-    ECanaMboxes.MBOX20.MSGCTRL.bit.DLC =
+    ECanaMboxes.MBOX30.MSGCTRL.bit.DLC =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Length;
-    ECanaMboxes.MBOX20.MSGID.all = Rider_Controls_Full_CAN_Enabl_B.CANPack1.ID;
-    ECanaMboxes.MBOX20.MDL.byte.BYTE0 =
+    ECanaMboxes.MBOX30.MSGID.all = Rider_Controls_Full_CAN_Enabl_B.CANPack1.ID;
+    ECanaMboxes.MBOX30.MDL.byte.BYTE0 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[3];
-    ECanaMboxes.MBOX20.MDL.byte.BYTE1 =
+    ECanaMboxes.MBOX30.MDL.byte.BYTE1 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[2];
-    ECanaMboxes.MBOX20.MDL.byte.BYTE2 =
+    ECanaMboxes.MBOX30.MDL.byte.BYTE2 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[1];
-    ECanaMboxes.MBOX20.MDL.byte.BYTE3 =
+    ECanaMboxes.MBOX30.MDL.byte.BYTE3 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[0];
-    ECanaMboxes.MBOX20.MDH.byte.BYTE4 =
+    ECanaMboxes.MBOX30.MDH.byte.BYTE4 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[7];
-    ECanaMboxes.MBOX20.MDH.byte.BYTE5 =
+    ECanaMboxes.MBOX30.MDH.byte.BYTE5 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[6];
-    ECanaMboxes.MBOX20.MDH.byte.BYTE6 =
+    ECanaMboxes.MBOX30.MDH.byte.BYTE6 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[5];
-    ECanaMboxes.MBOX20.MDH.byte.BYTE7 =
+    ECanaMboxes.MBOX30.MDH.byte.BYTE7 =
       Rider_Controls_Full_CAN_Enabl_B.CANPack1.Data[4];
-    ECanaRegs.CANTRS.all = (((uint32_T) 0x00000001) << 20);
+    ECanaRegs.CANTRS.all = (((uint32_T) 0x00000001) << 30);
     EDIS;
   }
 
   Rider_Controls_InHar_UpdateTID1();
+}
 
-  /* Update absolute time */
-  /* The "clockTick1" counts the number of times the code of this task has
-   * been executed. The resolution of this integer timer is 0.01, which is the step size
-   * of the task. Size of "clockTick1" ensures timer will not overflow during the
-   * application lifespan selected.
-   * Timer of this task consists of two 32 bit unsigned integers.
-   * The two integers represent the low bits Timing.clockTick1 and the high bits
-   * Timing.clockTickH1. When the low bit overflows to 0, the high bits increment.
-   */
-  Rider_Controls_Full_CAN_Enab_M->Timing.clockTick1++;
-  if (!Rider_Controls_Full_CAN_Enab_M->Timing.clockTick1) {
-    Rider_Controls_Full_CAN_Enab_M->Timing.clockTickH1++;
-  }
+/* Model step function for TID2 */
+void Rider_Controls_Full_CAN_Enable_step2(void) /* Sample time: [1.0s, 0.0s] */
+{
+  /* ModelReference: '<Root>/InHardware' */
+  Rider_Controls_InHardwareTID2();
+  Rider_Controls_InHar_UpdateTID2();
 }
 
 /* Model step wrapper function for compatibility with a static main program */
@@ -475,6 +947,10 @@ void Rider_Controls_Full_CAN_Enable_step(int_T tid)
 
    case 1 :
     Rider_Controls_Full_CAN_Enable_step1();
+    break;
+
+   case 2 :
+    Rider_Controls_Full_CAN_Enable_step2();
     break;
 
    default :
@@ -504,10 +980,15 @@ void Rider_Controls_Full_CAN_Enable_initialize(void)
       Rider_Controls_Full_CAN_Enabl_B.InHardware_o3[i] = 0.0F;
     }
 
+    Rider_Controls_Full_CAN_Enabl_B.CANPack = CAN_DATATYPE_GROUND;
     Rider_Controls_Full_CAN_Enabl_B.CANPack1 = CAN_DATATYPE_GROUND;
+    Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion = 0.0;
+    Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion1 = 0.0;
+    Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion2 = 0.0;
+    Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion3 = 0.0;
+    Rider_Controls_Full_CAN_Enabl_B.DataTypeConversion4 = 0.0;
     Rider_Controls_Full_CAN_Enabl_B.InHardware_o1 = 0.0F;
     Rider_Controls_Full_CAN_Enabl_B.InHardware_o2 = 0.0F;
-    Rider_Controls_Full_CAN_Enabl_B.Software_o1 = 0.0F;
   }
 
   /* states (dwork) */
@@ -515,32 +996,24 @@ void Rider_Controls_Full_CAN_Enable_initialize(void)
                 sizeof(D_Work_Rider_Controls_Full_CAN_));
 
   {
-    static uint32_T *clockTickPtrs[2];
-    static uint32_T *clockTickHPtrs[2];
     static uint32_T *taskCounterPtrs;
-    static boolean_T *rateTransitionPtrs[(2 * 2)];
-    Rider_Controls_Ful_TimingBridge.nTasks = 2;
-    clockTickPtrs[0] = &(Rider_Controls_Full_CAN_Enab_M->Timing.clockTick0);
-    clockTickHPtrs[0] = &(Rider_Controls_Full_CAN_Enab_M->Timing.clockTickH0);
-    clockTickPtrs[1] = &(Rider_Controls_Full_CAN_Enab_M->Timing.clockTick1);
-    clockTickHPtrs[1] = &(Rider_Controls_Full_CAN_Enab_M->Timing.clockTickH1);
-    Rider_Controls_Ful_TimingBridge.clockTick = clockTickPtrs;
-    Rider_Controls_Ful_TimingBridge.clockTickH = clockTickHPtrs;
+    static boolean_T *rateTransitionPtrs[(3 * 3)];
+    Rider_Controls_Ful_TimingBridge.nTasks = 3;
+    Rider_Controls_Ful_TimingBridge.clockTick = (NULL);
+    Rider_Controls_Ful_TimingBridge.clockTickH = (NULL);
     taskCounterPtrs = &(Rider_Controls_Full_CAN_Enab_M->Timing.TaskCounters.TID
                         [0]);
     Rider_Controls_Ful_TimingBridge.taskCounter = taskCounterPtrs;
-    rateTransitionPtrs[0*2 + 1] =
+    rateTransitionPtrs[0*3 + 1] =
       &(Rider_Controls_Full_CAN_Enab_M->Timing.RateInteraction.TID0_1);
+    rateTransitionPtrs[1*3 + 2] =
+      &(Rider_Controls_Full_CAN_Enab_M->Timing.RateInteraction.TID1_2);
     Rider_Controls_Ful_TimingBridge.rateTransition = rateTransitionPtrs;
   }
 
   /* Model Initialize fcn for ModelReference Block: '<Root>/InHardware' */
   Rider_Controls_I_initialize(rtmGetErrorStatusPointer
-    (Rider_Controls_Full_CAN_Enab_M), &Rider_Controls_Ful_TimingBridge, 0, 1);
-
-  /* Model Initialize fcn for ModelReference Block: '<Root>/OutHardware' */
-  Rider_Controls_OutHa_initialize(rtmGetErrorStatusPointer
-    (Rider_Controls_Full_CAN_Enab_M));
+    (Rider_Controls_Full_CAN_Enab_M), &Rider_Controls_Ful_TimingBridge, 0, 1, 2);
 
   /* Model Initialize fcn for ModelReference Block: '<Root>/Software' */
   Rider_Controls_Contr_initialize(rtmGetErrorStatusPointer
@@ -549,13 +1022,18 @@ void Rider_Controls_Full_CAN_Enable_initialize(void)
   /* Start for ModelReference: '<Root>/InHardware' */
   Rider_Controls_InHard_Start();
 
-  /* Start for ModelReference: '<Root>/OutHardware' */
-  Rider_Controls_OutHardwar_Start();
+  /* Start for S-Function (c280xcanxmt): '<Root>/eCAN Transmit' */
+
+  /* Configure mailbox 31 to transmit messages with the ID: 483 */
+  config_eCAN_A_mbx (1U, 31, 483, 0);
 
   /* Start for S-Function (c280xcanxmt): '<Root>/eCAN Transmit1' */
 
-  /* Configure mailbox 20 to transmit messages with the ID: 480 */
-  config_eCAN_A_mbx (1U, 20, 480, 0);
+  /* Configure mailbox 30 to transmit messages with the ID: 480 */
+  config_eCAN_A_mbx (1U, 30, 480, 0);
+
+  /* InitializeConditions for ModelReference: '<Root>/InHardware' */
+  Rider_Controls_InHardw_Init();
 }
 
 /* Model terminate function */

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Full_CAN_Enable'.
  *
- * Model version                  : 1.105
+ * Model version                  : 1.118
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed Apr 01 18:57:08 2015
+ * C/C++ source code generated on : Thu Apr 16 19:15:55 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -17,13 +17,14 @@
 #include "rtwtypes.h"
 
 volatile int IsrOverrun = 0;
-boolean_T isRateRunning[2] = { 0, 0 };
+boolean_T isRateRunning[3] = { 0, 0, 0 };
 
-boolean_T need2runFlags[2] = { 0, 0 };
+boolean_T need2runFlags[3] = { 0, 0, 0 };
 
 void rt_OneStep(void)
 {
-  boolean_T eventFlags[2];
+  boolean_T eventFlags[3];
+  int_T i;
 
   /* Check base rate for overrun */
   if (isRateRunning[0]++) {
@@ -47,39 +48,49 @@ void rt_OneStep(void)
   /* Get model outputs here */
   disableTimer0Interrupt();
   isRateRunning[0]--;
-  if (eventFlags[1]) {
-    if (need2runFlags[1]++) {
-      IsrOverrun = 1;
-      need2runFlags[1]--;              /* allow future iterations to succeed*/
-      return;
+  for (i = 1; i < 3; i++) {
+    if (eventFlags[i]) {
+      if (need2runFlags[i]++) {
+        IsrOverrun = 1;
+        need2runFlags[i]--;            /* allow future iterations to succeed*/
+        break;
+      }
     }
   }
 
-  if (need2runFlags[1]) {
-    if (isRateRunning[1]) {
+  for (i = 1; i < 3; i++) {
+    if (isRateRunning[i]) {
       /* Yield to higher priority*/
       return;
     }
 
-    isRateRunning[1]++;
-    enableTimer0Interrupt();
+    if (need2runFlags[i]) {
+      isRateRunning[i]++;
+      enableTimer0Interrupt();
 
-    /* Step the model for subrate "1" */
-    switch (1)
-    {
-     case 1 :
-      Rider_Controls_Full_CAN_Enable_step(1);
+      /* Step the model for subrate "i" */
+      switch (i)
+      {
+       case 1 :
+        Rider_Controls_Full_CAN_Enable_step(1);
 
-      /* Get model outputs here */
-      break;
+        /* Get model outputs here */
+        break;
 
-     default :
-      break;
+       case 2 :
+        Rider_Controls_Full_CAN_Enable_step(2);
+
+        /* Get model outputs here */
+        break;
+
+       default :
+        break;
+      }
+
+      disableTimer0Interrupt();
+      need2runFlags[i]--;
+      isRateRunning[i]--;
     }
-
-    disableTimer0Interrupt();
-    need2runFlags[1]--;
-    isRateRunning[1]--;
   }
 }
 

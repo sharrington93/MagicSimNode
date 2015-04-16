@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Full_CAN_Enable'.
  *
- * Model version                  : 1.105
+ * Model version                  : 1.118
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed Apr 01 18:57:08 2015
+ * C/C++ source code generated on : Thu Apr 16 19:15:55 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -31,8 +31,6 @@
 #include "model_reference_types.h"
 
 /* Child system includes */
-#define Rider_Controls_OutHardware_MDLREF_HIDE_CHILD_
-#include "Rider_Controls_OutHardware.h"
 #define Rider_Controls_InHardware_MDLREF_HIDE_CHILD_
 #include "Rider_Controls_InHardware.h"
 #define Rider_Controls_Control_MDLREF_HIDE_CHILD_
@@ -78,7 +76,13 @@ extern void init_eCAN_A ( uint16_T bitRatePrescaler, uint16_T timeSeg1, uint16_T
 
 /* Block signals (auto storage) */
 typedef struct {
+  CAN_DATATYPE CANPack;                /* '<Root>/CAN Pack' */
   CAN_DATATYPE CANPack1;               /* '<Root>/CAN Pack1' */
+  real_T DataTypeConversion;           /* '<Root>/Data Type Conversion' */
+  real_T DataTypeConversion1;          /* '<Root>/Data Type Conversion1' */
+  real_T DataTypeConversion2;          /* '<Root>/Data Type Conversion2' */
+  real_T DataTypeConversion3;          /* '<Root>/Data Type Conversion3' */
+  real_T DataTypeConversion4;          /* '<Root>/Data Type Conversion4' */
   real32_T InHardware_o1;              /* '<Root>/InHardware' */
   real32_T InHardware_o2;              /* '<Root>/InHardware' */
   real32_T InHardware_o3[40];          /* '<Root>/InHardware' */
@@ -86,13 +90,13 @@ typedef struct {
   real32_T Software_o2;                /* '<Root>/Software' */
   real32_T Software_o3;                /* '<Root>/Software' */
   uint16_T InHardware_o4;              /* '<Root>/InHardware' */
+  uint16_T InHardware_o5;              /* '<Root>/InHardware' */
   uint16_T Software_o4;                /* '<Root>/Software' */
-  uint16_T Software_o5;                /* '<Root>/Software' */
-  boolean_T InHardware_o5;             /* '<Root>/InHardware' */
 } BlockIO_Rider_Controls_Full_CAN;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
+  int_T CANPack_ModeSignalID;          /* '<Root>/CAN Pack' */
   int_T CANPack1_ModeSignalID;         /* '<Root>/CAN Pack1' */
 } D_Work_Rider_Controls_Full_CAN_;
 
@@ -106,16 +110,13 @@ struct tag_RTM_Rider_Controls_Full_CAN {
    * the timing information for the model.
    */
   struct {
-    uint32_T clockTick0;
-    uint32_T clockTickH0;
-    uint32_T clockTick1;
-    uint32_T clockTickH1;
     struct {
-      uint32_T TID[2];
+      uint32_T TID[3];
     } TaskCounters;
 
     struct {
       boolean_T TID0_1;
+      boolean_T TID1_2;
     } RateInteraction;
   } Timing;
 };
@@ -129,10 +130,6 @@ extern D_Work_Rider_Controls_Full_CAN_ Rider_Controls_Full_CAN_E_DWork;
 /* External function called from main */
 extern void Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep(boolean_T
   *eventFlags);
-
-/* External data declarations for dependent source files */
-extern const real_T Rider_Controls_Full_CAN_Enable_RGND;/* real_T ground */
-extern const uint16_T Rider_Controls_Full_CAN_Enable_U16GND;/* uint16_T ground */
 
 /* Model entry point functions */
 extern void Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep(boolean_T
