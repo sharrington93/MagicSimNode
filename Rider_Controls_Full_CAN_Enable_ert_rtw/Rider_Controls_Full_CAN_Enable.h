@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Full_CAN_Enable'.
  *
- * Model version                  : 1.118
+ * Model version                  : 1.127
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Thu Apr 16 19:15:55 2015
+ * C/C++ source code generated on : Wed May 27 16:42:47 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -36,8 +36,6 @@
 #define Rider_Controls_Control_MDLREF_HIDE_CHILD_
 #include "Rider_Controls_Control.h"
 #include "MW_target_hardware_resources.h"
-#include "rtGetInf.h"
-#include "rt_nonfinite.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetErrorStatus
@@ -79,19 +77,16 @@ typedef struct {
   CAN_DATATYPE CANPack;                /* '<Root>/CAN Pack' */
   CAN_DATATYPE CANPack1;               /* '<Root>/CAN Pack1' */
   real_T DataTypeConversion;           /* '<Root>/Data Type Conversion' */
+  real_T DataTypeConversion5;          /* '<Root>/Data Type Conversion5' */
   real_T DataTypeConversion1;          /* '<Root>/Data Type Conversion1' */
   real_T DataTypeConversion2;          /* '<Root>/Data Type Conversion2' */
   real_T DataTypeConversion3;          /* '<Root>/Data Type Conversion3' */
   real_T DataTypeConversion4;          /* '<Root>/Data Type Conversion4' */
   real32_T InHardware_o1;              /* '<Root>/InHardware' */
   real32_T InHardware_o2;              /* '<Root>/InHardware' */
-  real32_T InHardware_o3[40];          /* '<Root>/InHardware' */
-  real32_T Software_o1;                /* '<Root>/Software' */
-  real32_T Software_o2;                /* '<Root>/Software' */
-  real32_T Software_o3;                /* '<Root>/Software' */
+  real32_T InHardware_o3[36];          /* '<Root>/InHardware' */
   uint16_T InHardware_o4;              /* '<Root>/InHardware' */
   uint16_T InHardware_o5;              /* '<Root>/InHardware' */
-  uint16_T Software_o4;                /* '<Root>/Software' */
 } BlockIO_Rider_Controls_Full_CAN;
 
 /* Block states (auto storage) for system '<Root>' */

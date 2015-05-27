@@ -19,6 +19,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:96"] = {rtwname: "<Root>/Data Type Conversion3"};
 	this.rtwnameHashMap["<Root>/Data Type Conversion4"] = {sid: "Rider_Controls_Full_CAN_Enable:100"};
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:100"] = {rtwname: "<Root>/Data Type Conversion4"};
+	this.rtwnameHashMap["<Root>/Data Type Conversion5"] = {sid: "Rider_Controls_Full_CAN_Enable:104"};
+	this.sidHashMap["Rider_Controls_Full_CAN_Enable:104"] = {rtwname: "<Root>/Data Type Conversion5"};
 	this.rtwnameHashMap["<Root>/InHardware"] = {sid: "Rider_Controls_Full_CAN_Enable:77"};
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:77"] = {rtwname: "<Root>/InHardware"};
 	this.rtwnameHashMap["<Root>/OutHardware"] = {sid: "Rider_Controls_Full_CAN_Enable:84"};

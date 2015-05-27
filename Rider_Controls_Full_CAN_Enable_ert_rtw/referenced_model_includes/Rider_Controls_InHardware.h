@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_InHardware'.
  *
- * Model version                  : 1.248
+ * Model version                  : 1.310
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Thu Apr 16 19:15:19 2015
+ * C/C++ source code generated on : Wed May 27 15:53:08 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -15,7 +15,6 @@
 
 #ifndef RTW_HEADER_Rider_Controls_InHardware_h_
 #define RTW_HEADER_Rider_Controls_InHardware_h_
-#include <math.h>
 #include <string.h>
 #ifndef Rider_Controls_InHardware_COMMON_INCLUDES_
 # define Rider_Controls_InHardware_COMMON_INCLUDES_
@@ -31,9 +30,6 @@
 
 /* Shared type includes */
 #include "model_reference_types.h"
-#include "rt_nonfinite.h"
-#include "rt_roundd_snf.h"
-#include "rtGetInf.h"
 
 extern void enable_interrupts(void);
 extern void init_eCAN_A ( uint16_T bitRatePrescaler, uint16_T timeSeg1, uint16_T
@@ -47,7 +43,7 @@ extern void init_eCAN_A ( uint16_T bitRatePrescaler, uint16_T timeSeg1, uint16_T
 #ifndef Rider_Controls_InHardware_MDLREF_HIDE_CHILD_
 
 typedef struct {
-  uint16_T Counter;                    /* '<S50>/Counter' */
+  uint16_T Counter;                    /* '<S46>/Counter' */
 } rtB_MessageReceived4_Rider_Cont;
 
 #endif                                 /*Rider_Controls_InHardware_MDLREF_HIDE_CHILD_*/
@@ -56,7 +52,7 @@ typedef struct {
 #ifndef Rider_Controls_InHardware_MDLREF_HIDE_CHILD_
 
 typedef struct {
-  uint16_T Counter_Count;              /* '<S50>/Counter' */
+  uint16_T Counter_Count;              /* '<S46>/Counter' */
 } rtDW_MessageReceived4_Rider_Con;
 
 #endif                                 /*Rider_Controls_InHardware_MDLREF_HIDE_CHILD_*/
@@ -88,29 +84,9 @@ typedef struct {
   CAN_DATATYPE eCANReceive20_o2;       /* '<S1>/eCAN Receive20' */
   CAN_DATATYPE eCANReceive21_o2;       /* '<S1>/eCAN Receive21' */
   CAN_DATATYPE eCANReceive22_o2;       /* '<S1>/eCAN Receive22' */
-  CAN_DATATYPE eCANReceive23_o2;       /* '<S1>/eCAN Receive23' */
-  CAN_DATATYPE eCANReceive24_o2;       /* '<S1>/eCAN Receive24' */
   CAN_DATATYPE eCANReceive_o2;         /* '<Root>/eCAN Receive' */
-  real_T CANUnpack11_o1;               /* '<Root>/CAN Unpack11' */
   real_T CANUnpack11_o2;               /* '<Root>/CAN Unpack11' */
-  real_T CANUnpack11_o3;               /* '<Root>/CAN Unpack11' */
-  real_T CANUnpack11_o4;               /* '<Root>/CAN Unpack11' */
-  real_T CANUnpack12_o1;               /* '<Root>/CAN Unpack12' */
-  real_T CANUnpack12_o2;               /* '<Root>/CAN Unpack12' */
-  real_T CANUnpack12_o3;               /* '<Root>/CAN Unpack12' */
-  real_T CANUnpack12_o4;               /* '<Root>/CAN Unpack12' */
-  real_T CANUnpack13_o1;               /* '<Root>/CAN Unpack13' */
-  real_T CANUnpack13_o2;               /* '<Root>/CAN Unpack13' */
-  real_T CANUnpack13_o3;               /* '<Root>/CAN Unpack13' */
-  real_T CANUnpack13_o4;               /* '<Root>/CAN Unpack13' */
-  real_T CANUnpack14_o1;               /* '<Root>/CAN Unpack14' */
-  real_T CANUnpack14_o2;               /* '<Root>/CAN Unpack14' */
-  real_T CANUnpack14_o3;               /* '<Root>/CAN Unpack14' */
-  real_T CANUnpack14_o4;               /* '<Root>/CAN Unpack14' */
-  real_T CANUnpack15_o1;               /* '<Root>/CAN Unpack15' */
   real_T CANUnpack15_o2;               /* '<Root>/CAN Unpack15' */
-  real_T CANUnpack15_o3;               /* '<Root>/CAN Unpack15' */
-  real_T CANUnpack15_o4;               /* '<Root>/CAN Unpack15' */
   real_T CANUnpack1_o1;                /* '<S1>/CAN Unpack1' */
   real_T CANUnpack1_o2;                /* '<S1>/CAN Unpack1' */
   real_T CANUnpack2_o1;                /* '<S1>/CAN Unpack2' */
@@ -147,17 +123,10 @@ typedef struct {
   real_T CANUnpack22_o2;               /* '<S1>/CAN Unpack22' */
   real_T CANUnpack23_o1;               /* '<S1>/CAN Unpack23' */
   real_T CANUnpack23_o2;               /* '<S1>/CAN Unpack23' */
-  real_T CANUnpack24_o1;               /* '<S1>/CAN Unpack24' */
-  real_T CANUnpack24_o2;               /* '<S1>/CAN Unpack24' */
-  real_T CANUnpack25_o1;               /* '<S1>/CAN Unpack25' */
-  real_T CANUnpack25_o2;               /* '<S1>/CAN Unpack25' */
   real_T CANUnpack_o2;                 /* '<Root>/CAN Unpack' */
-  real_T d0;
-  real_T d1;
-  real_T d2;
   real32_T ADC;                        /* '<Root>/ADC' */
-  real32_T Sum;                        /* '<S28>/Sum' */
-  real32_T RateTransition;             /* '<S28>/Rate Transition' */
+  real32_T Sum;                        /* '<S26>/Sum' */
+  real32_T RateTransition;             /* '<S26>/Rate Transition' */
   uint16_T RateTransition_n;           /* '<S2>/Rate Transition' */
   uint16_T RateTransition_c;           /* '<S3>/Rate Transition' */
   uint16_T RateTransition_a;           /* '<S4>/Rate Transition' */
@@ -174,19 +143,22 @@ typedef struct {
   uint16_T RateTransition_k;           /* '<S15>/Rate Transition' */
   uint16_T RateTransition_e;           /* '<S16>/Rate Transition' */
   uint16_T RateTransition_h4;          /* '<S17>/Rate Transition' */
-  uint16_T RateTransition_cd;          /* '<S18>/Rate Transition' */
-  uint16_T RateTransition_oj;          /* '<S19>/Rate Transition' */
-  uint16_T RateTransition_b;           /* '<S20>/Rate Transition' */
-  uint16_T RateTransition_f;           /* '<S21>/Rate Transition' */
-  uint16_T RateTransition_a5;          /* '<S22>/Rate Transition' */
-  uint16_T RateTransition_al;          /* '<S23>/Rate Transition' */
-  uint16_T RateTransition_pj;          /* '<S24>/Rate Transition' */
-  uint16_T RateTransition_nw;          /* '<S25>/Rate Transition' */
-  uint16_T RateTransition_i;           /* '<S26>/Rate Transition' */
-  uint16_T RateTransition_ov;          /* '<S27>/Rate Transition' */
-  uint16_T DigitalInput;               /* '<Root>/Digital Input' */
+  uint16_T RateTransition_b;           /* '<S18>/Rate Transition' */
+  uint16_T RateTransition_f;           /* '<S19>/Rate Transition' */
+  uint16_T RateTransition_a5;          /* '<S20>/Rate Transition' */
+  uint16_T RateTransition_al;          /* '<S21>/Rate Transition' */
+  uint16_T RateTransition_pj;          /* '<S22>/Rate Transition' */
+  uint16_T RateTransition_nw;          /* '<S23>/Rate Transition' */
+  uint16_T RateTransition_i;           /* '<S24>/Rate Transition' */
+  uint16_T RateTransition_ov;          /* '<S25>/Rate Transition' */
+  uint16_T CANUnpack11_o1[8];          /* '<Root>/CAN Unpack11' */
+  uint16_T CANUnpack12[8];             /* '<Root>/CAN Unpack12' */
+  uint16_T CANUnpack13[8];             /* '<Root>/CAN Unpack13' */
+  uint16_T CANUnpack14[8];             /* '<Root>/CAN Unpack14' */
+  uint16_T CANUnpack15_o1[8];          /* '<Root>/CAN Unpack15' */
   boolean_T RateTransition_lz;         /* '<Root>/Rate Transition' */
   boolean_T LogicalOperator;           /* '<Root>/Logical Operator' */
+  boolean_T DigitalInput;              /* '<Root>/Digital Input' */
   rtB_MessageReceived4_Rider_Cont MessageReceived5;/* '<Root>/Message Received5' */
   rtB_MessageReceived4_Rider_Cont MessageReceived1;/* '<Root>/Message Received1' */
   rtB_MessageReceived4_Rider_Cont MessageReceived2;/* '<Root>/Message Received2' */
@@ -201,8 +173,6 @@ typedef struct {
   rtB_MessageReceived4_Rider_Cont MessageReceived3_j;/* '<S1>/Message Received3' */
   rtB_MessageReceived4_Rider_Cont MessageReceived2_d;/* '<S1>/Message Received2' */
   rtB_MessageReceived4_Rider_Cont MessageReceived7;/* '<S1>/Message Received7' */
-  rtB_MessageReceived4_Rider_Cont MessageReceived20;/* '<S1>/Message Received20' */
-  rtB_MessageReceived4_Rider_Cont MessageReceived19;/* '<S1>/Message Received19' */
   rtB_MessageReceived4_Rider_Cont MessageReceived18;/* '<S1>/Message Received18' */
   rtB_MessageReceived4_Rider_Cont MessageReceived17;/* '<S1>/Message Received17' */
   rtB_MessageReceived4_Rider_Cont MessageReceived16;/* '<S1>/Message Received16' */
@@ -221,7 +191,7 @@ typedef struct {
 #ifndef Rider_Controls_InHardware_MDLREF_HIDE_CHILD_
 
 typedef struct {
-  real32_T Delay_DSTATE;               /* '<S28>/Delay' */
+  real32_T Delay_DSTATE;               /* '<S26>/Delay' */
   int_T CANUnpack11_ModeSignalID;      /* '<Root>/CAN Unpack11' */
   int_T CANUnpack11_StatusPortID;      /* '<Root>/CAN Unpack11' */
   int_T CANUnpack12_ModeSignalID;      /* '<Root>/CAN Unpack12' */
@@ -268,38 +238,32 @@ typedef struct {
   int_T CANUnpack22_StatusPortID;      /* '<S1>/CAN Unpack22' */
   int_T CANUnpack23_ModeSignalID;      /* '<S1>/CAN Unpack23' */
   int_T CANUnpack23_StatusPortID;      /* '<S1>/CAN Unpack23' */
-  int_T CANUnpack24_ModeSignalID;      /* '<S1>/CAN Unpack24' */
-  int_T CANUnpack24_StatusPortID;      /* '<S1>/CAN Unpack24' */
-  int_T CANUnpack25_ModeSignalID;      /* '<S1>/CAN Unpack25' */
-  int_T CANUnpack25_StatusPortID;      /* '<S1>/CAN Unpack25' */
   int_T CANUnpack_ModeSignalID;        /* '<Root>/CAN Unpack' */
   int_T CANUnpack_StatusPortID;        /* '<Root>/CAN Unpack' */
-  uint16_T DelayInput1_DSTATE;         /* '<S56>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_f;       /* '<S57>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_e;       /* '<S58>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_m;       /* '<S59>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_d;       /* '<S60>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_h;       /* '<S61>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_l;       /* '<S62>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_mj;      /* '<S63>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_c;       /* '<S64>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_b;       /* '<S65>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_p;       /* '<S66>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_dv;      /* '<S67>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_cs;      /* '<S68>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_k;       /* '<S69>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_g;       /* '<S70>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_c0;      /* '<S71>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_j;       /* '<S72>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_gr;      /* '<S73>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_o;       /* '<S74>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_n;       /* '<S75>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_dt;      /* '<S76>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_dy;      /* '<S77>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_ey;      /* '<S78>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_c2;      /* '<S79>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_jc;      /* '<S80>/Delay Input1' */
-  uint16_T DelayInput1_DSTATE_kj;      /* '<S81>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE;         /* '<S52>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_f;       /* '<S53>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_e;       /* '<S54>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_m;       /* '<S55>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_d;       /* '<S56>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_h;       /* '<S57>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_l;       /* '<S58>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_mj;      /* '<S59>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_c;       /* '<S60>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_b;       /* '<S61>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_p;       /* '<S62>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_dv;      /* '<S63>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_cs;      /* '<S64>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_k;       /* '<S65>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_g;       /* '<S66>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_c0;      /* '<S67>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_o;       /* '<S68>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_n;       /* '<S69>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_dt;      /* '<S70>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_dy;      /* '<S71>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_ey;      /* '<S72>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_c2;      /* '<S73>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_j;       /* '<S74>/Delay Input1' */
+  uint16_T DelayInput1_DSTATE_kj;      /* '<S75>/Delay Input1' */
   uint16_T Counter_Count;              /* '<S2>/Counter' */
   uint16_T Counter_Count_l;            /* '<S3>/Counter' */
   uint16_T Counter_Count_i;            /* '<S4>/Counter' */
@@ -316,16 +280,14 @@ typedef struct {
   uint16_T Counter_Count_d0;           /* '<S15>/Counter' */
   uint16_T Counter_Count_hr;           /* '<S16>/Counter' */
   uint16_T Counter_Count_ix;           /* '<S17>/Counter' */
-  uint16_T Counter_Count_o;            /* '<S18>/Counter' */
-  uint16_T Counter_Count_b;            /* '<S19>/Counter' */
-  uint16_T Counter_Count_ce;           /* '<S20>/Counter' */
-  uint16_T Counter_Count_e;            /* '<S21>/Counter' */
-  uint16_T Counter_Count_ha;           /* '<S22>/Counter' */
-  uint16_T Counter_Count_g;            /* '<S23>/Counter' */
-  uint16_T Counter_Count_h1;           /* '<S24>/Counter' */
-  uint16_T Counter_Count_ks;           /* '<S25>/Counter' */
-  uint16_T Counter_Count_ca;           /* '<S26>/Counter' */
-  uint16_T Counter_Count_i1;           /* '<S27>/Counter' */
+  uint16_T Counter_Count_ce;           /* '<S18>/Counter' */
+  uint16_T Counter_Count_e;            /* '<S19>/Counter' */
+  uint16_T Counter_Count_ha;           /* '<S20>/Counter' */
+  uint16_T Counter_Count_g;            /* '<S21>/Counter' */
+  uint16_T Counter_Count_h1;           /* '<S22>/Counter' */
+  uint16_T Counter_Count_ks;           /* '<S23>/Counter' */
+  uint16_T Counter_Count_ca;           /* '<S24>/Counter' */
+  uint16_T Counter_Count_i1;           /* '<S25>/Counter' */
   boolean_T RateTransition_Buffer0;    /* '<Root>/Rate Transition' */
   rtDW_MessageReceived4_Rider_Con MessageReceived5;/* '<Root>/Message Received5' */
   rtDW_MessageReceived4_Rider_Con MessageReceived1;/* '<Root>/Message Received1' */
@@ -341,8 +303,6 @@ typedef struct {
   rtDW_MessageReceived4_Rider_Con MessageReceived3_j;/* '<S1>/Message Received3' */
   rtDW_MessageReceived4_Rider_Con MessageReceived2_d;/* '<S1>/Message Received2' */
   rtDW_MessageReceived4_Rider_Con MessageReceived7;/* '<S1>/Message Received7' */
-  rtDW_MessageReceived4_Rider_Con MessageReceived20;/* '<S1>/Message Received20' */
-  rtDW_MessageReceived4_Rider_Con MessageReceived19;/* '<S1>/Message Received19' */
   rtDW_MessageReceived4_Rider_Con MessageReceived18;/* '<S1>/Message Received18' */
   rtDW_MessageReceived4_Rider_Con MessageReceived17;/* '<S1>/Message Received17' */
   rtDW_MessageReceived4_Rider_Con MessageReceived16;/* '<S1>/Message Received16' */
@@ -382,7 +342,7 @@ extern void Rider_Controls_InHar_UpdateTID1(void);
 extern void Rider_Controls_InHar_UpdateTID2(void);
 extern void Rider_Controls_InHardwareTID0(void);
 extern void Rider_Controls_InHardwareTID1(real32_T *rty_Throttle, real32_T
-  *rty_RPM, real32_T rty_Temperatures[40], uint16_T *rty_EStop, uint16_T
+  *rty_RPM, real32_T rty_Temperatures[36], uint16_T *rty_EStop, uint16_T
   *rty_BIMStatus);
 extern void Rider_Controls_InHardwareTID2(void);
 
@@ -448,70 +408,64 @@ extern rtDW_Rider_Controls_InHardware Rider_Controls_InHardware_DWork;
  * '<S15>'  : 'Rider_Controls_InHardware/Check CAN Time21'
  * '<S16>'  : 'Rider_Controls_InHardware/Check CAN Time22'
  * '<S17>'  : 'Rider_Controls_InHardware/Check CAN Time23'
- * '<S18>'  : 'Rider_Controls_InHardware/Check CAN Time24'
- * '<S19>'  : 'Rider_Controls_InHardware/Check CAN Time25'
- * '<S20>'  : 'Rider_Controls_InHardware/Check CAN Time26'
- * '<S21>'  : 'Rider_Controls_InHardware/Check CAN Time3'
- * '<S22>'  : 'Rider_Controls_InHardware/Check CAN Time4'
- * '<S23>'  : 'Rider_Controls_InHardware/Check CAN Time5'
- * '<S24>'  : 'Rider_Controls_InHardware/Check CAN Time6'
- * '<S25>'  : 'Rider_Controls_InHardware/Check CAN Time7'
- * '<S26>'  : 'Rider_Controls_InHardware/Check CAN Time8'
- * '<S27>'  : 'Rider_Controls_InHardware/Check CAN Time9'
- * '<S28>'  : 'Rider_Controls_InHardware/Filter1'
- * '<S29>'  : 'Rider_Controls_InHardware/Filter2'
- * '<S30>'  : 'Rider_Controls_InHardware/Message Received1'
- * '<S31>'  : 'Rider_Controls_InHardware/Message Received2'
- * '<S32>'  : 'Rider_Controls_InHardware/Message Received3'
- * '<S33>'  : 'Rider_Controls_InHardware/Message Received4'
- * '<S34>'  : 'Rider_Controls_InHardware/Message Received5'
- * '<S35>'  : 'Rider_Controls_InHardware/Message Received6'
- * '<S36>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received1'
- * '<S37>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received10'
- * '<S38>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received11'
- * '<S39>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received12'
- * '<S40>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received13'
- * '<S41>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received14'
- * '<S42>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received15'
- * '<S43>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received16'
- * '<S44>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received17'
- * '<S45>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received18'
- * '<S46>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received19'
- * '<S47>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received2'
- * '<S48>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received20'
- * '<S49>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received3'
- * '<S50>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received4'
- * '<S51>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received5'
- * '<S52>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received6'
- * '<S53>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received7'
- * '<S54>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received8'
- * '<S55>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received9'
- * '<S56>'  : 'Rider_Controls_InHardware/Check CAN Time1/Detect Change'
- * '<S57>'  : 'Rider_Controls_InHardware/Check CAN Time10/Detect Change'
- * '<S58>'  : 'Rider_Controls_InHardware/Check CAN Time11/Detect Change'
- * '<S59>'  : 'Rider_Controls_InHardware/Check CAN Time12/Detect Change'
- * '<S60>'  : 'Rider_Controls_InHardware/Check CAN Time13/Detect Change'
- * '<S61>'  : 'Rider_Controls_InHardware/Check CAN Time14/Detect Change'
- * '<S62>'  : 'Rider_Controls_InHardware/Check CAN Time15/Detect Change'
- * '<S63>'  : 'Rider_Controls_InHardware/Check CAN Time16/Detect Change'
- * '<S64>'  : 'Rider_Controls_InHardware/Check CAN Time17/Detect Change'
- * '<S65>'  : 'Rider_Controls_InHardware/Check CAN Time18/Detect Change'
- * '<S66>'  : 'Rider_Controls_InHardware/Check CAN Time19/Detect Change'
- * '<S67>'  : 'Rider_Controls_InHardware/Check CAN Time2/Detect Change'
- * '<S68>'  : 'Rider_Controls_InHardware/Check CAN Time20/Detect Change'
- * '<S69>'  : 'Rider_Controls_InHardware/Check CAN Time21/Detect Change'
- * '<S70>'  : 'Rider_Controls_InHardware/Check CAN Time22/Detect Change'
- * '<S71>'  : 'Rider_Controls_InHardware/Check CAN Time23/Detect Change'
- * '<S72>'  : 'Rider_Controls_InHardware/Check CAN Time24/Detect Change'
- * '<S73>'  : 'Rider_Controls_InHardware/Check CAN Time25/Detect Change'
- * '<S74>'  : 'Rider_Controls_InHardware/Check CAN Time26/Detect Change'
- * '<S75>'  : 'Rider_Controls_InHardware/Check CAN Time3/Detect Change'
- * '<S76>'  : 'Rider_Controls_InHardware/Check CAN Time4/Detect Change'
- * '<S77>'  : 'Rider_Controls_InHardware/Check CAN Time5/Detect Change'
- * '<S78>'  : 'Rider_Controls_InHardware/Check CAN Time6/Detect Change'
- * '<S79>'  : 'Rider_Controls_InHardware/Check CAN Time7/Detect Change'
- * '<S80>'  : 'Rider_Controls_InHardware/Check CAN Time8/Detect Change'
- * '<S81>'  : 'Rider_Controls_InHardware/Check CAN Time9/Detect Change'
+ * '<S18>'  : 'Rider_Controls_InHardware/Check CAN Time26'
+ * '<S19>'  : 'Rider_Controls_InHardware/Check CAN Time3'
+ * '<S20>'  : 'Rider_Controls_InHardware/Check CAN Time4'
+ * '<S21>'  : 'Rider_Controls_InHardware/Check CAN Time5'
+ * '<S22>'  : 'Rider_Controls_InHardware/Check CAN Time6'
+ * '<S23>'  : 'Rider_Controls_InHardware/Check CAN Time7'
+ * '<S24>'  : 'Rider_Controls_InHardware/Check CAN Time8'
+ * '<S25>'  : 'Rider_Controls_InHardware/Check CAN Time9'
+ * '<S26>'  : 'Rider_Controls_InHardware/Filter1'
+ * '<S27>'  : 'Rider_Controls_InHardware/Filter2'
+ * '<S28>'  : 'Rider_Controls_InHardware/Message Received1'
+ * '<S29>'  : 'Rider_Controls_InHardware/Message Received2'
+ * '<S30>'  : 'Rider_Controls_InHardware/Message Received3'
+ * '<S31>'  : 'Rider_Controls_InHardware/Message Received4'
+ * '<S32>'  : 'Rider_Controls_InHardware/Message Received5'
+ * '<S33>'  : 'Rider_Controls_InHardware/Message Received6'
+ * '<S34>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received1'
+ * '<S35>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received10'
+ * '<S36>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received11'
+ * '<S37>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received12'
+ * '<S38>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received13'
+ * '<S39>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received14'
+ * '<S40>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received15'
+ * '<S41>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received16'
+ * '<S42>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received17'
+ * '<S43>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received18'
+ * '<S44>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received2'
+ * '<S45>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received3'
+ * '<S46>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received4'
+ * '<S47>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received5'
+ * '<S48>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received6'
+ * '<S49>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received7'
+ * '<S50>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received8'
+ * '<S51>'  : 'Rider_Controls_InHardware/CAN Battery Messages/Message Received9'
+ * '<S52>'  : 'Rider_Controls_InHardware/Check CAN Time1/Detect Change'
+ * '<S53>'  : 'Rider_Controls_InHardware/Check CAN Time10/Detect Change'
+ * '<S54>'  : 'Rider_Controls_InHardware/Check CAN Time11/Detect Change'
+ * '<S55>'  : 'Rider_Controls_InHardware/Check CAN Time12/Detect Change'
+ * '<S56>'  : 'Rider_Controls_InHardware/Check CAN Time13/Detect Change'
+ * '<S57>'  : 'Rider_Controls_InHardware/Check CAN Time14/Detect Change'
+ * '<S58>'  : 'Rider_Controls_InHardware/Check CAN Time15/Detect Change'
+ * '<S59>'  : 'Rider_Controls_InHardware/Check CAN Time16/Detect Change'
+ * '<S60>'  : 'Rider_Controls_InHardware/Check CAN Time17/Detect Change'
+ * '<S61>'  : 'Rider_Controls_InHardware/Check CAN Time18/Detect Change'
+ * '<S62>'  : 'Rider_Controls_InHardware/Check CAN Time19/Detect Change'
+ * '<S63>'  : 'Rider_Controls_InHardware/Check CAN Time2/Detect Change'
+ * '<S64>'  : 'Rider_Controls_InHardware/Check CAN Time20/Detect Change'
+ * '<S65>'  : 'Rider_Controls_InHardware/Check CAN Time21/Detect Change'
+ * '<S66>'  : 'Rider_Controls_InHardware/Check CAN Time22/Detect Change'
+ * '<S67>'  : 'Rider_Controls_InHardware/Check CAN Time23/Detect Change'
+ * '<S68>'  : 'Rider_Controls_InHardware/Check CAN Time26/Detect Change'
+ * '<S69>'  : 'Rider_Controls_InHardware/Check CAN Time3/Detect Change'
+ * '<S70>'  : 'Rider_Controls_InHardware/Check CAN Time4/Detect Change'
+ * '<S71>'  : 'Rider_Controls_InHardware/Check CAN Time5/Detect Change'
+ * '<S72>'  : 'Rider_Controls_InHardware/Check CAN Time6/Detect Change'
+ * '<S73>'  : 'Rider_Controls_InHardware/Check CAN Time7/Detect Change'
+ * '<S74>'  : 'Rider_Controls_InHardware/Check CAN Time8/Detect Change'
+ * '<S75>'  : 'Rider_Controls_InHardware/Check CAN Time9/Detect Change'
  */
 #endif                                 /* RTW_HEADER_Rider_Controls_InHardware_h_ */
 

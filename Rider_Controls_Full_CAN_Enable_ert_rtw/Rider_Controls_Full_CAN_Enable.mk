@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'Rider_Controls_Full_CAN_Enable'. 
 ## 
 ## Makefile     : Rider_Controls_Full_CAN_Enable.mk
-## Generated on : Thu Apr 16 19:16:04 2015
+## Generated on : Wed May 27 16:42:55 2015
 ## MATLAB Coder version: 2.7 (R2014b)
 ## 
 ## Build Info:
