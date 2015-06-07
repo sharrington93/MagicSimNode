@@ -1,0 +1,717 @@
+%implements s25_b0_2l3ai_Outputs "C"
+
+%function OutputsForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real32_T rtb_Sum;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS2B0 = OpaqueTLCBlockFcn("Outputs", 2, 0, 2, 1)
+%<tlcOutputsFcnOfS2B0>\
+/* Sum: '<S26>/Sum' incorporates:
+ *  Delay: '<S26>/Delay'
+ *  Gain: '<S26>/Gain1'
+ *  Gain: '<S26>/Gain2'
+ */
+rtb_Sum = 0.0609F * Rider_Controls_InHardware_B.ADC + 0.9391F * Rider_Controls_InHardware_DWork.Delay_DSTATE;
+/* RateTransition: '<S26>/Rate Transition' */
+if (%<(LibIsSpecialSampleHit(1, 0))>) {
+    Rider_Controls_InHardware_B.RateTransition = rtb_Sum;
+}
+/* End of RateTransition: '<S26>/Rate Transition' */
+
+/* Update for Delay: '<S26>/Delay' */
+Rider_Controls_InHardware_DWork.Delay_DSTATE = rtb_Sum;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 1, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutput0LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 1
+%assign ::GlobalCurrentTID = 1
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+int16_T rtb_BitwiseOperator2;
+int16_T rtb_BitwiseOperator1;
+int16_T rtb_BitwiseOperator3;
+int16_T rtb_BitwiseOperator4;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS2B2 = OpaqueTLCBlockFcn("Outputs", 2, 2, 2, 2)
+%assign tlcOutputsFcnOfS2B4 = OpaqueTLCBlockFcn("Outputs", 2, 4, 2, 2)
+%assign tlcOutputsFcnOfS2B6 = OpaqueTLCBlockFcn("Outputs", 2, 6, 2, 2)
+%assign tlcOutputsFcnOfS2B8 = OpaqueTLCBlockFcn("Outputs", 2, 8, 2, 2)
+%assign tlcOutputsFcnOfS2B9 = OpaqueTLCBlockFcn("Outputs", 2, 9, 2, 2)
+%assign tlcOutputsFcnOfS2B11 = OpaqueTLCBlockFcn("Outputs", 2, 11, 2, 2)
+%assign tlcOutputsFcnOfS2B12 = OpaqueTLCBlockFcn("Outputs", 2, 12, 2, 2)
+%assign tlcOutputsFcnOfS2B14 = OpaqueTLCBlockFcn("Outputs", 2, 14, 2, 2)
+%assign tlcOutputsFcnOfS2B15 = OpaqueTLCBlockFcn("Outputs", 2, 15, 2, 2)
+%assign tlcOutputsFcnOfS2B17 = OpaqueTLCBlockFcn("Outputs", 2, 17, 2, 2)
+%assign tlcOutputsFcnOfS2B18 = OpaqueTLCBlockFcn("Outputs", 2, 18, 2, 2)
+%assign tlcOutputsFcnOfS2B20 = OpaqueTLCBlockFcn("Outputs", 2, 20, 2, 2)
+%assign tlcOutputsFcnOfS2B21 = OpaqueTLCBlockFcn("Outputs", 2, 21, 2, 2)
+%assign tlcOutputsFcnOfS2B23 = OpaqueTLCBlockFcn("Outputs", 2, 23, 2, 2)
+%assign tlcOutputsFcnOfS2B24 = OpaqueTLCBlockFcn("Outputs", 2, 24, 2, 2)
+%assign tlcOutputsFcnOfS2B26 = OpaqueTLCBlockFcn("Outputs", 2, 26, 2, 2)
+%assign tlcOutputsFcnOfS2B27 = OpaqueTLCBlockFcn("Outputs", 2, 27, 2, 2)
+%assign tlcOutputsFcnOfS2B29 = OpaqueTLCBlockFcn("Outputs", 2, 29, 2, 2)
+%assign tlcOutputsFcnOfS2B30 = OpaqueTLCBlockFcn("Outputs", 2, 30, 2, 2)
+%assign tlcOutputsFcnOfS2B32 = OpaqueTLCBlockFcn("Outputs", 2, 32, 2, 2)
+%assign tlcOutputsFcnOfS2B33 = OpaqueTLCBlockFcn("Outputs", 2, 33, 2, 2)
+%assign tlcOutputsFcnOfS2B35 = OpaqueTLCBlockFcn("Outputs", 2, 35, 2, 2)
+%assign tlcOutputsFcnOfS2B36 = OpaqueTLCBlockFcn("Outputs", 2, 36, 2, 2)
+%assign tlcOutputsFcnOfS2B38 = OpaqueTLCBlockFcn("Outputs", 2, 38, 2, 2)
+%assign tlcOutputsFcnOfS2B39 = OpaqueTLCBlockFcn("Outputs", 2, 39, 2, 2)
+%assign tlcOutputsFcnOfS2B41 = OpaqueTLCBlockFcn("Outputs", 2, 41, 2, 2)
+%assign tlcOutputsFcnOfS2B42 = OpaqueTLCBlockFcn("Outputs", 2, 42, 2, 2)
+%assign tlcOutputsFcnOfS2B44 = OpaqueTLCBlockFcn("Outputs", 2, 44, 2, 2)
+%assign tlcOutputsFcnOfS2B45 = OpaqueTLCBlockFcn("Outputs", 2, 45, 2, 2)
+%assign tlcOutputsFcnOfS2B47 = OpaqueTLCBlockFcn("Outputs", 2, 47, 2, 2)
+%assign tlcOutputsFcnOfS2B48 = OpaqueTLCBlockFcn("Outputs", 2, 48, 2, 2)
+%assign tlcOutputsFcnOfS2B50 = OpaqueTLCBlockFcn("Outputs", 2, 50, 2, 2)
+%assign tlcOutputsFcnOfS2B51 = OpaqueTLCBlockFcn("Outputs", 2, 51, 2, 2)
+%assign tlcOutputsFcnOfS2B53 = OpaqueTLCBlockFcn("Outputs", 2, 53, 2, 2)
+%assign tlcOutputsFcnOfS2B54 = OpaqueTLCBlockFcn("Outputs", 2, 54, 2, 2)
+%assign tlcOutputsFcnOfS2B56 = OpaqueTLCBlockFcn("Outputs", 2, 56, 2, 2)
+%assign tlcOutputsFcnOfS2B57 = OpaqueTLCBlockFcn("Outputs", 2, 57, 2, 2)
+%assign tlcOutputsFcnOfS2B59 = OpaqueTLCBlockFcn("Outputs", 2, 59, 2, 2)
+%assign tlcOutputsFcnOfS2B61 = OpaqueTLCBlockFcn("Outputs", 2, 61, 2, 2)
+%assign tlcOutputsFcnOfS2B63 = OpaqueTLCBlockFcn("Outputs", 2, 63, 2, 2)
+%assign tlcOutputsFcnOfS2B64 = OpaqueTLCBlockFcn("Outputs", 2, 64, 2, 2)
+%assign tlcOutputsFcnOfS2B66 = OpaqueTLCBlockFcn("Outputs", 2, 66, 2, 2)
+%assign tlcOutputsFcnOfS2B67 = OpaqueTLCBlockFcn("Outputs", 2, 67, 2, 2)
+%assign tlcOutputsFcnOfS2B69 = OpaqueTLCBlockFcn("Outputs", 2, 69, 2, 2)
+%assign tlcOutputsFcnOfS2B70 = OpaqueTLCBlockFcn("Outputs", 2, 70, 2, 2)
+%assign tlcOutputsFcnOfS2B72 = OpaqueTLCBlockFcn("Outputs", 2, 72, 2, 2)
+%assign tlcOutputsFcnOfS2B73 = OpaqueTLCBlockFcn("Outputs", 2, 73, 2, 2)
+%assign tlcOutputsFcnOfS2B75 = OpaqueTLCBlockFcn("Outputs", 2, 75, 2, 2)
+%assign tlcOutputsFcnOfS2B102 = OpaqueTLCBlockFcn("Outputs", 2, 102, 2, 2)
+%assign tlcOutputsFcnOfS2B104 = OpaqueTLCBlockFcn("Outputs", 2, 104, 2, 2)
+%<SLibCG_TrackEO(4)>\
+%<SLibCG_TrackEO(3)>\
+%<SLibCG_TrackEO(2)>\
+%<SLibCG_TrackEO(0)>\
+/* Outport: '<Root>/Throttle %<"\%\' incorporates:\
+ *  Gain: \'<Root>/Gain1\'\
+"> */
+Rider_Controls_InHardware_Y.Throttle = 0.000244140625F * Rider_Controls_InHardware_B.RateTransition;
+%<tlcOutputsFcnOfS2B2>\
+%<tlcOutputsFcnOfS2B4>\
+%<tlcOutputsFcnOfS2B6>\
+%<tlcOutputsFcnOfS2B8>\
+%<tlcOutputsFcnOfS2B9>\
+%<tlcOutputsFcnOfS2B11>\
+%<tlcOutputsFcnOfS2B12>\
+%<tlcOutputsFcnOfS2B14>\
+%<tlcOutputsFcnOfS2B15>\
+%<tlcOutputsFcnOfS2B17>\
+%<tlcOutputsFcnOfS2B18>\
+%<tlcOutputsFcnOfS2B20>\
+%<tlcOutputsFcnOfS2B21>\
+%<tlcOutputsFcnOfS2B23>\
+%<tlcOutputsFcnOfS2B24>\
+%<tlcOutputsFcnOfS2B26>\
+%<tlcOutputsFcnOfS2B27>\
+%<tlcOutputsFcnOfS2B29>\
+%<tlcOutputsFcnOfS2B30>\
+%<tlcOutputsFcnOfS2B32>\
+%<tlcOutputsFcnOfS2B33>\
+%<tlcOutputsFcnOfS2B35>\
+%<tlcOutputsFcnOfS2B36>\
+%<tlcOutputsFcnOfS2B38>\
+%<tlcOutputsFcnOfS2B39>\
+%<tlcOutputsFcnOfS2B41>\
+%<tlcOutputsFcnOfS2B42>\
+%<tlcOutputsFcnOfS2B44>\
+%<tlcOutputsFcnOfS2B45>\
+%<tlcOutputsFcnOfS2B47>\
+%<tlcOutputsFcnOfS2B48>\
+%<tlcOutputsFcnOfS2B50>\
+%<tlcOutputsFcnOfS2B51>\
+%<tlcOutputsFcnOfS2B53>\
+%<tlcOutputsFcnOfS2B54>\
+%<tlcOutputsFcnOfS2B56>\
+%<tlcOutputsFcnOfS2B57>\
+%<tlcOutputsFcnOfS2B59>\
+/* Outport: '<Root>/Temperatures' incorporates:
+ *  DataTypeConversion: '<Root>/Data Type Conversion'
+ */
+Rider_Controls_InHardware_Y.Temperatures[0] = (real32_T)Rider_Controls_InHardware_B.CANUnpack1_o1;
+Rider_Controls_InHardware_Y.Temperatures[1] = (real32_T)Rider_Controls_InHardware_B.CANUnpack1_o2;
+Rider_Controls_InHardware_Y.Temperatures[2] = (real32_T)Rider_Controls_InHardware_B.CANUnpack2_o1;
+Rider_Controls_InHardware_Y.Temperatures[3] = (real32_T)Rider_Controls_InHardware_B.CANUnpack2_o2;
+Rider_Controls_InHardware_Y.Temperatures[4] = (real32_T)Rider_Controls_InHardware_B.CANUnpack3_o1;
+Rider_Controls_InHardware_Y.Temperatures[5] = (real32_T)Rider_Controls_InHardware_B.CANUnpack3_o2;
+Rider_Controls_InHardware_Y.Temperatures[6] = (real32_T)Rider_Controls_InHardware_B.CANUnpack4_o1;
+Rider_Controls_InHardware_Y.Temperatures[7] = (real32_T)Rider_Controls_InHardware_B.CANUnpack4_o2;
+Rider_Controls_InHardware_Y.Temperatures[8] = (real32_T)Rider_Controls_InHardware_B.CANUnpack5_o2;
+Rider_Controls_InHardware_Y.Temperatures[9] = (real32_T)Rider_Controls_InHardware_B.CANUnpack5_o1;
+Rider_Controls_InHardware_Y.Temperatures[10] = (real32_T)Rider_Controls_InHardware_B.CANUnpack6_o1;
+Rider_Controls_InHardware_Y.Temperatures[11] = (real32_T)Rider_Controls_InHardware_B.CANUnpack6_o2;
+Rider_Controls_InHardware_Y.Temperatures[12] = (real32_T)Rider_Controls_InHardware_B.CANUnpack7_o1;
+Rider_Controls_InHardware_Y.Temperatures[13] = (real32_T)Rider_Controls_InHardware_B.CANUnpack7_o2;
+Rider_Controls_InHardware_Y.Temperatures[14] = (real32_T)Rider_Controls_InHardware_B.CANUnpack8_o1;
+Rider_Controls_InHardware_Y.Temperatures[15] = (real32_T)Rider_Controls_InHardware_B.CANUnpack8_o2;
+Rider_Controls_InHardware_Y.Temperatures[16] = (real32_T)Rider_Controls_InHardware_B.CANUnpack9_o1;
+Rider_Controls_InHardware_Y.Temperatures[17] = (real32_T)Rider_Controls_InHardware_B.CANUnpack9_o2;
+Rider_Controls_InHardware_Y.Temperatures[18] = (real32_T)Rider_Controls_InHardware_B.CANUnpack10_o1;
+Rider_Controls_InHardware_Y.Temperatures[19] = (real32_T)Rider_Controls_InHardware_B.CANUnpack10_o2;
+Rider_Controls_InHardware_Y.Temperatures[20] = (real32_T)Rider_Controls_InHardware_B.CANUnpack16_o1;
+Rider_Controls_InHardware_Y.Temperatures[21] = (real32_T)Rider_Controls_InHardware_B.CANUnpack16_o2;
+Rider_Controls_InHardware_Y.Temperatures[22] = (real32_T)Rider_Controls_InHardware_B.CANUnpack17_o1;
+Rider_Controls_InHardware_Y.Temperatures[23] = (real32_T)Rider_Controls_InHardware_B.CANUnpack17_o2;
+Rider_Controls_InHardware_Y.Temperatures[24] = (real32_T)Rider_Controls_InHardware_B.CANUnpack18_o1;
+Rider_Controls_InHardware_Y.Temperatures[25] = (real32_T)Rider_Controls_InHardware_B.CANUnpack18_o2;
+Rider_Controls_InHardware_Y.Temperatures[26] = (real32_T)Rider_Controls_InHardware_B.CANUnpack19_o1;
+Rider_Controls_InHardware_Y.Temperatures[27] = (real32_T)Rider_Controls_InHardware_B.CANUnpack19_o2;
+Rider_Controls_InHardware_Y.Temperatures[28] = (real32_T)Rider_Controls_InHardware_B.CANUnpack20_o1;
+Rider_Controls_InHardware_Y.Temperatures[29] = (real32_T)Rider_Controls_InHardware_B.CANUnpack20_o2;
+Rider_Controls_InHardware_Y.Temperatures[30] = (real32_T)Rider_Controls_InHardware_B.CANUnpack21_o1;
+Rider_Controls_InHardware_Y.Temperatures[31] = (real32_T)Rider_Controls_InHardware_B.CANUnpack21_o2;
+Rider_Controls_InHardware_Y.Temperatures[32] = (real32_T)Rider_Controls_InHardware_B.CANUnpack22_o1;
+Rider_Controls_InHardware_Y.Temperatures[33] = (real32_T)Rider_Controls_InHardware_B.CANUnpack22_o2;
+Rider_Controls_InHardware_Y.Temperatures[34] = (real32_T)Rider_Controls_InHardware_B.CANUnpack23_o1;
+Rider_Controls_InHardware_Y.Temperatures[35] = (real32_T)Rider_Controls_InHardware_B.CANUnpack23_o2;
+%<tlcOutputsFcnOfS2B61>\
+%<tlcOutputsFcnOfS2B63>\
+/* S-Function (sfix_bitop): '<Root>/Bitwise Operator2' */
+rtb_BitwiseOperator2 = (int16_T)(Rider_Controls_InHardware_B.CANUnpack11_o1[4] & 1U);
+%<tlcOutputsFcnOfS2B64>\
+%<tlcOutputsFcnOfS2B66>\
+/* S-Function (sfix_bitop): '<Root>/Bitwise Operator1' */
+rtb_BitwiseOperator1 = (int16_T)(Rider_Controls_InHardware_B.CANUnpack12[4] & 1U);
+%<tlcOutputsFcnOfS2B67>\
+%<tlcOutputsFcnOfS2B69>\
+/* S-Function (sfix_bitop): '<Root>/Bitwise Operator3' */
+rtb_BitwiseOperator3 = (int16_T)(Rider_Controls_InHardware_B.CANUnpack13[4] & 1U);
+%<tlcOutputsFcnOfS2B70>\
+%<tlcOutputsFcnOfS2B72>\
+/* S-Function (sfix_bitop): '<Root>/Bitwise Operator4' */
+rtb_BitwiseOperator4 = (int16_T)(Rider_Controls_InHardware_B.CANUnpack14[4] & 1U);
+%<tlcOutputsFcnOfS2B73>\
+%<tlcOutputsFcnOfS2B75>\
+/* RateTransition: '<Root>/Rate Transition' */
+if (%<(LibIsSpecialSampleHit(2, 1))>) {
+%<SLibCG_SetBOV(120, 0, 2, 1, "", -1, "", 0, "%<(SLibCG_DWV(97, 0, 2, 1, "", -1, "", 0))>")>\
+}
+/* End of RateTransition: '<Root>/Rate Transition' */
+
+/* Outport: '<Root>/BIM Status' incorporates:
+ *  Constant: '<Root>/Constant2'
+ *  DataTypeConversion: '<Root>/Data Type Conversion1'
+ *  Logic: '<Root>/Logical Operator1'
+ *  RelationalOperator: '<Root>/Relational Operator'
+ *  S-Function (sfix_bitop): '<Root>/Bitwise Operator5'
+ *  Sum: '<Root>/Add'
+ */
+Rider_Controls_InHardware_Y.BIMStatus = (uint16_T)((((((uint16_T)rtb_BitwiseOperator2 + rtb_BitwiseOperator1) + rtb_BitwiseOperator3) + rtb_BitwiseOperator4) + (Rider_Controls_InHardware_B.CANUnpack15_o1[4] & 1U) != 5U) || %<(SLibCG_SE(SLibCG_BOV(120, 0, 2, 1, "", -1, "", 0)))>);
+/* RateTransition: '<S2>/Rate Transition' */
+if (%<(LibIsSpecialSampleHit(2, 1))>) {
+    Rider_Controls_InHardware_B.RateTransition_n = Rider_Controls_InHardware_B.MessageReceived5_n.Counter;
+    /* RateTransition: '<S3>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_c = Rider_Controls_InHardware_B.MessageReceived5.Counter;
+    /* RateTransition: '<S4>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_a = Rider_Controls_InHardware_B.MessageReceived6_b.Counter;
+    /* RateTransition: '<S5>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_o = Rider_Controls_InHardware_B.MessageReceived7.Counter;
+    /* RateTransition: '<S6>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_at = Rider_Controls_InHardware_B.MessageReceived8.Counter;
+    /* RateTransition: '<S7>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_h = Rider_Controls_InHardware_B.MessageReceived9.Counter;
+    /* RateTransition: '<S8>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_m = Rider_Controls_InHardware_B.MessageReceived10.Counter;
+    /* RateTransition: '<S9>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_d = Rider_Controls_InHardware_B.MessageReceived11.Counter;
+    /* RateTransition: '<S10>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_ag = Rider_Controls_InHardware_B.MessageReceived12.Counter;
+    /* RateTransition: '<S11>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_l = Rider_Controls_InHardware_B.MessageReceived13.Counter;
+    /* RateTransition: '<S12>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_p = Rider_Controls_InHardware_B.MessageReceived14.Counter;
+    /* RateTransition: '<S13>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_mc = Rider_Controls_InHardware_B.MessageReceived1_c.Counter;
+    /* RateTransition: '<S14>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_ar = Rider_Controls_InHardware_B.MessageReceived15.Counter;
+    /* RateTransition: '<S15>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_k = Rider_Controls_InHardware_B.MessageReceived16.Counter;
+    /* RateTransition: '<S16>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_e = Rider_Controls_InHardware_B.MessageReceived17.Counter;
+    /* RateTransition: '<S17>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_h4 = Rider_Controls_InHardware_B.MessageReceived18.Counter;
+    /* RateTransition: '<S18>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_b = Rider_Controls_InHardware_B.MessageReceived6.Counter;
+    /* RateTransition: '<S19>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_f = Rider_Controls_InHardware_B.MessageReceived2_a.Counter;
+    /* RateTransition: '<S20>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_a5 = Rider_Controls_InHardware_B.MessageReceived3_b.Counter;
+    /* RateTransition: '<S21>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_al = Rider_Controls_InHardware_B.MessageReceived4_b.Counter;
+    /* RateTransition: '<S22>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_pj = Rider_Controls_InHardware_B.MessageReceived4.Counter;
+    /* RateTransition: '<S23>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_nw = Rider_Controls_InHardware_B.MessageReceived1.Counter;
+    /* RateTransition: '<S24>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_i = Rider_Controls_InHardware_B.MessageReceived2.Counter;
+    /* RateTransition: '<S25>/Rate Transition' */
+    Rider_Controls_InHardware_B.RateTransition_ov = Rider_Controls_InHardware_B.MessageReceived3.Counter;
+}
+/* End of RateTransition: '<S2>/Rate Transition' */
+%<tlcOutputsFcnOfS2B102>\
+/* Outport: '<Root>/E-Stop' incorporates:
+ *  DataTypeConversion: '<Root>/Data Type Conversion40'
+ *  Logic: '<Root>/Logical Operator2'
+ */
+Rider_Controls_InHardware_Y.EStop = (uint16_T)!%<(SLibCG_SE(SLibCG_BOV(121, 0, 2, 1, "", -1, "", 0)))>;
+%<tlcOutputsFcnOfS2B104>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 2, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutput1LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+uint16_T rtb_Counter;
+boolean_T rtb_RelationalOperator_m5;
+boolean_T rtb_RelationalOperator_j;
+boolean_T rtb_RelationalOperator_gk;
+boolean_T rtb_RelationalOperator_po;
+boolean_T rtb_RelationalOperator_or;
+boolean_T rtb_RelationalOperator_d;
+boolean_T rtb_RelationalOperator_bd;
+boolean_T rtb_RelationalOperator_e;
+boolean_T rtb_RelationalOperator_i;
+boolean_T rtb_RelationalOperator_i4;
+boolean_T rtb_RelationalOperator_kj;
+boolean_T rtb_RelationalOperator_l0;
+boolean_T rtb_RelationalOperator_k;
+boolean_T rtb_RelationalOperator_ll;
+boolean_T rtb_RelationalOperator_m;
+boolean_T rtb_RelationalOperator_ad;
+boolean_T rtb_RelationalOperator_bl;
+boolean_T rtb_RelationalOperator_a;
+boolean_T rtb_RelationalOperator_g;
+boolean_T rtb_RelationalOperator_n;
+boolean_T rtb_RelationalOperator_f;
+boolean_T rtb_RelationalOperator_no;
+boolean_T rtb_RelationalOperator_h;
+%closefile localVarDecl
+/* RelationalOperator: '<S53>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S53>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_n != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE);
+/* S-Function (sdspcount2): '<S2>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count;
+Rider_Controls_InHardware_DWork.Counter_Count++;
+/* End of S-Function (sdspcount2): '<S2>/Counter' */
+
+/* RelationalOperator: '<S2>/Relational Operator' */
+rtb_RelationalOperator_m5 = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S54>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S54>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_g = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_c != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_f);
+/* S-Function (sdspcount2): '<S3>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_g != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_l = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_l;
+Rider_Controls_InHardware_DWork.Counter_Count_l++;
+/* End of S-Function (sdspcount2): '<S3>/Counter' */
+
+/* RelationalOperator: '<S3>/Relational Operator' */
+rtb_RelationalOperator_j = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S55>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S55>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_b = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_a != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_e);
+/* S-Function (sdspcount2): '<S4>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_b != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_i = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_i;
+Rider_Controls_InHardware_DWork.Counter_Count_i++;
+/* End of S-Function (sdspcount2): '<S4>/Counter' */
+
+/* RelationalOperator: '<S4>/Relational Operator' */
+rtb_RelationalOperator_gk = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S56>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S56>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_j = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_o != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_m);
+/* S-Function (sdspcount2): '<S5>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_j != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_d = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_d;
+Rider_Controls_InHardware_DWork.Counter_Count_d++;
+/* End of S-Function (sdspcount2): '<S5>/Counter' */
+
+/* RelationalOperator: '<S5>/Relational Operator' */
+rtb_RelationalOperator_po = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S57>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S57>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_c = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_at != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_d);
+/* S-Function (sdspcount2): '<S6>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_c != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_k = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_k;
+Rider_Controls_InHardware_DWork.Counter_Count_k++;
+/* End of S-Function (sdspcount2): '<S6>/Counter' */
+
+/* RelationalOperator: '<S6>/Relational Operator' */
+rtb_RelationalOperator_or = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S58>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S58>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_d = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_h != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_h);
+/* S-Function (sdspcount2): '<S7>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_d != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_c = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_c;
+Rider_Controls_InHardware_DWork.Counter_Count_c++;
+/* End of S-Function (sdspcount2): '<S7>/Counter' */
+
+/* RelationalOperator: '<S7>/Relational Operator' */
+rtb_RelationalOperator_d = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S59>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S59>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_k = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_m != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_l);
+/* S-Function (sdspcount2): '<S8>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_k != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_h = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_h;
+Rider_Controls_InHardware_DWork.Counter_Count_h++;
+/* End of S-Function (sdspcount2): '<S8>/Counter' */
+
+/* RelationalOperator: '<S8>/Relational Operator' */
+rtb_RelationalOperator_bd = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S60>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S60>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_ch = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_d != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_mj);
+/* S-Function (sdspcount2): '<S9>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_ch != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_f = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_f;
+Rider_Controls_InHardware_DWork.Counter_Count_f++;
+/* End of S-Function (sdspcount2): '<S9>/Counter' */
+
+/* RelationalOperator: '<S9>/Relational Operator' */
+rtb_RelationalOperator_e = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S61>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S61>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_f = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_ag != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_c);
+/* S-Function (sdspcount2): '<S10>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_f != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_im = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_im;
+Rider_Controls_InHardware_DWork.Counter_Count_im++;
+/* End of S-Function (sdspcount2): '<S10>/Counter' */
+
+/* RelationalOperator: '<S10>/Relational Operator' */
+rtb_RelationalOperator_i = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S62>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S62>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_o = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_l != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_b);
+/* S-Function (sdspcount2): '<S11>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_o != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_p = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_p;
+Rider_Controls_InHardware_DWork.Counter_Count_p++;
+/* End of S-Function (sdspcount2): '<S11>/Counter' */
+
+/* RelationalOperator: '<S11>/Relational Operator' */
+rtb_RelationalOperator_i4 = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S63>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S63>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_n = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_p != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_p);
+/* S-Function (sdspcount2): '<S12>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_n != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_a = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_a;
+Rider_Controls_InHardware_DWork.Counter_Count_a++;
+/* End of S-Function (sdspcount2): '<S12>/Counter' */
+
+/* RelationalOperator: '<S12>/Relational Operator' */
+rtb_RelationalOperator_kj = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S64>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S64>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_i = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_mc != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_dv);
+/* S-Function (sdspcount2): '<S13>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_i != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_ls = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_ls;
+Rider_Controls_InHardware_DWork.Counter_Count_ls++;
+/* End of S-Function (sdspcount2): '<S13>/Counter' */
+
+/* RelationalOperator: '<S13>/Relational Operator' */
+rtb_RelationalOperator_l0 = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S65>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S65>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_ba = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_ar != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_cs);
+/* S-Function (sdspcount2): '<S14>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_ba != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_ll = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_ll;
+Rider_Controls_InHardware_DWork.Counter_Count_ll++;
+/* End of S-Function (sdspcount2): '<S14>/Counter' */
+
+/* RelationalOperator: '<S14>/Relational Operator' */
+rtb_RelationalOperator_k = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S66>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S66>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_h = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_k != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_k);
+/* S-Function (sdspcount2): '<S15>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_h != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_d0 = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_d0;
+Rider_Controls_InHardware_DWork.Counter_Count_d0++;
+/* End of S-Function (sdspcount2): '<S15>/Counter' */
+
+/* RelationalOperator: '<S15>/Relational Operator' */
+rtb_RelationalOperator_ll = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S67>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S67>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_ii = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_e != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_g);
+/* S-Function (sdspcount2): '<S16>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_ii != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_hr = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_hr;
+Rider_Controls_InHardware_DWork.Counter_Count_hr++;
+/* End of S-Function (sdspcount2): '<S16>/Counter' */
+
+/* RelationalOperator: '<S16>/Relational Operator' */
+rtb_RelationalOperator_m = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S68>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S68>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_j4 = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_h4 != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_c0);
+/* S-Function (sdspcount2): '<S17>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_j4 != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_ix = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_ix;
+Rider_Controls_InHardware_DWork.Counter_Count_ix++;
+/* End of S-Function (sdspcount2): '<S17>/Counter' */
+
+/* RelationalOperator: '<S17>/Relational Operator' */
+rtb_RelationalOperator_ad = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S69>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S69>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_iin = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_b != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_o);
+/* S-Function (sdspcount2): '<S18>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_iin != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_ce = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_ce;
+Rider_Controls_InHardware_DWork.Counter_Count_ce++;
+/* End of S-Function (sdspcount2): '<S18>/Counter' */
+
+/* RelationalOperator: '<S18>/Relational Operator' */
+rtb_RelationalOperator_bl = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S70>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S70>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_e = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_f != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_n);
+/* S-Function (sdspcount2): '<S19>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_e != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_e = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_e;
+Rider_Controls_InHardware_DWork.Counter_Count_e++;
+/* End of S-Function (sdspcount2): '<S19>/Counter' */
+
+/* RelationalOperator: '<S19>/Relational Operator' */
+rtb_RelationalOperator_a = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S71>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S71>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_n2 = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_a5 != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_dt);
+/* S-Function (sdspcount2): '<S20>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_n2 != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_ha = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_ha;
+Rider_Controls_InHardware_DWork.Counter_Count_ha++;
+/* End of S-Function (sdspcount2): '<S20>/Counter' */
+
+/* RelationalOperator: '<S20>/Relational Operator' */
+rtb_RelationalOperator_g = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S72>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S72>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_f2 = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_al != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_dy);
+/* S-Function (sdspcount2): '<S21>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_f2 != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_g = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_g;
+Rider_Controls_InHardware_DWork.Counter_Count_g++;
+/* End of S-Function (sdspcount2): '<S21>/Counter' */
+
+/* RelationalOperator: '<S21>/Relational Operator' */
+rtb_RelationalOperator_n = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S73>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S73>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_gv = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_pj != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_ey);
+/* S-Function (sdspcount2): '<S22>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_gv != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_h1 = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_h1;
+Rider_Controls_InHardware_DWork.Counter_Count_h1++;
+/* End of S-Function (sdspcount2): '<S22>/Counter' */
+
+/* RelationalOperator: '<S22>/Relational Operator' */
+rtb_RelationalOperator_f = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S74>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S74>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_p = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_nw != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_c2);
+/* S-Function (sdspcount2): '<S23>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_p != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_ks = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_ks;
+Rider_Controls_InHardware_DWork.Counter_Count_ks++;
+/* End of S-Function (sdspcount2): '<S23>/Counter' */
+
+/* RelationalOperator: '<S23>/Relational Operator' */
+rtb_RelationalOperator_no = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S75>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S75>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_po = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_i != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_j);
+/* S-Function (sdspcount2): '<S24>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_po != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_ca = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_ca;
+Rider_Controls_InHardware_DWork.Counter_Count_ca++;
+/* End of S-Function (sdspcount2): '<S24>/Counter' */
+
+/* RelationalOperator: '<S24>/Relational Operator' */
+rtb_RelationalOperator_h = (rtb_Counter >= 3U);
+/* RelationalOperator: '<S76>/FixPt Relational Operator' incorporates:
+ *  UnitDelay: '<S76>/Delay Input1'
+ */
+Rider_Controls_InHardware_B.FixPtRelationalOperator_p1 = (uint16_T)(Rider_Controls_InHardware_B.RateTransition_ov != Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_kj);
+/* S-Function (sdspcount2): '<S25>/Counter' */
+if (Rider_Controls_InHardware_B.FixPtRelationalOperator_p1 != 0U) {
+    Rider_Controls_InHardware_DWork.Counter_Count_i1 = 0U;
+}
+rtb_Counter = Rider_Controls_InHardware_DWork.Counter_Count_i1;
+Rider_Controls_InHardware_DWork.Counter_Count_i1++;
+/* End of S-Function (sdspcount2): '<S25>/Counter' */
+
+/* Update for RateTransition: '<Root>/Rate Transition' incorporates:
+ *  Logic: '<Root>/Logical Operator'
+ *  RelationalOperator: '<S25>/Relational Operator'
+ */
+%<SLibCG_SetDWV(97, 0, 2, 1, "", -1, "", 0, "(rtb_RelationalOperator_m5 || rtb_RelationalOperator_l0 || rtb_RelationalOperator_a || rtb_RelationalOperator_g || rtb_RelationalOperator_n || rtb_RelationalOperator_f || rtb_RelationalOperator_no || rtb_RelationalOperator_h || (rtb_Counter >= 3U) || rtb_RelationalOperator_j || rtb_RelationalOperator_gk || rtb_RelationalOperator_po || rtb_RelationalOperator_or || rtb_RelationalOperator_d || rtb_RelationalOperator_bd || rtb_RelationalOperator_e || rtb_RelationalOperator_i || rtb_RelationalOperator_i4 || rtb_RelationalOperator_kj || rtb_RelationalOperator_k || rtb_RelationalOperator_ll || rtb_RelationalOperator_m || rtb_RelationalOperator_ad || rtb_RelationalOperator_bl)")>\
+/* Update for UnitDelay: '<S53>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE = Rider_Controls_InHardware_B.RateTransition_n;
+/* Update for UnitDelay: '<S54>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_f = Rider_Controls_InHardware_B.RateTransition_c;
+/* Update for UnitDelay: '<S55>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_e = Rider_Controls_InHardware_B.RateTransition_a;
+/* Update for UnitDelay: '<S56>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_m = Rider_Controls_InHardware_B.RateTransition_o;
+/* Update for UnitDelay: '<S57>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_d = Rider_Controls_InHardware_B.RateTransition_at;
+/* Update for UnitDelay: '<S58>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_h = Rider_Controls_InHardware_B.RateTransition_h;
+/* Update for UnitDelay: '<S59>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_l = Rider_Controls_InHardware_B.RateTransition_m;
+/* Update for UnitDelay: '<S60>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_mj = Rider_Controls_InHardware_B.RateTransition_d;
+/* Update for UnitDelay: '<S61>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_c = Rider_Controls_InHardware_B.RateTransition_ag;
+/* Update for UnitDelay: '<S62>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_b = Rider_Controls_InHardware_B.RateTransition_l;
+/* Update for UnitDelay: '<S63>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_p = Rider_Controls_InHardware_B.RateTransition_p;
+/* Update for UnitDelay: '<S64>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_dv = Rider_Controls_InHardware_B.RateTransition_mc;
+/* Update for UnitDelay: '<S65>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_cs = Rider_Controls_InHardware_B.RateTransition_ar;
+/* Update for UnitDelay: '<S66>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_k = Rider_Controls_InHardware_B.RateTransition_k;
+/* Update for UnitDelay: '<S67>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_g = Rider_Controls_InHardware_B.RateTransition_e;
+/* Update for UnitDelay: '<S68>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_c0 = Rider_Controls_InHardware_B.RateTransition_h4;
+/* Update for UnitDelay: '<S69>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_o = Rider_Controls_InHardware_B.RateTransition_b;
+/* Update for UnitDelay: '<S70>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_n = Rider_Controls_InHardware_B.RateTransition_f;
+/* Update for UnitDelay: '<S71>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_dt = Rider_Controls_InHardware_B.RateTransition_a5;
+/* Update for UnitDelay: '<S72>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_dy = Rider_Controls_InHardware_B.RateTransition_al;
+/* Update for UnitDelay: '<S73>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_ey = Rider_Controls_InHardware_B.RateTransition_pj;
+/* Update for UnitDelay: '<S74>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_c2 = Rider_Controls_InHardware_B.RateTransition_nw;
+/* Update for UnitDelay: '<S75>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_j = Rider_Controls_InHardware_B.RateTransition_i;
+/* Update for UnitDelay: '<S76>/Delay Input1' */
+Rider_Controls_InHardware_DWork.DelayInput1_DSTATE_kj = Rider_Controls_InHardware_B.RateTransition_ov;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(2, 3, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutput2LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction

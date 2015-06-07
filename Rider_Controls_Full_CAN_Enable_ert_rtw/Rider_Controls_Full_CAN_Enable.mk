@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'Rider_Controls_Full_CAN_Enable'. 
 ## 
 ## Makefile     : Rider_Controls_Full_CAN_Enable.mk
-## Generated on : Wed May 27 16:42:55 2015
+## Generated on : Sun Jun 07 05:38:03 2015
 ## MATLAB Coder version: 2.7 (R2014b)
 ## 
 ## Build Info:
@@ -302,7 +302,7 @@ CPPFLAGS += $(CPPFLAGS_SKIPFORSIL) $(CPPFLAGS_BASIC)
 # C++ Linker
 #---------------
 
-CPP_LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
+CPP_LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
 
 CPP_LDFLAGS += $(CPP_LDFLAGS_SKIPFORSIL)
 
@@ -310,7 +310,7 @@ CPP_LDFLAGS += $(CPP_LDFLAGS_SKIPFORSIL)
 # C++ Shared Library Linker
 #------------------------------
 
-CPP_SHAREDLIB_LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
+CPP_SHAREDLIB_LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
 
 CPP_SHAREDLIB_LDFLAGS += $(CPP_SHAREDLIB_LDFLAGS_SKIPFORSIL)
 
@@ -318,7 +318,7 @@ CPP_SHAREDLIB_LDFLAGS += $(CPP_SHAREDLIB_LDFLAGS_SKIPFORSIL)
 # Linker
 #-----------
 
-LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
+LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
 
 LDFLAGS += $(LDFLAGS_SKIPFORSIL)
 
@@ -326,7 +326,7 @@ LDFLAGS += $(LDFLAGS_SKIPFORSIL)
 # Shared Library Linker
 #--------------------------
 
-SHAREDLIB_LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
+SHAREDLIB_LDFLAGS_SKIPFORSIL = -l"rts2800_ml.lib" --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1 --define BOOT_FROM_FLASH=1
 
 SHAREDLIB_LDFLAGS += $(SHAREDLIB_LDFLAGS_SKIPFORSIL)
 

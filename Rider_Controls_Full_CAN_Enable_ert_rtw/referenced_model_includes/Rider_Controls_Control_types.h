@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.171
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed May 27 15:52:49 2015
+ * C/C++ source code generated on : Sat Jun 06 12:18:17 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000

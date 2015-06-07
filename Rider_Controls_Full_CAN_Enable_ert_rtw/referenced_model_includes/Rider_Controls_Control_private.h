@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.171
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed May 27 15:52:49 2015
+ * C/C++ source code generated on : Sat Jun 06 12:18:17 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -37,8 +37,8 @@
 
 extern const real32_T rtCP_pooled_kXF479Tr1zzv[5];
 extern const real32_T rtCP_pooled_B0qELKmN8GAt[5];
-extern const real32_T rtCP_pooled_qgZrQ0kJRiEc[4];
-extern const real32_T rtCP_pooled_4sEq7SW1OOvc[4];
+extern const real32_T rtCP_pooled_oaa0NRPWZaqa[2];
+extern const real32_T rtCP_pooled_RarCRswdQecv[2];
 
 #define rtCP_BatteryTemptoCurrent_     rtCP_pooled_kXF479Tr1zzv  /* Expression: BattTemp_Current_y
                                                                   * Referenced by: '<S1>/Battery Temp to Current'
@@ -46,10 +46,10 @@ extern const real32_T rtCP_pooled_4sEq7SW1OOvc[4];
 #define rtCP_BatteryTemptoCurren_o     rtCP_pooled_B0qELKmN8GAt  /* Expression: BattTemp_Current_x
                                                                   * Referenced by: '<S1>/Battery Temp to Current'
                                                                   */
-#define rtCP_RPMtoMaxMotorCurrent_     rtCP_pooled_qgZrQ0kJRiEc  /* Expression: RPM_Max_Current_y
+#define rtCP_RPMtoMaxMotorCurrent_     rtCP_pooled_oaa0NRPWZaqa  /* Expression: RPM_Max_Current_y
                                                                   * Referenced by: '<S2>/RPM to Max Motor Current'
                                                                   */
-#define rtCP_RPMtoMaxMotorCurren_o     rtCP_pooled_4sEq7SW1OOvc  /* Expression: RPM_Max_Current_x
+#define rtCP_RPMtoMaxMotorCurren_o     rtCP_pooled_RarCRswdQecv  /* Expression: RPM_Max_Current_x
                                                                   * Referenced by: '<S2>/RPM to Max Motor Current'
                                                                   */
 #endif                                 /* RTW_HEADER_Rider_Controls_Control_private_h_ */

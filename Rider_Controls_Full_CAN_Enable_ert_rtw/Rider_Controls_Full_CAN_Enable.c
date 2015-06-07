@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Full_CAN_Enable'.
  *
- * Model version                  : 1.127
+ * Model version                  : 1.130
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Wed May 27 16:42:47 2015
+ * C/C++ source code generated on : Sat Jun 06 12:26:19 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -917,7 +917,7 @@ void Rider_Controls_Full_CAN_Enable_step1(void) /* Sample time: [0.01s, 0.0s] */
         real64_T outValue = 0;
 
         {
-          real64_T result = 5000.0;
+          real64_T result = (-5000.0);
 
           /* no scaling required */
           outValue = result;

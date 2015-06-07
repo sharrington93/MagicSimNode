@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v6.2.0                      
 ******************************************************************************
->> Linked Wed May 27 16:43:03 2015
+>> Linked Sun Jun 07 05:38:11 2015
 
 OUTPUT FILE NAME:   <../Rider_Controls_Full_CAN_Enable.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 003ebf5b
@@ -15,7 +15,7 @@ PAGE 0:
   BEGINRAM              00000000   00000002  00000000  00000002  RWIX
   PRAML0_L3             00008000   00002000  00000021  00001fdf  RWIX
   OTP                   003d7800   00000400  00000000  00000400  RWIX
-  FLASH                 003e8000   0000fff6  00004311  0000bce5  RWIX
+  FLASH                 003e8000   0000fff6  00004309  0000bced  RWIX
   BEGINFLASH            003f7ff6   00000002  00000002  00000000  RWIX
   CSM_PWL               003f7ff8   00000008  00000000  00000008  RWIX
   IQTABLES              003fe000   00000b50  00000000  00000b50  RWIX
@@ -118,24 +118,24 @@ section   page    origin      length       input sections
                   003ec192    00000008     DSP2803x_CodeStartBranch.obj (.text)
                   003ec19a    00000008     MW_c28xx_csl.obj (.text)
 
-.econst    0    003ec1a2    00000128     
+.econst    0    003ec1a2    00000120     
                   003ec1a2    00000100     DSP2803x_PieVect.obj (.econst)
                   003ec2a2    0000000a     rtwshared.lib : const_params.obj (.econst:_rtCP_pooled_B0qELKmN8GAt)
                   003ec2ac    0000000a                   : const_params.obj (.econst:_rtCP_pooled_kXF479Tr1zzv)
-                  003ec2b6    00000008                   : const_params.obj (.econst:_rtCP_pooled_4sEq7SW1OOvc)
-                  003ec2be    00000008                   : const_params.obj (.econst:_rtCP_pooled_qgZrQ0kJRiEc)
-                  003ec2c6    00000002     Rider_Controls_Full_CAN_Enable.obj (.econst)
-                  003ec2c8    00000002     rtwshared.lib : rtGetNaN.obj (.econst)
+                  003ec2b6    00000004                   : const_params.obj (.econst:_rtCP_pooled_RarCRswdQecv)
+                  003ec2ba    00000004                   : const_params.obj (.econst:_rtCP_pooled_oaa0NRPWZaqa)
+                  003ec2be    00000002     Rider_Controls_Full_CAN_Enable.obj (.econst)
+                  003ec2c0    00000002     rtwshared.lib : rtGetNaN.obj (.econst)
 
-ramfuncs   0    003ec2ca    00000021     RUN ADDR = 00008000
-                  003ec2ca    0000001d     DSP2803x_SysCtrl.obj (ramfuncs)
-                  003ec2e7    00000004     DSP2803x_usDelay.obj (ramfuncs)
+ramfuncs   0    003ec2c2    00000021     RUN ADDR = 00008000
+                  003ec2c2    0000001d     DSP2803x_SysCtrl.obj (ramfuncs)
+                  003ec2df    00000004     DSP2803x_usDelay.obj (ramfuncs)
 
-.cinit     0    003ec2eb    00000026     
-                  003ec2eb    00000010     ert_main.obj (.cinit)
-                  003ec2fb    0000000a     rts2800_ml.lib : _lock.obj (.cinit)
-                  003ec305    0000000a                    : exit.obj (.cinit)
-                  003ec30f    00000002     --HOLE-- [fill = 0]
+.cinit     0    003ec2e3    00000026     
+                  003ec2e3    00000010     ert_main.obj (.cinit)
+                  003ec2f3    0000000a     rts2800_ml.lib : _lock.obj (.cinit)
+                  003ec2fd    0000000a                    : exit.obj (.cinit)
+                  003ec307    00000002     --HOLE-- [fill = 0]
 
 codestart 
 *          0    003f7ff6    00000002     
@@ -487,10 +487,9 @@ address     data page           name
 
 003ec2a2    fb0a (003ec280)     _rtCP_pooled_B0qELKmN8GAt
 003ec2ac    fb0a (003ec280)     _rtCP_pooled_kXF479Tr1zzv
-003ec2b6    fb0a (003ec280)     _rtCP_pooled_4sEq7SW1OOvc
-003ec2be    fb0a (003ec280)     _rtCP_pooled_qgZrQ0kJRiEc
-
-003ec2c6    fb0b (003ec2c0)     _Rider_Controls_Full_CAN_Enab_M
+003ec2b6    fb0a (003ec280)     _rtCP_pooled_RarCRswdQecv
+003ec2ba    fb0a (003ec280)     _rtCP_pooled_oaa0NRPWZaqa
+003ec2be    fb0a (003ec280)     _Rider_Controls_Full_CAN_Enab_M
 
 003f7ff8    fdff (003f7fc0)     _CsmPwl
 
@@ -638,8 +637,8 @@ address    name
 00000d00   _PieVectTable
 003ec1a2   _PieVectTableInit
 003eb803   _RTOSINT_ISR
-003ec2eb   _RamfuncsLoadEnd
-003ec2ca   _RamfuncsLoadStart
+003ec2e3   _RamfuncsLoadEnd
+003ec2c2   _RamfuncsLoadStart
 00008000   _RamfuncsRunStart
 003eac4b   _Ri_MessageReceived4_Disable
 003e821e   _Rider_Cont_MessageReceived4
@@ -649,7 +648,7 @@ address    name
 00000332   _Rider_Controls_Control_DWork
 0000034c   _Rider_Controls_Ful_TimingBridge
 00000340   _Rider_Controls_Full_CAN_E_DWork
-003ec2c6   _Rider_Controls_Full_CAN_Enab_M
+003ec2be   _Rider_Controls_Full_CAN_Enab_M
 00000342   _Rider_Controls_Full_CAN_Enab_M_
 00000380   _Rider_Controls_Full_CAN_Enabl_B
 003eb2d8   _Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep
@@ -715,7 +714,7 @@ address    name
 ffffffff   ___binit__
 00000002   ___bss__
 ffffffff   ___c_args__
-003ec2eb   ___cinit__
+003ec2e3   ___cinit__
 00000002   ___data__
 00000002   ___edata__
 00000002   ___end__
@@ -751,10 +750,10 @@ ffffffff   ___pinit__
 003ec174   _memset
 00000037   _need2runFlags
 003eb78b   _rsvd_ISR
-003ec2b6   _rtCP_pooled_4sEq7SW1OOvc
 003ec2a2   _rtCP_pooled_B0qELKmN8GAt
+003ec2b6   _rtCP_pooled_RarCRswdQecv
 003ec2ac   _rtCP_pooled_kXF479Tr1zzv
-003ec2be   _rtCP_pooled_qgZrQ0kJRiEc
+003ec2ba   _rtCP_pooled_oaa0NRPWZaqa
 003ec121   _rtGetInf
 003ec11a   _rtGetInfF
 003ec115   _rtGetMinusInf
@@ -774,7 +773,7 @@ ffffffff   ___pinit__
 003ebdbf   _rt_InitInfAndNaN
 003ebb27   _rt_OneStep
 ffffffff   binit
-003ec2eb   cinit
+003ec2e3   cinit
 003f7ff6   code_start
 00000002   edata
 00000002   end
@@ -1053,13 +1052,13 @@ address    name
 003ec1a2   etext
 003ec2a2   _rtCP_pooled_B0qELKmN8GAt
 003ec2ac   _rtCP_pooled_kXF479Tr1zzv
-003ec2b6   _rtCP_pooled_4sEq7SW1OOvc
-003ec2be   _rtCP_pooled_qgZrQ0kJRiEc
-003ec2c6   _Rider_Controls_Full_CAN_Enab_M
-003ec2ca   _RamfuncsLoadStart
-003ec2eb   _RamfuncsLoadEnd
-003ec2eb   ___cinit__
-003ec2eb   cinit
+003ec2b6   _rtCP_pooled_RarCRswdQecv
+003ec2ba   _rtCP_pooled_oaa0NRPWZaqa
+003ec2be   _Rider_Controls_Full_CAN_Enab_M
+003ec2c2   _RamfuncsLoadStart
+003ec2e3   _RamfuncsLoadEnd
+003ec2e3   ___cinit__
+003ec2e3   cinit
 003f7ff6   code_start
 003f7ff8   _CsmPwl
 ffffffff   ___binit__

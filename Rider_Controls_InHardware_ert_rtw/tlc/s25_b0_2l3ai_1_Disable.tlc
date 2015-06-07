@@ -1,0 +1,20 @@
+%implements s25_b0_2l3ai_1_Disable "C"
+
+%function Disable(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(5)>\
+/* Disable for Outport: '<Root>/Tritium Errors' incorporates:
+ *  Disable for Outport: '<S34>/Result'
+ */
+Rider_Controls_InHardware_Y.TritiumErrors = false;
+%closefile cfgTxt
+%<cfgTxt>
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Disable(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 1, fcnProtoType)>
+%endfunction
