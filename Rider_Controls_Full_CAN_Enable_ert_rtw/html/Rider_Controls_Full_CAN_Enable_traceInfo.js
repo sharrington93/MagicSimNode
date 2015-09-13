@@ -7,6 +7,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:92"] = {rtwname: "<Root>/CAN Pack"};
 	this.rtwnameHashMap["<Root>/CAN Pack1"] = {sid: "Rider_Controls_Full_CAN_Enable:98"};
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:98"] = {rtwname: "<Root>/CAN Pack1"};
+	this.rtwnameHashMap["<Root>/CAN Pack2"] = {sid: "Rider_Controls_Full_CAN_Enable:107"};
+	this.sidHashMap["Rider_Controls_Full_CAN_Enable:107"] = {rtwname: "<Root>/CAN Pack2"};
 	this.rtwnameHashMap["<Root>/Constant"] = {sid: "Rider_Controls_Full_CAN_Enable:99"};
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:99"] = {rtwname: "<Root>/Constant"};
 	this.rtwnameHashMap["<Root>/Data Type Conversion"] = {sid: "Rider_Controls_Full_CAN_Enable:93"};
@@ -31,6 +33,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:97"] = {rtwname: "<Root>/eCAN Transmit"};
 	this.rtwnameHashMap["<Root>/eCAN Transmit1"] = {sid: "Rider_Controls_Full_CAN_Enable:101"};
 	this.sidHashMap["Rider_Controls_Full_CAN_Enable:101"] = {rtwname: "<Root>/eCAN Transmit1"};
+	this.rtwnameHashMap["<Root>/eCAN Transmit2"] = {sid: "Rider_Controls_Full_CAN_Enable:108"};
+	this.sidHashMap["Rider_Controls_Full_CAN_Enable:108"] = {rtwname: "<Root>/eCAN Transmit2"};
 	this.getSID = function(rtwname) { return this.rtwnameHashMap[rtwname];}
 	this.getRtwname = function(sid) { return this.sidHashMap[sid];}
 }

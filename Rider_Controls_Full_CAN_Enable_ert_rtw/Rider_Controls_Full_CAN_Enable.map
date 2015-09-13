@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v6.2.0                      
 ******************************************************************************
->> Linked Sun Jun 07 05:38:11 2015
+>> Linked Sat Jun 27 16:52:01 2015
 
 OUTPUT FILE NAME:   <../Rider_Controls_Full_CAN_Enable.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 003ebf5b
+ENTRY POINT SYMBOL: "_c_int00"  address: 003ebf84
 
 
 MEMORY CONFIGURATION
@@ -15,7 +15,7 @@ PAGE 0:
   BEGINRAM              00000000   00000002  00000000  00000002  RWIX
   PRAML0_L3             00008000   00002000  00000021  00001fdf  RWIX
   OTP                   003d7800   00000400  00000000  00000400  RWIX
-  FLASH                 003e8000   0000fff6  00004309  0000bced  RWIX
+  FLASH                 003e8000   0000fff6  000042ea  0000bd0c  RWIX
   BEGINFLASH            003f7ff6   00000002  00000002  00000000  RWIX
   CSM_PWL               003f7ff8   00000008  00000000  00000008  RWIX
   IQTABLES              003fe000   00000b50  00000000  00000b50  RWIX
@@ -26,7 +26,7 @@ PAGE 0:
   VECTORS               003fffc2   0000003e  00000000  0000003e  RWIX
 
 PAGE 1:
-  RAMM0M1               00000002   000007fe  00000438  000003c6  RWIX
+  RAMM0M1               00000002   000007fe  00000444  000003ba  RWIX
   DEV_EMU               00000880   00000105  00000004  00000101  RWIX
   SYS_PWR_CTL           00000985   00000003  00000003  00000000  RWIX
   FLASH_REGS            00000a80   00000060  00000008  00000058  RWIX
@@ -80,62 +80,62 @@ section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
 .pinit     0    003e8000    00000000     UNINITIALIZED
 
-.text      0    003e8000    000041a2     
-                  003e8000    00002df3     Rider_Controls_InHardware_rtwlib.lib : Rider_Controls_InHardware.obj (.text)
-                  003eadf3    000004f2     Rider_Controls_Full_CAN_Enable.obj (.text)
-                  003eb2e5    000002fd     Rider_Controls_Control_rtwlib.lib : Rider_Controls_Control.obj (.text)
-                  003eb5e2    000001a9     DSP2803x_Adc.obj (.text)
-                  003eb78b    0000017c     DSP2803x_DefaultIsr.obj (.text:retain)
-                  003eb907    00000139     DSP2803x_SysCtrl.obj (.text)
-                  003eba40    000000e7     MW_c28xx_can.obj (.text)
-                  003ebb27    00000092     ert_main.obj (.text)
-                  003ebbb9    00000091     DSP2803x_Lin.obj (.text)
-                  003ebc4a    00000083     rts2800_ml.lib : fs_div.obj (.text)
-                  003ebccd    0000007a     rtwshared.lib : look1_iflf_plinlgpw.obj (.text)
-                  003ebd47    00000078     rts2800_ml.lib : fs_add.obj (.text)
-                  003ebdbf    00000073     rtwshared.lib : rt_nonfinite.obj (.text)
-                  003ebe32    0000006d     c2803xSchedulerTimer0.obj (.text:retain)
-                  003ebe9f    00000062     DSP2803x_CpuTimers.obj (.text)
-                  003ebf01    0000005a     rts2800_ml.lib : fs_mpy.obj (.text)
-                  003ebf5b    00000044                    : boot.obj (.text)
-                  003ebf9f    00000041     c2803xSchedulerTimer0.obj (.text)
-                  003ebfe0    00000040     MW_c28xx_board.obj (.text)
-                  003ec020    0000002d     Rider_Controls_InHardware_rtwlib.lib : MW_c28xx_adc.obj (.text)
-                  003ec04d    00000029     rts2800_ml.lib : fs_tol.obj (.text)
-                  003ec076    00000028     DSP2803x_PieCtrl.obj (.text)
-                  003ec09e    00000021     rts2800_ml.lib : memcpy_ff.obj (.text)
-                  003ec0bf    0000001d                    : fs_tou.obj (.text)
-                  003ec0dc    00000019                    : args_main.obj (.text)
-                  003ec0f5    00000019                    : exit.obj (.text)
-                  003ec10e    00000018     rtwshared.lib : rtGetInf.obj (.text)
-                  003ec126    00000017     rts2800_ml.lib : fs_cmp.obj (.text)
-                  003ec13d    00000016     c2803xBoard_Realtime_Support.obj (.text)
-                  003ec153    00000011     DSP2803x_PieVect.obj (.text)
-                  003ec164    00000010     rts2800_ml.lib : u_tofs.obj (.text)
-                  003ec174    0000000c                    : memset.obj (.text)
-                  003ec180    00000009                    : _lock.obj (.text)
-                  003ec189    00000009     rtwshared.lib : rtGetNaN.obj (.text)
-                  003ec192    00000008     DSP2803x_CodeStartBranch.obj (.text)
-                  003ec19a    00000008     MW_c28xx_csl.obj (.text)
+.text      0    003e8000    0000418b     
+                  003e8000    00002c65     Rider_Controls_InHardware_rtwlib.lib : Rider_Controls_InHardware.obj (.text)
+                  003eac65    00000639     Rider_Controls_Full_CAN_Enable.obj (.text)
+                  003eb29e    00000329     Rider_Controls_Control_rtwlib.lib : Rider_Controls_Control.obj (.text)
+                  003eb5c7    000001a9     DSP2803x_Adc.obj (.text)
+                  003eb770    0000017c     DSP2803x_DefaultIsr.obj (.text:retain)
+                  003eb8ec    00000139     DSP2803x_SysCtrl.obj (.text)
+                  003eba25    000000e7     MW_c28xx_can.obj (.text)
+                  003ebb0c    00000092     ert_main.obj (.text)
+                  003ebb9e    00000091     DSP2803x_Lin.obj (.text)
+                  003ebc2f    00000083     rts2800_ml.lib : fs_div.obj (.text)
+                  003ebcb2    0000007a     rtwshared.lib : look1_iflf_plinlgpw.obj (.text)
+                  003ebd2c    00000078     rts2800_ml.lib : fs_add.obj (.text)
+                  003ebda4    00000073     rtwshared.lib : rt_nonfinite.obj (.text)
+                  003ebe17    0000006d     c2803xSchedulerTimer0.obj (.text:retain)
+                  003ebe84    00000062     DSP2803x_CpuTimers.obj (.text)
+                  003ebee6    0000005a     rts2800_ml.lib : fs_mpy.obj (.text)
+                  003ebf40    00000044     MW_c28xx_board.obj (.text)
+                  003ebf84    00000044     rts2800_ml.lib : boot.obj (.text)
+                  003ebfc8    00000041     c2803xSchedulerTimer0.obj (.text)
+                  003ec009    0000002d     Rider_Controls_InHardware_rtwlib.lib : MW_c28xx_adc.obj (.text)
+                  003ec036    00000029     rts2800_ml.lib : fs_tol.obj (.text)
+                  003ec05f    00000028     DSP2803x_PieCtrl.obj (.text)
+                  003ec087    00000021     rts2800_ml.lib : memcpy_ff.obj (.text)
+                  003ec0a8    0000001d                    : fs_tou.obj (.text)
+                  003ec0c5    00000019                    : args_main.obj (.text)
+                  003ec0de    00000019                    : exit.obj (.text)
+                  003ec0f7    00000018     rtwshared.lib : rtGetInf.obj (.text)
+                  003ec10f    00000017     rts2800_ml.lib : fs_cmp.obj (.text)
+                  003ec126    00000016     c2803xBoard_Realtime_Support.obj (.text)
+                  003ec13c    00000011     DSP2803x_PieVect.obj (.text)
+                  003ec14d    00000010     rts2800_ml.lib : u_tofs.obj (.text)
+                  003ec15d    0000000c                    : memset.obj (.text)
+                  003ec169    00000009                    : _lock.obj (.text)
+                  003ec172    00000009     rtwshared.lib : rtGetNaN.obj (.text)
+                  003ec17b    00000008     DSP2803x_CodeStartBranch.obj (.text)
+                  003ec183    00000008     MW_c28xx_csl.obj (.text)
 
-.econst    0    003ec1a2    00000120     
-                  003ec1a2    00000100     DSP2803x_PieVect.obj (.econst)
-                  003ec2a2    0000000a     rtwshared.lib : const_params.obj (.econst:_rtCP_pooled_B0qELKmN8GAt)
-                  003ec2ac    0000000a                   : const_params.obj (.econst:_rtCP_pooled_kXF479Tr1zzv)
-                  003ec2b6    00000004                   : const_params.obj (.econst:_rtCP_pooled_RarCRswdQecv)
-                  003ec2ba    00000004                   : const_params.obj (.econst:_rtCP_pooled_oaa0NRPWZaqa)
-                  003ec2be    00000002     Rider_Controls_Full_CAN_Enable.obj (.econst)
-                  003ec2c0    00000002     rtwshared.lib : rtGetNaN.obj (.econst)
+.econst    0    003ec18c    00000118     
+                  003ec18c    00000100     DSP2803x_PieVect.obj (.econst)
+                  003ec28c    00000006     rtwshared.lib : const_params.obj (.econst:_rtCP_pooled_1ozRLNp3qYGp)
+                  003ec292    00000006                   : const_params.obj (.econst:_rtCP_pooled_jo2sCkKdcHDF)
+                  003ec298    00000004                   : const_params.obj (.econst:_rtCP_pooled_RarCRswdQecv)
+                  003ec29c    00000004                   : const_params.obj (.econst:_rtCP_pooled_oaa0NRPWZaqa)
+                  003ec2a0    00000002     Rider_Controls_Full_CAN_Enable.obj (.econst)
+                  003ec2a2    00000002     rtwshared.lib : rtGetNaN.obj (.econst)
 
-ramfuncs   0    003ec2c2    00000021     RUN ADDR = 00008000
-                  003ec2c2    0000001d     DSP2803x_SysCtrl.obj (ramfuncs)
-                  003ec2df    00000004     DSP2803x_usDelay.obj (ramfuncs)
+ramfuncs   0    003ec2a4    00000021     RUN ADDR = 00008000
+                  003ec2a4    0000001d     DSP2803x_SysCtrl.obj (ramfuncs)
+                  003ec2c1    00000004     DSP2803x_usDelay.obj (ramfuncs)
 
-.cinit     0    003ec2e3    00000026     
-                  003ec2e3    00000010     ert_main.obj (.cinit)
-                  003ec2f3    0000000a     rts2800_ml.lib : _lock.obj (.cinit)
-                  003ec2fd    0000000a                    : exit.obj (.cinit)
-                  003ec307    00000002     --HOLE-- [fill = 0]
+.cinit     0    003ec2c5    00000026     
+                  003ec2c5    00000010     ert_main.obj (.cinit)
+                  003ec2d5    0000000a     rts2800_ml.lib : _lock.obj (.cinit)
+                  003ec2df    0000000a                    : exit.obj (.cinit)
+                  003ec2e9    00000002     --HOLE-- [fill = 0]
 
 codestart 
 *          0    003f7ff6    00000002     
@@ -146,24 +146,23 @@ codestart
 
 .bss       1    00000002    00000000     UNINITIALIZED
 
-.ebss      1    00000002    000003f8     UNINITIALIZED
+.ebss      1    00000002    00000404     UNINITIALIZED
                   00000002    00000018     DSP2803x_CpuTimers.obj (.ebss)
                   0000001a    00000010     can_datatype_ground.obj (.ebss)
                   0000002a    0000000c     rtwshared.lib : rt_nonfinite.obj (.ebss)
-                  00000036    00000007     ert_main.obj (.ebss)
-                  0000003d    00000002     DSP2803x_Lin.obj (.ebss)
-                  0000003f    00000001     --HOLE--
+                  00000036    00000008     Rider_Controls_Control_rtwlib.lib : Rider_Controls_Control.obj (.ebss)
+                  0000003e    00000002     DSP2803x_Lin.obj (.ebss)
                   00000040    000002f0     Rider_Controls_InHardware_rtwlib.lib : Rider_Controls_InHardware.obj (.ebss)
-                  00000330    00000006     Rider_Controls_Control_rtwlib.lib : Rider_Controls_Control.obj (.ebss)
-                  00000336    00000004     rts2800_ml.lib : _lock.obj (.ebss)
-                  0000033a    00000004                    : exit.obj (.ebss)
-                  0000033e    00000002     --HOLE--
-                  00000340    000000ba     Rider_Controls_Full_CAN_Enable.obj (.ebss)
+                  00000330    00000007     ert_main.obj (.ebss)
+                  00000337    00000001     --HOLE--
+                  00000338    00000004     rts2800_ml.lib : _lock.obj (.ebss)
+                  0000033c    00000004                    : exit.obj (.ebss)
+                  00000340    000000c6     Rider_Controls_Full_CAN_Enable.obj (.ebss)
 
 .data      1    00000002    00000000     UNINITIALIZED
 
-.stack     1    000003fa    00000040     UNINITIALIZED
-                  000003fa    00000040     --HOLE--
+.stack     1    00000406    00000040     UNINITIALIZED
+                  00000406    00000040     --HOLE--
 
 DevEmuRegsFile 
 *          1    00000880    00000004     UNINITIALIZED
@@ -372,11 +371,10 @@ address     data page           name
 00000030       0 (00000000)     _rtMinusInfF
 00000032       0 (00000000)     _rtInfF
 00000034       0 (00000000)     _rtNaNF
-00000036       0 (00000000)     _IsrOverrun
-00000037       0 (00000000)     _need2runFlags
-0000003a       0 (00000000)     _isRateRunning
-0000003d       0 (00000000)     _P1
-0000003e       0 (00000000)     _P0
+00000036       0 (00000000)     _Rider_Controls_Cont_MdlrefDWork
+00000038       0 (00000000)     _Rider_Controls_Control_DWork
+0000003e       0 (00000000)     _P1
+0000003f       0 (00000000)     _P0
 
 00000040       1 (00000040)     _Rider_Controls_InHa_MdlrefDWork
 00000042       1 (00000040)     _Rider_Controls_InH_TimingBridge
@@ -386,20 +384,21 @@ address     data page           name
 
 00000100       4 (00000100)     _Rider_Controls_InHardware_B
 
-00000330       c (00000300)     _Rider_Controls_Cont_MdlrefDWork
-00000332       c (00000300)     _Rider_Controls_Control_DWork
-00000336       c (00000300)     __unlock
-00000338       c (00000300)     __lock
-0000033a       c (00000300)     ___TI_cleanup_ptr
-0000033c       c (00000300)     ___TI_dtors_ptr
+00000330       c (00000300)     _IsrOverrun
+00000331       c (00000300)     _need2runFlags
+00000334       c (00000300)     _isRateRunning
+00000338       c (00000300)     __unlock
+0000033a       c (00000300)     __lock
+0000033c       c (00000300)     ___TI_cleanup_ptr
+0000033e       c (00000300)     ___TI_dtors_ptr
 
 00000340       d (00000340)     _Rider_Controls_Full_CAN_E_DWork
-00000342       d (00000340)     _Rider_Controls_Full_CAN_Enab_M_
-0000034c       d (00000340)     _Rider_Controls_Ful_TimingBridge
+00000344       d (00000340)     _Rider_Controls_Full_CAN_Enab_M_
+0000034e       d (00000340)     _Rider_Controls_Ful_TimingBridge
 
 00000380       e (00000380)     _Rider_Controls_Full_CAN_Enabl_B
 
-000003fa       f (000003c0)     __stack
+00000406      10 (00000400)     __stack
 
 00000880      22 (00000880)     _DevEmuRegs
 
@@ -483,13 +482,13 @@ address     data page           name
 
 003d7e80    f5fa (003d7e80)     _PartIdRegs
 
-003ec1a2    fb06 (003ec180)     _PieVectTableInit
+003ec18c    fb06 (003ec180)     _PieVectTableInit
 
-003ec2a2    fb0a (003ec280)     _rtCP_pooled_B0qELKmN8GAt
-003ec2ac    fb0a (003ec280)     _rtCP_pooled_kXF479Tr1zzv
-003ec2b6    fb0a (003ec280)     _rtCP_pooled_RarCRswdQecv
-003ec2ba    fb0a (003ec280)     _rtCP_pooled_oaa0NRPWZaqa
-003ec2be    fb0a (003ec280)     _Rider_Controls_Full_CAN_Enab_M
+003ec28c    fb0a (003ec280)     _rtCP_pooled_1ozRLNp3qYGp
+003ec292    fb0a (003ec280)     _rtCP_pooled_jo2sCkKdcHDF
+003ec298    fb0a (003ec280)     _rtCP_pooled_RarCRswdQecv
+003ec29c    fb0a (003ec280)     _rtCP_pooled_oaa0NRPWZaqa
+003ec2a0    fb0a (003ec280)     _Rider_Controls_Full_CAN_Enab_M
 
 003f7ff8    fdff (003f7fc0)     _CsmPwl
 
@@ -501,43 +500,43 @@ address    name
 00000002   .bss
 00000002   .data
 003e8000   .text
-003ec0f5   C$$EXIT
-003ebd4c   FS$$ADD
-003ec126   FS$$CMP
-003ebc4a   FS$$DIV
-003ebf01   FS$$MPY
-003ebd47   FS$$SUB
-003ec04d   FS$$TOL
-003ec0bf   FS$$TOU
-003ec164   U$$TOFS
-003eb902   _ADCINT1_ISR
-003eb8fd   _ADCINT2_ISR
-003eb8f8   _ADCINT3_ISR
-003eb8f3   _ADCINT4_ISR
-003eb8ee   _ADCINT5_ISR
-003eb8e9   _ADCINT6_ISR
-003eb8e4   _ADCINT7_ISR
-003eb8df   _ADCINT8_ISR
-003eb8da   _ADCINT9_ISR
-003eb626   _AdcChanSelect
-003eb67e   _AdcConversion
-003eb766   _AdcOffsetSelfCal
+003ec0de   C$$EXIT
+003ebd31   FS$$ADD
+003ec10f   FS$$CMP
+003ebc2f   FS$$DIV
+003ebee6   FS$$MPY
+003ebd2c   FS$$SUB
+003ec036   FS$$TOL
+003ec0a8   FS$$TOU
+003ec14d   U$$TOFS
+003eb8e7   _ADCINT1_ISR
+003eb8e2   _ADCINT2_ISR
+003eb8dd   _ADCINT3_ISR
+003eb8d8   _ADCINT4_ISR
+003eb8d3   _ADCINT5_ISR
+003eb8ce   _ADCINT6_ISR
+003eb8c9   _ADCINT7_ISR
+003eb8c4   _ADCINT8_ISR
+003eb8bf   _ADCINT9_ISR
+003eb60b   _AdcChanSelect
+003eb663   _AdcConversion
+003eb74b   _AdcOffsetSelfCal
 00007100   _AdcRegs
 00000b00   _AdcResult
 0000001a   _CAN_DATATYPE_GROUND
-003eb8d5   _CLA1_INT1_ISR
-003eb8d0   _CLA1_INT2_ISR
-003eb8cb   _CLA1_INT3_ISR
-003eb8c6   _CLA1_INT4_ISR
-003eb8c1   _CLA1_INT5_ISR
-003eb8bc   _CLA1_INT6_ISR
-003eb8b7   _CLA1_INT7_ISR
-003eb8b2   _CLA1_INT8_ISR
+003eb8ba   _CLA1_INT1_ISR
+003eb8b5   _CLA1_INT2_ISR
+003eb8b0   _CLA1_INT3_ISR
+003eb8ab   _CLA1_INT4_ISR
+003eb8a6   _CLA1_INT5_ISR
+003eb8a1   _CLA1_INT6_ISR
+003eb89c   _CLA1_INT7_ISR
+003eb897   _CLA1_INT8_ISR
 00001400   _Cla1Regs
 00006400   _Comp1Regs
 00006420   _Comp2Regs
 00006440   _Comp3Regs
-003ebedc   _ConfigCpuTimer
+003ebec1   _ConfigCpuTimer
 00000012   _CpuTimer0
 00000c00   _CpuTimer0Regs
 00000002   _CpuTimer1
@@ -546,36 +545,36 @@ address    name
 00000c10   _CpuTimer2Regs
 003f7ff8   _CsmPwl
 00000ae0   _CsmRegs
-003eba12   _CsmUnlock
-003eb8ad   _DATALOG_ISR
+003eb9f7   _CsmUnlock
+003eb892   _DATALOG_ISR
 0000801d   _DSP28x_usDelay
 00000880   _DevEmuRegs
-003eb949   _DisableDog
-003eb8a8   _ECAN0INTA_ISR
-003eb8a3   _ECAN1INTA_ISR
-003eb89e   _ECAP1_INT_ISR
+003eb92e   _DisableDog
+003eb88d   _ECAN0INTA_ISR
+003eb888   _ECAN1INTA_ISR
+003eb883   _ECAP1_INT_ISR
 00006040   _ECanaLAMRegs
 000060c0   _ECanaMOTORegs
 00006080   _ECanaMOTSRegs
 00006100   _ECanaMboxes
 00006000   _ECanaRegs
 00006a00   _ECap1Regs
-003eb899   _EMPTY_ISR
-003eb894   _EMUINT_ISR
-003eb88f   _EPWM1_INT_ISR
-003eb88a   _EPWM1_TZINT_ISR
-003eb885   _EPWM2_INT_ISR
-003eb880   _EPWM2_TZINT_ISR
-003eb87b   _EPWM3_INT_ISR
-003eb876   _EPWM3_TZINT_ISR
-003eb871   _EPWM4_INT_ISR
-003eb86c   _EPWM4_TZINT_ISR
-003eb867   _EPWM5_INT_ISR
-003eb862   _EPWM5_TZINT_ISR
-003eb85d   _EPWM6_INT_ISR
-003eb858   _EPWM6_TZINT_ISR
-003eb853   _EPWM7_INT_ISR
-003eb84e   _EPWM7_TZINT_ISR
+003eb87e   _EMPTY_ISR
+003eb879   _EMUINT_ISR
+003eb874   _EPWM1_INT_ISR
+003eb86f   _EPWM1_TZINT_ISR
+003eb86a   _EPWM2_INT_ISR
+003eb865   _EPWM2_TZINT_ISR
+003eb860   _EPWM3_INT_ISR
+003eb85b   _EPWM3_TZINT_ISR
+003eb856   _EPWM4_INT_ISR
+003eb851   _EPWM4_TZINT_ISR
+003eb84c   _EPWM5_INT_ISR
+003eb847   _EPWM5_TZINT_ISR
+003eb842   _EPWM6_INT_ISR
+003eb83d   _EPWM6_TZINT_ISR
+003eb838   _EPWM7_INT_ISR
+003eb833   _EPWM7_TZINT_ISR
 00006800   _EPwm1Regs
 00006840   _EPwm2Regs
 00006880   _EPwm3Regs
@@ -583,201 +582,201 @@ address    name
 00006900   _EPwm5Regs
 00006940   _EPwm6Regs
 00006980   _EPwm7Regs
-003eb849   _EQEP1_INT_ISR
+003eb82e   _EQEP1_INT_ISR
 00006b00   _EQep1Regs
 00000d01   _EmuBMode
 00000d00   _EmuKey
-003ec095   _EnableInterrupts
-003eb9fa   _ExtOscSel
+003ec07e   _EnableInterrupts
+003eb9df   _ExtOscSel
 00000a80   _FlashRegs
 00000d04   _Flash_CPUScaleFactor
 00000d02   _Flash_CallbackPtr
-003ebc26   _GenIdParity
+003ebc0b   _GenIdParity
 00006f80   _GpioCtrlRegs
 00006fc0   _GpioDataRegs
 00006fe0   _GpioIntRegs
-003eb844   _HRCAP1_INT_ISR
-003eb83f   _HRCAP2_INT_ISR
+003eb829   _HRCAP1_INT_ISR
+003eb824   _HRCAP2_INT_ISR
 00006ac0   _HRCap1Regs
 00006ae0   _HRCap2Regs
-003eb83a   _I2CINT1A_ISR
-003eb835   _I2CINT2A_ISR
+003eb81f   _I2CINT1A_ISR
+003eb81a   _I2CINT2A_ISR
 00007900   _I2caRegs
-003eb830   _ILLEGAL_ISR
-003eb82b   _INT13_ISR
-003eb826   _INT14_ISR
-003eb608   _InitAdc
-003eb5e2   _InitAdcAio
-003ebe9f   _InitCpuTimers
+003eb815   _ILLEGAL_ISR
+003eb810   _INT13_ISR
+003eb80b   _INT14_ISR
+003eb5ed   _InitAdc
+003eb5c7   _InitAdcAio
+003ebe84   _InitCpuTimers
 00008000   _InitFlash
-003ebbd1   _InitLin
-003ebbb9   _InitLinGpio
-003ebbd1   _InitLina
-003ebbb9   _InitLinaGpio
-003eb99f   _InitPeripheralClocks
-003ec076   _InitPieCtrl
-003ec153   _InitPieVectTable
-003eb951   _InitPll
-003eb9e8   _InitSysCtrl
-003eb939   _IntOsc1Sel
-003eb925   _IntOsc2Sel
-00000036   _IsrOverrun
-003eb821   _LIN0INTA_ISR
-003eb81c   _LIN1INTA_ISR
-003eb817   _LUF_ISR
-003eb812   _LVF_ISR
+003ebbb6   _InitLin
+003ebb9e   _InitLinGpio
+003ebbb6   _InitLina
+003ebb9e   _InitLinaGpio
+003eb984   _InitPeripheralClocks
+003ec05f   _InitPieCtrl
+003ec13c   _InitPieVectTable
+003eb936   _InitPll
+003eb9cd   _InitSysCtrl
+003eb91e   _IntOsc1Sel
+003eb90a   _IntOsc2Sel
+00000330   _IsrOverrun
+003eb806   _LIN0INTA_ISR
+003eb801   _LIN1INTA_ISR
+003eb7fc   _LUF_ISR
+003eb7f7   _LVF_ISR
 00006c00   _LinaRegs
-003eb80d   _NMI_ISR
+003eb7f2   _NMI_ISR
 00007060   _NmiIntruptRegs
-0000003e   _P0
-0000003d   _P1
-003eb808   _PIE_RESERVED
+0000003f   _P0
+0000003e   _P1
+003eb7ed   _PIE_RESERVED
 003d7e80   _PartIdRegs
 00000ce0   _PieCtrlRegs
 00000d00   _PieVectTable
-003ec1a2   _PieVectTableInit
-003eb803   _RTOSINT_ISR
-003ec2e3   _RamfuncsLoadEnd
-003ec2c2   _RamfuncsLoadStart
+003ec18c   _PieVectTableInit
+003eb7e8   _RTOSINT_ISR
+003ec2c5   _RamfuncsLoadEnd
+003ec2a4   _RamfuncsLoadStart
 00008000   _RamfuncsRunStart
-003eac4b   _Ri_MessageReceived4_Disable
+003eaabd   _Ri_MessageReceived4_Disable
 003e821e   _Rider_Cont_MessageReceived4
-00000330   _Rider_Controls_Cont_MdlrefDWork
-003eb5d4   _Rider_Controls_Contr_initialize
-003eb2e5   _Rider_Controls_Control
-00000332   _Rider_Controls_Control_DWork
-0000034c   _Rider_Controls_Ful_TimingBridge
+00000036   _Rider_Controls_Cont_MdlrefDWork
+003eb5b6   _Rider_Controls_Contr_initialize
+003eb29e   _Rider_Controls_Control
+00000038   _Rider_Controls_Control_DWork
+0000034e   _Rider_Controls_Ful_TimingBridge
 00000340   _Rider_Controls_Full_CAN_E_DWork
-003ec2be   _Rider_Controls_Full_CAN_Enab_M
-00000342   _Rider_Controls_Full_CAN_Enab_M_
+003ec2a0   _Rider_Controls_Full_CAN_Enab_M
+00000344   _Rider_Controls_Full_CAN_Enab_M_
 00000380   _Rider_Controls_Full_CAN_Enabl_B
-003eb2d8   _Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep
-003eb264   _Rider_Controls_Full_CAN_Enable_initialize
-003eb255   _Rider_Controls_Full_CAN_Enable_step
-003eb24e   _Rider_Controls_Full_CAN_Enable_step0
-003eadf9   _Rider_Controls_Full_CAN_Enable_step1
-003eadf4   _Rider_Controls_Full_CAN_Enable_step2
-003eadf3   _Rider_Controls_Full_CAN_Enable_terminate
-003eacae   _Rider_Controls_I_initialize
+003eb291   _Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep
+003eb20f   _Rider_Controls_Full_CAN_Enable_initialize
+003eb200   _Rider_Controls_Full_CAN_Enable_step
+003eb1f9   _Rider_Controls_Full_CAN_Enable_step0
+003eac6b   _Rider_Controls_Full_CAN_Enable_step1
+003eac66   _Rider_Controls_Full_CAN_Enable_step2
+003eac65   _Rider_Controls_Full_CAN_Enable_terminate
+003eab20   _Rider_Controls_I_initialize
 00000042   _Rider_Controls_InH_TimingBridge
-003eac4d   _Rider_Controls_InHa_Disable
+003eaabf   _Rider_Controls_InHa_Disable
 00000040   _Rider_Controls_InHa_MdlrefDWork
-003eac44   _Rider_Controls_InHar_UpdateTID0
-003eac43   _Rider_Controls_InHar_UpdateTID1
-003eabac   _Rider_Controls_InHar_UpdateTID2
+003eaab6   _Rider_Controls_InHar_UpdateTID0
+003eaab5   _Rider_Controls_InHar_UpdateTID1
+003eaa1e   _Rider_Controls_InHar_UpdateTID2
 00000044   _Rider_Controls_InHard_GlobalTID
-003ea944   _Rider_Controls_InHard_Start
-003ea863   _Rider_Controls_InHardw_Init
-003ea81c   _Rider_Controls_InHardwareTID0
+003ea7b6   _Rider_Controls_InHard_Start
+003ea6d5   _Rider_Controls_InHardw_Init
+003ea68e   _Rider_Controls_InHardwareTID0
 003e8223   _Rider_Controls_InHardwareTID1
 003e8002   _Rider_Controls_InHardwareTID2
 00000100   _Rider_Controls_InHardware_B
 00000080   _Rider_Controls_InHardware_DWork
 003e8000   _Rider_MessageReceived4_Init
-003eb7fe   _SCIRXINTA_ISR
-003eb7f9   _SCITXINTA_ISR
-003eb7f4   _SPIRXINTA_ISR
-003eb7ef   _SPIRXINTB_ISR
-003eb7ea   _SPITXINTA_ISR
-003eb7e5   _SPITXINTB_ISR
+003eb7e3   _SCIRXINTA_ISR
+003eb7de   _SCITXINTA_ISR
+003eb7d9   _SPIRXINTA_ISR
+003eb7d4   _SPIRXINTB_ISR
+003eb7cf   _SPITXINTA_ISR
+003eb7ca   _SPITXINTB_ISR
 00007050   _SciaRegs
-003eb91b   _ServiceDog
+003eb900   _ServiceDog
 00007040   _SpiaRegs
 00007740   _SpibRegs
 00007010   _SysCtrlRegs
 00000985   _SysPwrCtrlRegs
-003eb7e0   _TINT0_ISR
-003ebe32   _TINT0_isr
-003eb7db   _USER10_ISR
-003eb7d6   _USER11_ISR
-003eb7d1   _USER12_ISR
-003eb7cc   _USER1_ISR
-003eb7c7   _USER2_ISR
-003eb7c2   _USER3_ISR
-003eb7bd   _USER4_ISR
-003eb7b8   _USER5_ISR
-003eb7b3   _USER6_ISR
-003eb7ae   _USER7_ISR
-003eb7a9   _USER8_ISR
-003eb7a4   _USER9_ISR
-003eb79f   _WAKEINT_ISR
-003eb79a   _XINT1_ISR
-003eb795   _XINT2_ISR
-003eb790   _XINT3_ISR
+003eb7c5   _TINT0_ISR
+003ebe17   _TINT0_isr
+003eb7c0   _USER10_ISR
+003eb7bb   _USER11_ISR
+003eb7b6   _USER12_ISR
+003eb7b1   _USER1_ISR
+003eb7ac   _USER2_ISR
+003eb7a7   _USER3_ISR
+003eb7a2   _USER4_ISR
+003eb79d   _USER5_ISR
+003eb798   _USER6_ISR
+003eb793   _USER7_ISR
+003eb78e   _USER8_ISR
+003eb789   _USER9_ISR
+003eb784   _WAKEINT_ISR
+003eb77f   _XINT1_ISR
+003eb77a   _XINT2_ISR
+003eb775   _XINT3_ISR
 00007070   _XIntruptRegs
-003eb907   _XtalOscSel
-0000043a   __STACK_END
+003eb8ec   _XtalOscSel
+00000446   __STACK_END
 00000040   __STACK_SIZE
 00000001   __TI_args_main
-0000033a   ___TI_cleanup_ptr
-0000033c   ___TI_dtors_ptr
+0000033c   ___TI_cleanup_ptr
+0000033e   ___TI_dtors_ptr
 ffffffff   ___binit__
 00000002   ___bss__
 ffffffff   ___c_args__
-003ec2e3   ___cinit__
+003ec2c5   ___cinit__
 00000002   ___data__
 00000002   ___edata__
 00000002   ___end__
-003ec1a2   ___etext__
-003ec09e   ___memcpy_ff
+003ec18b   ___etext__
+003ec087   ___memcpy_ff
 ffffffff   ___pinit__
 003e8000   ___text__
-003ec0dc   __args_main
-00000338   __lock
-003ec188   __nop
-003ec184   __register_lock
-003ec180   __register_unlock
-000003fa   __stack
-00000336   __unlock
-003ec0f5   _abort
-003ec144   _c2000_flash_init
-003ebf5b   _c_int00
-003ec020   _config_ADC_SOC0
-003ebad3   _config_eCAN_A_mbx
-003ebfb5   _configureTimer0
-003ebfa7   _disableTimer0Interrupt
-003ec19b   _disableWatchdog
-003ebf9f   _enableTimer0Interrupt
-003ec19a   _enable_interrupts
-003ec0f7   _exit
-003ec141   _globalInterruptDisable
-003ec13d   _globalInterruptEnable
-003ebfe0   _init_board
-003eba40   _init_eCAN_A
-0000003a   _isRateRunning
-003ebccd   _look1_iflf_plinlgpw
-003ebb86   _main
-003ec174   _memset
-00000037   _need2runFlags
-003eb78b   _rsvd_ISR
-003ec2a2   _rtCP_pooled_B0qELKmN8GAt
-003ec2b6   _rtCP_pooled_RarCRswdQecv
-003ec2ac   _rtCP_pooled_kXF479Tr1zzv
-003ec2ba   _rtCP_pooled_oaa0NRPWZaqa
-003ec121   _rtGetInf
-003ec11a   _rtGetInfF
-003ec115   _rtGetMinusInf
-003ec10e   _rtGetMinusInfF
-003ec18d   _rtGetNaN
-003ec189   _rtGetNaNF
+003ec0c5   __args_main
+0000033a   __lock
+003ec171   __nop
+003ec16d   __register_lock
+003ec169   __register_unlock
+00000406   __stack
+00000338   __unlock
+003ec0de   _abort
+003ec12d   _c2000_flash_init
+003ebf84   _c_int00
+003ec009   _config_ADC_SOC0
+003ebab8   _config_eCAN_A_mbx
+003ebfde   _configureTimer0
+003ebfd0   _disableTimer0Interrupt
+003ec184   _disableWatchdog
+003ebfc8   _enableTimer0Interrupt
+003ec183   _enable_interrupts
+003ec0e0   _exit
+003ec12a   _globalInterruptDisable
+003ec126   _globalInterruptEnable
+003ebf40   _init_board
+003eba25   _init_eCAN_A
+00000334   _isRateRunning
+003ebcb2   _look1_iflf_plinlgpw
+003ebb6b   _main
+003ec15d   _memset
+00000331   _need2runFlags
+003eb770   _rsvd_ISR
+003ec28c   _rtCP_pooled_1ozRLNp3qYGp
+003ec298   _rtCP_pooled_RarCRswdQecv
+003ec292   _rtCP_pooled_jo2sCkKdcHDF
+003ec29c   _rtCP_pooled_oaa0NRPWZaqa
+003ec10a   _rtGetInf
+003ec103   _rtGetInfF
+003ec0fe   _rtGetMinusInf
+003ec0f7   _rtGetMinusInfF
+003ec176   _rtGetNaN
+003ec172   _rtGetNaNF
 0000002c   _rtInf
 00000032   _rtInfF
-003ebe15   _rtIsInf
-003ebdf8   _rtIsInfF
-003ebdeb   _rtIsNaN
-003ebdde   _rtIsNaNF
+003ebdfa   _rtIsInf
+003ebddd   _rtIsInfF
+003ebdd0   _rtIsNaN
+003ebdc3   _rtIsNaNF
 0000002a   _rtMinusInf
 00000030   _rtMinusInfF
 0000002e   _rtNaN
 00000034   _rtNaNF
-003ebdbf   _rt_InitInfAndNaN
-003ebb27   _rt_OneStep
+003ebda4   _rt_InitInfAndNaN
+003ebb0c   _rt_OneStep
 ffffffff   binit
-003ec2e3   cinit
+003ec2c5   cinit
 003f7ff6   code_start
 00000002   edata
 00000002   end
-003ec1a2   etext
+003ec18b   etext
 ffffffff   pinit
 
 
@@ -804,29 +803,29 @@ address    name
 00000030   _rtMinusInfF
 00000032   _rtInfF
 00000034   _rtNaNF
-00000036   _IsrOverrun
-00000037   _need2runFlags
-0000003a   _isRateRunning
-0000003d   _P1
-0000003e   _P0
+00000036   _Rider_Controls_Cont_MdlrefDWork
+00000038   _Rider_Controls_Control_DWork
+0000003e   _P1
+0000003f   _P0
 00000040   _Rider_Controls_InHa_MdlrefDWork
 00000040   __STACK_SIZE
 00000042   _Rider_Controls_InH_TimingBridge
 00000044   _Rider_Controls_InHard_GlobalTID
 00000080   _Rider_Controls_InHardware_DWork
 00000100   _Rider_Controls_InHardware_B
-00000330   _Rider_Controls_Cont_MdlrefDWork
-00000332   _Rider_Controls_Control_DWork
-00000336   __unlock
-00000338   __lock
-0000033a   ___TI_cleanup_ptr
-0000033c   ___TI_dtors_ptr
+00000330   _IsrOverrun
+00000331   _need2runFlags
+00000334   _isRateRunning
+00000338   __unlock
+0000033a   __lock
+0000033c   ___TI_cleanup_ptr
+0000033e   ___TI_dtors_ptr
 00000340   _Rider_Controls_Full_CAN_E_DWork
-00000342   _Rider_Controls_Full_CAN_Enab_M_
-0000034c   _Rider_Controls_Ful_TimingBridge
+00000344   _Rider_Controls_Full_CAN_Enab_M_
+0000034e   _Rider_Controls_Ful_TimingBridge
 00000380   _Rider_Controls_Full_CAN_Enabl_B
-000003fa   __stack
-0000043a   __STACK_END
+00000406   __stack
+00000446   __STACK_END
 00000880   _DevEmuRegs
 00000985   _SysPwrCtrlRegs
 00000a80   _FlashRegs
@@ -883,182 +882,182 @@ address    name
 003e8002   _Rider_Controls_InHardwareTID2
 003e821e   _Rider_Cont_MessageReceived4
 003e8223   _Rider_Controls_InHardwareTID1
-003ea81c   _Rider_Controls_InHardwareTID0
-003ea863   _Rider_Controls_InHardw_Init
-003ea944   _Rider_Controls_InHard_Start
-003eabac   _Rider_Controls_InHar_UpdateTID2
-003eac43   _Rider_Controls_InHar_UpdateTID1
-003eac44   _Rider_Controls_InHar_UpdateTID0
-003eac4b   _Ri_MessageReceived4_Disable
-003eac4d   _Rider_Controls_InHa_Disable
-003eacae   _Rider_Controls_I_initialize
-003eadf3   _Rider_Controls_Full_CAN_Enable_terminate
-003eadf4   _Rider_Controls_Full_CAN_Enable_step2
-003eadf9   _Rider_Controls_Full_CAN_Enable_step1
-003eb24e   _Rider_Controls_Full_CAN_Enable_step0
-003eb255   _Rider_Controls_Full_CAN_Enable_step
-003eb264   _Rider_Controls_Full_CAN_Enable_initialize
-003eb2d8   _Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep
-003eb2e5   _Rider_Controls_Control
-003eb5d4   _Rider_Controls_Contr_initialize
-003eb5e2   _InitAdcAio
-003eb608   _InitAdc
-003eb626   _AdcChanSelect
-003eb67e   _AdcConversion
-003eb766   _AdcOffsetSelfCal
-003eb78b   _rsvd_ISR
-003eb790   _XINT3_ISR
-003eb795   _XINT2_ISR
-003eb79a   _XINT1_ISR
-003eb79f   _WAKEINT_ISR
-003eb7a4   _USER9_ISR
-003eb7a9   _USER8_ISR
-003eb7ae   _USER7_ISR
-003eb7b3   _USER6_ISR
-003eb7b8   _USER5_ISR
-003eb7bd   _USER4_ISR
-003eb7c2   _USER3_ISR
-003eb7c7   _USER2_ISR
-003eb7cc   _USER1_ISR
-003eb7d1   _USER12_ISR
-003eb7d6   _USER11_ISR
-003eb7db   _USER10_ISR
-003eb7e0   _TINT0_ISR
-003eb7e5   _SPITXINTB_ISR
-003eb7ea   _SPITXINTA_ISR
-003eb7ef   _SPIRXINTB_ISR
-003eb7f4   _SPIRXINTA_ISR
-003eb7f9   _SCITXINTA_ISR
-003eb7fe   _SCIRXINTA_ISR
-003eb803   _RTOSINT_ISR
-003eb808   _PIE_RESERVED
-003eb80d   _NMI_ISR
-003eb812   _LVF_ISR
-003eb817   _LUF_ISR
-003eb81c   _LIN1INTA_ISR
-003eb821   _LIN0INTA_ISR
-003eb826   _INT14_ISR
-003eb82b   _INT13_ISR
-003eb830   _ILLEGAL_ISR
-003eb835   _I2CINT2A_ISR
-003eb83a   _I2CINT1A_ISR
-003eb83f   _HRCAP2_INT_ISR
-003eb844   _HRCAP1_INT_ISR
-003eb849   _EQEP1_INT_ISR
-003eb84e   _EPWM7_TZINT_ISR
-003eb853   _EPWM7_INT_ISR
-003eb858   _EPWM6_TZINT_ISR
-003eb85d   _EPWM6_INT_ISR
-003eb862   _EPWM5_TZINT_ISR
-003eb867   _EPWM5_INT_ISR
-003eb86c   _EPWM4_TZINT_ISR
-003eb871   _EPWM4_INT_ISR
-003eb876   _EPWM3_TZINT_ISR
-003eb87b   _EPWM3_INT_ISR
-003eb880   _EPWM2_TZINT_ISR
-003eb885   _EPWM2_INT_ISR
-003eb88a   _EPWM1_TZINT_ISR
-003eb88f   _EPWM1_INT_ISR
-003eb894   _EMUINT_ISR
-003eb899   _EMPTY_ISR
-003eb89e   _ECAP1_INT_ISR
-003eb8a3   _ECAN1INTA_ISR
-003eb8a8   _ECAN0INTA_ISR
-003eb8ad   _DATALOG_ISR
-003eb8b2   _CLA1_INT8_ISR
-003eb8b7   _CLA1_INT7_ISR
-003eb8bc   _CLA1_INT6_ISR
-003eb8c1   _CLA1_INT5_ISR
-003eb8c6   _CLA1_INT4_ISR
-003eb8cb   _CLA1_INT3_ISR
-003eb8d0   _CLA1_INT2_ISR
-003eb8d5   _CLA1_INT1_ISR
-003eb8da   _ADCINT9_ISR
-003eb8df   _ADCINT8_ISR
-003eb8e4   _ADCINT7_ISR
-003eb8e9   _ADCINT6_ISR
-003eb8ee   _ADCINT5_ISR
-003eb8f3   _ADCINT4_ISR
-003eb8f8   _ADCINT3_ISR
-003eb8fd   _ADCINT2_ISR
-003eb902   _ADCINT1_ISR
-003eb907   _XtalOscSel
-003eb91b   _ServiceDog
-003eb925   _IntOsc2Sel
-003eb939   _IntOsc1Sel
-003eb949   _DisableDog
-003eb951   _InitPll
-003eb99f   _InitPeripheralClocks
-003eb9e8   _InitSysCtrl
-003eb9fa   _ExtOscSel
-003eba12   _CsmUnlock
-003eba40   _init_eCAN_A
-003ebad3   _config_eCAN_A_mbx
-003ebb27   _rt_OneStep
-003ebb86   _main
-003ebbb9   _InitLinGpio
-003ebbb9   _InitLinaGpio
-003ebbd1   _InitLin
-003ebbd1   _InitLina
-003ebc26   _GenIdParity
-003ebc4a   FS$$DIV
-003ebccd   _look1_iflf_plinlgpw
-003ebd47   FS$$SUB
-003ebd4c   FS$$ADD
-003ebdbf   _rt_InitInfAndNaN
-003ebdde   _rtIsNaNF
-003ebdeb   _rtIsNaN
-003ebdf8   _rtIsInfF
-003ebe15   _rtIsInf
-003ebe32   _TINT0_isr
-003ebe9f   _InitCpuTimers
-003ebedc   _ConfigCpuTimer
-003ebf01   FS$$MPY
-003ebf5b   _c_int00
-003ebf9f   _enableTimer0Interrupt
-003ebfa7   _disableTimer0Interrupt
-003ebfb5   _configureTimer0
-003ebfe0   _init_board
-003ec020   _config_ADC_SOC0
-003ec04d   FS$$TOL
-003ec076   _InitPieCtrl
-003ec095   _EnableInterrupts
-003ec09e   ___memcpy_ff
-003ec0bf   FS$$TOU
-003ec0dc   __args_main
-003ec0f5   C$$EXIT
-003ec0f5   _abort
-003ec0f7   _exit
-003ec10e   _rtGetMinusInfF
-003ec115   _rtGetMinusInf
-003ec11a   _rtGetInfF
-003ec121   _rtGetInf
-003ec126   FS$$CMP
-003ec13d   _globalInterruptEnable
-003ec141   _globalInterruptDisable
-003ec144   _c2000_flash_init
-003ec153   _InitPieVectTable
-003ec164   U$$TOFS
-003ec174   _memset
-003ec180   __register_unlock
-003ec184   __register_lock
-003ec188   __nop
-003ec189   _rtGetNaNF
-003ec18d   _rtGetNaN
-003ec19a   _enable_interrupts
-003ec19b   _disableWatchdog
-003ec1a2   _PieVectTableInit
-003ec1a2   ___etext__
-003ec1a2   etext
-003ec2a2   _rtCP_pooled_B0qELKmN8GAt
-003ec2ac   _rtCP_pooled_kXF479Tr1zzv
-003ec2b6   _rtCP_pooled_RarCRswdQecv
-003ec2ba   _rtCP_pooled_oaa0NRPWZaqa
-003ec2be   _Rider_Controls_Full_CAN_Enab_M
-003ec2c2   _RamfuncsLoadStart
-003ec2e3   _RamfuncsLoadEnd
-003ec2e3   ___cinit__
-003ec2e3   cinit
+003ea68e   _Rider_Controls_InHardwareTID0
+003ea6d5   _Rider_Controls_InHardw_Init
+003ea7b6   _Rider_Controls_InHard_Start
+003eaa1e   _Rider_Controls_InHar_UpdateTID2
+003eaab5   _Rider_Controls_InHar_UpdateTID1
+003eaab6   _Rider_Controls_InHar_UpdateTID0
+003eaabd   _Ri_MessageReceived4_Disable
+003eaabf   _Rider_Controls_InHa_Disable
+003eab20   _Rider_Controls_I_initialize
+003eac65   _Rider_Controls_Full_CAN_Enable_terminate
+003eac66   _Rider_Controls_Full_CAN_Enable_step2
+003eac6b   _Rider_Controls_Full_CAN_Enable_step1
+003eb1f9   _Rider_Controls_Full_CAN_Enable_step0
+003eb200   _Rider_Controls_Full_CAN_Enable_step
+003eb20f   _Rider_Controls_Full_CAN_Enable_initialize
+003eb291   _Rider_Controls_Full_CAN_Enable_SetEventsForThisBaseStep
+003eb29e   _Rider_Controls_Control
+003eb5b6   _Rider_Controls_Contr_initialize
+003eb5c7   _InitAdcAio
+003eb5ed   _InitAdc
+003eb60b   _AdcChanSelect
+003eb663   _AdcConversion
+003eb74b   _AdcOffsetSelfCal
+003eb770   _rsvd_ISR
+003eb775   _XINT3_ISR
+003eb77a   _XINT2_ISR
+003eb77f   _XINT1_ISR
+003eb784   _WAKEINT_ISR
+003eb789   _USER9_ISR
+003eb78e   _USER8_ISR
+003eb793   _USER7_ISR
+003eb798   _USER6_ISR
+003eb79d   _USER5_ISR
+003eb7a2   _USER4_ISR
+003eb7a7   _USER3_ISR
+003eb7ac   _USER2_ISR
+003eb7b1   _USER1_ISR
+003eb7b6   _USER12_ISR
+003eb7bb   _USER11_ISR
+003eb7c0   _USER10_ISR
+003eb7c5   _TINT0_ISR
+003eb7ca   _SPITXINTB_ISR
+003eb7cf   _SPITXINTA_ISR
+003eb7d4   _SPIRXINTB_ISR
+003eb7d9   _SPIRXINTA_ISR
+003eb7de   _SCITXINTA_ISR
+003eb7e3   _SCIRXINTA_ISR
+003eb7e8   _RTOSINT_ISR
+003eb7ed   _PIE_RESERVED
+003eb7f2   _NMI_ISR
+003eb7f7   _LVF_ISR
+003eb7fc   _LUF_ISR
+003eb801   _LIN1INTA_ISR
+003eb806   _LIN0INTA_ISR
+003eb80b   _INT14_ISR
+003eb810   _INT13_ISR
+003eb815   _ILLEGAL_ISR
+003eb81a   _I2CINT2A_ISR
+003eb81f   _I2CINT1A_ISR
+003eb824   _HRCAP2_INT_ISR
+003eb829   _HRCAP1_INT_ISR
+003eb82e   _EQEP1_INT_ISR
+003eb833   _EPWM7_TZINT_ISR
+003eb838   _EPWM7_INT_ISR
+003eb83d   _EPWM6_TZINT_ISR
+003eb842   _EPWM6_INT_ISR
+003eb847   _EPWM5_TZINT_ISR
+003eb84c   _EPWM5_INT_ISR
+003eb851   _EPWM4_TZINT_ISR
+003eb856   _EPWM4_INT_ISR
+003eb85b   _EPWM3_TZINT_ISR
+003eb860   _EPWM3_INT_ISR
+003eb865   _EPWM2_TZINT_ISR
+003eb86a   _EPWM2_INT_ISR
+003eb86f   _EPWM1_TZINT_ISR
+003eb874   _EPWM1_INT_ISR
+003eb879   _EMUINT_ISR
+003eb87e   _EMPTY_ISR
+003eb883   _ECAP1_INT_ISR
+003eb888   _ECAN1INTA_ISR
+003eb88d   _ECAN0INTA_ISR
+003eb892   _DATALOG_ISR
+003eb897   _CLA1_INT8_ISR
+003eb89c   _CLA1_INT7_ISR
+003eb8a1   _CLA1_INT6_ISR
+003eb8a6   _CLA1_INT5_ISR
+003eb8ab   _CLA1_INT4_ISR
+003eb8b0   _CLA1_INT3_ISR
+003eb8b5   _CLA1_INT2_ISR
+003eb8ba   _CLA1_INT1_ISR
+003eb8bf   _ADCINT9_ISR
+003eb8c4   _ADCINT8_ISR
+003eb8c9   _ADCINT7_ISR
+003eb8ce   _ADCINT6_ISR
+003eb8d3   _ADCINT5_ISR
+003eb8d8   _ADCINT4_ISR
+003eb8dd   _ADCINT3_ISR
+003eb8e2   _ADCINT2_ISR
+003eb8e7   _ADCINT1_ISR
+003eb8ec   _XtalOscSel
+003eb900   _ServiceDog
+003eb90a   _IntOsc2Sel
+003eb91e   _IntOsc1Sel
+003eb92e   _DisableDog
+003eb936   _InitPll
+003eb984   _InitPeripheralClocks
+003eb9cd   _InitSysCtrl
+003eb9df   _ExtOscSel
+003eb9f7   _CsmUnlock
+003eba25   _init_eCAN_A
+003ebab8   _config_eCAN_A_mbx
+003ebb0c   _rt_OneStep
+003ebb6b   _main
+003ebb9e   _InitLinGpio
+003ebb9e   _InitLinaGpio
+003ebbb6   _InitLin
+003ebbb6   _InitLina
+003ebc0b   _GenIdParity
+003ebc2f   FS$$DIV
+003ebcb2   _look1_iflf_plinlgpw
+003ebd2c   FS$$SUB
+003ebd31   FS$$ADD
+003ebda4   _rt_InitInfAndNaN
+003ebdc3   _rtIsNaNF
+003ebdd0   _rtIsNaN
+003ebddd   _rtIsInfF
+003ebdfa   _rtIsInf
+003ebe17   _TINT0_isr
+003ebe84   _InitCpuTimers
+003ebec1   _ConfigCpuTimer
+003ebee6   FS$$MPY
+003ebf40   _init_board
+003ebf84   _c_int00
+003ebfc8   _enableTimer0Interrupt
+003ebfd0   _disableTimer0Interrupt
+003ebfde   _configureTimer0
+003ec009   _config_ADC_SOC0
+003ec036   FS$$TOL
+003ec05f   _InitPieCtrl
+003ec07e   _EnableInterrupts
+003ec087   ___memcpy_ff
+003ec0a8   FS$$TOU
+003ec0c5   __args_main
+003ec0de   C$$EXIT
+003ec0de   _abort
+003ec0e0   _exit
+003ec0f7   _rtGetMinusInfF
+003ec0fe   _rtGetMinusInf
+003ec103   _rtGetInfF
+003ec10a   _rtGetInf
+003ec10f   FS$$CMP
+003ec126   _globalInterruptEnable
+003ec12a   _globalInterruptDisable
+003ec12d   _c2000_flash_init
+003ec13c   _InitPieVectTable
+003ec14d   U$$TOFS
+003ec15d   _memset
+003ec169   __register_unlock
+003ec16d   __register_lock
+003ec171   __nop
+003ec172   _rtGetNaNF
+003ec176   _rtGetNaN
+003ec183   _enable_interrupts
+003ec184   _disableWatchdog
+003ec18b   ___etext__
+003ec18b   etext
+003ec18c   _PieVectTableInit
+003ec28c   _rtCP_pooled_1ozRLNp3qYGp
+003ec292   _rtCP_pooled_jo2sCkKdcHDF
+003ec298   _rtCP_pooled_RarCRswdQecv
+003ec29c   _rtCP_pooled_oaa0NRPWZaqa
+003ec2a0   _Rider_Controls_Full_CAN_Enab_M
+003ec2a4   _RamfuncsLoadStart
+003ec2c5   _RamfuncsLoadEnd
+003ec2c5   ___cinit__
+003ec2c5   cinit
 003f7ff6   code_start
 003f7ff8   _CsmPwl
 ffffffff   ___binit__

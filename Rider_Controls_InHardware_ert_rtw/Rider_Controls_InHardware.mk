@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'Rider_Controls_InHardware'. 
 ## 
 ## Makefile     : Rider_Controls_InHardware.mk
-## Generated on : Tue Mar 31 20:24:38 2015
+## Generated on : Thu Jun 18 12:58:27 2015
 ## MATLAB Coder version: 2.7 (R2014b)
 ## 
 ## Build Info:
@@ -214,7 +214,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR)/Rider_Controls_InHardware_ert_rtw -I$(START_DIR) -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/shared/can/src/scanutil -I$(MATLAB_ROOT)/toolbox/dsp/extern/src/export/include -I$(MATLAB_ROOT)/toolbox/dsp/extern/src/export/include/src -I$(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include -I$(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt -I$(MATLAB_ROOT)/toolbox/shared/dsp/vision/matlab/include -IC:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../src -I$(MATLAB_ROOT)/toolbox/target/extensions/processor/tic2000/include -I$(MATLAB_ROOT)/toolbox/rtw/targets/common/can/blocks/tlc_c -IC:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../inc -IC:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/include -IC:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_headers/include -I$(MATLAB_ROOT)/toolbox/target/extensions/processor/tic2000/blks/lct/include
+INCLUDES_BUILDINFO = -I$(START_DIR)/Rider_Controls_InHardware_ert_rtw -I$(START_DIR) -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/dsp/include -I$(MATLAB_ROOT)/toolbox/dsp/extern/src/export/include/src -I$(MATLAB_ROOT)/toolbox/dsp/extern/src/export/include -I$(MATLAB_ROOT)/toolbox/shared/dsp/vision/matlab/include -I$(MATLAB_ROOT)/toolbox/shared/can/src/scanutil -IC:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../src -I$(MATLAB_ROOT)/toolbox/target/extensions/processor/tic2000/include -I$(MATLAB_ROOT)/toolbox/rtw/targets/common/can/blocks/tlc_c -IC:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../inc -IC:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/include -IC:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_headers/include -I$(MATLAB_ROOT)/toolbox/target/extensions/processor/tic2000/blks/lct/include
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -234,7 +234,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_IMPLIED) $(DEFINES_SKIPFOR
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_board.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_adc.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_can.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_csl.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/Rider_Controls_InHardware.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/can_datatype_ground.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/rtGetInf.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/rtGetNaN.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/rt_nonfinite.c C:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../src/c2803xBoard_Realtime_Support.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_CpuTimers.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_DefaultIsr.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_headers/source/DSP2803x_GlobalVariableDefs.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_PieCtrl.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_PieVect.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_SysCtrl.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_usDelay.asm C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_CodeStartBranch.asm C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_Adc.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_Lin.c C:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../src/c2803xSchedulerTimer0.c
+SRCS = $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_board.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_adc.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_can.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/MW_c28xx_csl.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/Rider_Controls_InHardware.c $(START_DIR)/Rider_Controls_InHardware_ert_rtw/can_datatype_ground.c C:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../src/c2803xBoard_Realtime_Support.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_CpuTimers.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_DefaultIsr.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_headers/source/DSP2803x_GlobalVariableDefs.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_PieCtrl.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_PieVect.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_SysCtrl.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_usDelay.asm C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_CodeStartBranch.asm C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_Adc.c C:/ti/controlSUITE/device_support/f2803x/v125/DSP2803x_common/source/DSP2803x_Lin.c C:/MATLAB/SupportPackages/R2014b/texasinstrumentsc2000/toolbox/target/supportpackages/tic2000/@slCustomizer/../src/c2803xSchedulerTimer0.c
 
 MAIN_SRC = $(START_DIR)/Rider_Controls_InHardware_ert_rtw/ert_main.c
 
@@ -244,7 +244,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = MW_c28xx_board.obj MW_c28xx_adc.obj MW_c28xx_can.obj MW_c28xx_csl.obj Rider_Controls_InHardware.obj can_datatype_ground.obj rtGetInf.obj rtGetNaN.obj rt_nonfinite.obj c2803xBoard_Realtime_Support.obj DSP2803x_CpuTimers.obj DSP2803x_DefaultIsr.obj DSP2803x_GlobalVariableDefs.obj DSP2803x_PieCtrl.obj DSP2803x_PieVect.obj DSP2803x_SysCtrl.obj DSP2803x_usDelay.obj DSP2803x_CodeStartBranch.obj DSP2803x_Adc.obj DSP2803x_Lin.obj c2803xSchedulerTimer0.obj
+OBJS = MW_c28xx_board.obj MW_c28xx_adc.obj MW_c28xx_can.obj MW_c28xx_csl.obj Rider_Controls_InHardware.obj can_datatype_ground.obj c2803xBoard_Realtime_Support.obj DSP2803x_CpuTimers.obj DSP2803x_DefaultIsr.obj DSP2803x_GlobalVariableDefs.obj DSP2803x_PieCtrl.obj DSP2803x_PieVect.obj DSP2803x_SysCtrl.obj DSP2803x_usDelay.obj DSP2803x_CodeStartBranch.obj DSP2803x_Adc.obj DSP2803x_Lin.obj c2803xSchedulerTimer0.obj
 
 MAIN_OBJ = ert_main.obj
 
@@ -422,54 +422,6 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 
 
 %.obj : $(MATLAB_ROOT)/simulink/src/%.cpp
-	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.cla
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.c
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.asm
-	$(AS) $(ASFLAGS) "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/%.cpp
-	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.cla
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.c
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.asm
-	$(AS) $(ASFLAGS) "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/%.cpp
-	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.cla
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.c
-	$(CC) $(CFLAGS) --output_file="$@" "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.asm
-	$(AS) $(ASFLAGS) "$<"
-
-
-%.obj : $(MATLAB_ROOT)/toolbox/comm/extern/comm_rt/export/include/comm_rt/%.cpp
 	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
 
 

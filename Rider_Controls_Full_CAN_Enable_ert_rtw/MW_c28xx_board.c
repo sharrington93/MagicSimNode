@@ -49,7 +49,12 @@ void init_board ()
   /* initial GPIO qualification settings.... */
   EALLOW;
   GpioCtrlRegs.GPAQSEL1.all = 0U;
-  GpioCtrlRegs.GPAQSEL2.all = 0U;
+  GpioCtrlRegs.GPAQSEL2.all = 2097152U;
   GpioCtrlRegs.GPBQSEL1.all = 0U;
+
+  /* Initialize qualification sampling period */
+  // GpioCtrlRegs.GPACTRL.bit.QUALPRD3 = 255;          // GPIO Port A Qualification Control Register Field: Sampling period for pins GPIO24 to GPIO31
+  GpioCtrlRegs.GPACTRL.all = (GpioCtrlRegs.GPACTRL.all & ~0xFF000000) |
+    0xFF000000;
   EDIS;
 }

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Control'.
  *
- * Model version                  : 1.171
+ * Model version                  : 1.174
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Sat Jun 06 12:18:17 2015
+ * C/C++ source code generated on : Sat Jun 27 16:51:18 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000

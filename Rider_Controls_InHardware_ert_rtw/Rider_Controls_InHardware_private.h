@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_InHardware'.
  *
- * Model version                  : 1.125
+ * Model version                  : 1.316
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Tue Mar 31 20:24:26 2015
+ * C/C++ source code generated on : Thu Jun 18 12:58:10 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -26,7 +26,10 @@ extern CAN_DATATYPE CAN_DATATYPE_GROUND;
 extern CAN_DATATYPE CAN_DATATYPE_GROUND;
 extern CAN_DATATYPE CAN_DATATYPE_GROUND;
 extern CAN_DATATYPE CAN_DATATYPE_GROUND;
-extern real_T rt_roundd_snf(real_T u);
+extern void Rider_MessageReceived4_Init(rtDW_MessageReceived4_Rider_Con *localDW);
+extern void Ri_MessageReceived4_Disable(rtB_MessageReceived4_Rider_Cont *localB);
+extern void Rider_Cont_MessageReceived4(rtB_MessageReceived4_Rider_Cont *localB,
+  rtDW_MessageReceived4_Rider_Con *localDW);
 extern void Rider_Controls_InHardware_step0(void);
 extern void Rider_Controls_InHardware_step1(void);
 extern void Rider_Controls_InHardware_step2(void);

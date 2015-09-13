@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_InHardware'.
  *
- * Model version                  : 1.311
+ * Model version                  : 1.320
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Sun Jun 07 05:37:19 2015
+ * C/C++ source code generated on : Thu Jun 25 22:18:14 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -342,7 +342,7 @@ extern void Rider_Controls_InHar_UpdateTID1(void);
 extern void Rider_Controls_InHar_UpdateTID2(void);
 extern void Rider_Controls_InHardwareTID0(void);
 extern void Rider_Controls_InHardwareTID1(real32_T *rty_Throttle, real32_T
-  *rty_RPM, real32_T rty_Temperatures[36], uint16_T *rty_EStop, uint16_T
+  *rty_RPM, real32_T rty_Temperatures[34], uint16_T *rty_EStop, uint16_T
   *rty_BIMStatus);
 extern void Rider_Controls_InHardwareTID2(void);
 

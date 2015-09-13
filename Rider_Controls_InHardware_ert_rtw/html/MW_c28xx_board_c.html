@@ -113,15 +113,25 @@
 <tr name="51" id="51">
 <td>51</td><td>  <a id="51c3" class="tk">GpioCtrlRegs</a>.<a id="51c16" class="tk">GPAQSEL1</a>.<a id="51c25" class="tk">all</a> = 0U;</td></tr>
 <tr name="52" id="52">
-<td>52</td><td>  <a id="52c3" class="tk">GpioCtrlRegs</a>.<a id="52c16" class="tk">GPAQSEL2</a>.<a id="52c25" class="tk">all</a> = 0U;</td></tr>
+<td>52</td><td>  <a id="52c3" class="tk">GpioCtrlRegs</a>.<a id="52c16" class="tk">GPAQSEL2</a>.<a id="52c25" class="tk">all</a> = 2097152U;</td></tr>
 <tr name="53" id="53">
 <td>53</td><td>  <a id="53c3" class="tk">GpioCtrlRegs</a>.<a id="53c16" class="tk">GPBQSEL1</a>.<a id="53c25" class="tk">all</a> = 0U;</td></tr>
 <tr name="54" id="54">
-<td>54</td><td>  <a id="54c3" class="tk">EDIS</a>;</td></tr>
+<td>54</td><td></td></tr>
 <tr name="55" id="55">
-<td>55</td><td><span class="br">}</span></td></tr>
+<td>55</td><td>  <span class="ct">/* Initialize qualification sampling period */</span></td></tr>
 <tr name="56" id="56">
-<td>56</td><td></td></tr>
+<td>56</td><td>  <span class="ct">// GpioCtrlRegs.GPACTRL.bit.QUALPRD3 = 255;          // GPIO Port A Qualification Control Register Field: Sampling period for pins GPIO24 to GPIO31</span></td></tr>
+<tr name="57" id="57">
+<td>57</td><td>  <a id="57c3" class="tk">GpioCtrlRegs</a>.<a id="57c16" class="tk">GPACTRL</a>.<a id="57c24" class="tk">all</a> = (<a id="57c31" class="tk">GpioCtrlRegs</a>.<a id="57c44" class="tk">GPACTRL</a>.<a id="57c52" class="tk">all</a> &amp; ~0xFF000000) |</td></tr>
+<tr name="58" id="58">
+<td>58</td><td>    0xFF000000;</td></tr>
+<tr name="59" id="59">
+<td>59</td><td>  <a id="59c3" class="tk">EDIS</a>;</td></tr>
+<tr name="60" id="60">
+<td>60</td><td><span class="br">}</span></td></tr>
+<tr name="61" id="61">
+<td>61</td><td></td></tr>
 </table>
 </pre>
 </body>

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Full_CAN_Enable'.
  *
- * Model version                  : 1.130
+ * Model version                  : 1.133
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Sat Jun 06 12:26:19 2015
+ * C/C++ source code generated on : Fri Jun 26 07:23:12 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -76,6 +76,7 @@ extern void init_eCAN_A ( uint16_T bitRatePrescaler, uint16_T timeSeg1, uint16_T
 typedef struct {
   CAN_DATATYPE CANPack;                /* '<Root>/CAN Pack' */
   CAN_DATATYPE CANPack1;               /* '<Root>/CAN Pack1' */
+  CAN_DATATYPE CANPack2;               /* '<Root>/CAN Pack2' */
   real_T DataTypeConversion;           /* '<Root>/Data Type Conversion' */
   real_T DataTypeConversion5;          /* '<Root>/Data Type Conversion5' */
   real_T DataTypeConversion1;          /* '<Root>/Data Type Conversion1' */
@@ -84,7 +85,7 @@ typedef struct {
   real_T DataTypeConversion4;          /* '<Root>/Data Type Conversion4' */
   real32_T InHardware_o1;              /* '<Root>/InHardware' */
   real32_T InHardware_o2;              /* '<Root>/InHardware' */
-  real32_T InHardware_o3[36];          /* '<Root>/InHardware' */
+  real32_T InHardware_o3[34];          /* '<Root>/InHardware' */
   uint16_T InHardware_o4;              /* '<Root>/InHardware' */
   uint16_T InHardware_o5;              /* '<Root>/InHardware' */
 } BlockIO_Rider_Controls_Full_CAN;
@@ -93,6 +94,7 @@ typedef struct {
 typedef struct {
   int_T CANPack_ModeSignalID;          /* '<Root>/CAN Pack' */
   int_T CANPack1_ModeSignalID;         /* '<Root>/CAN Pack1' */
+  int_T CANPack2_ModeSignalID;         /* '<Root>/CAN Pack2' */
 } D_Work_Rider_Controls_Full_CAN_;
 
 /* Real-time Model Data Structure */

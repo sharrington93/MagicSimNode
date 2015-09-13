@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'Rider_Controls_Control'.
  *
- * Model version                  : 1.171
+ * Model version                  : 1.174
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Sat Jun 06 12:18:17 2015
+ * C/C++ source code generated on : Sat Jun 27 16:51:18 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -35,8 +35,9 @@ extern void enable_interrupts(void);
 #ifndef Rider_Controls_Control_MDLREF_HIDE_CHILD_
 
 typedef struct {
-  uint32_T m_bpIndex;                  /* '<S1>/Battery Temp to Current' */
-  uint32_T m_bpIndex_k;                /* '<S2>/RPM to Max Motor Current' */
+  real32_T Delay_DSTATE;               /* '<S1>/Delay' */
+  uint32_T m_bpIndex;                  /* '<S2>/Battery Temp to Current' */
+  uint32_T m_bpIndex_k;                /* '<S3>/RPM to Max Motor Current' */
 } rtDW_Rider_Controls_Control;
 
 #endif                                 /*Rider_Controls_Control_MDLREF_HIDE_CHILD_*/
@@ -59,7 +60,7 @@ typedef struct {
 #endif                                 /*Rider_Controls_Control_MDLREF_HIDE_CHILD_*/
 
 extern void Rider_Controls_Control(const real32_T *rtu_Throttle, const real32_T *
-  rtu_RPM, const real32_T rtu_BatteryTempurature[36], const uint16_T *rtu_EStop,
+  rtu_RPM, const real32_T rtu_BatteryTempurature[34], const uint16_T *rtu_EStop,
   const uint16_T *rtu_BIMStatus, real32_T *rty_MotorCurrent, real32_T
   *rty_RPM_Lookup, real32_T *rty_Batt_Lookup, uint16_T *rty_RPMLimit, uint16_T
   *rty_BatteryLimit, uint16_T *rty_EStopOut, uint16_T *rty_StatusLock, real32_T *
@@ -96,10 +97,11 @@ extern rtDW_Rider_Controls_Control Rider_Controls_Control_DWork;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'Rider_Controls_Control'
- * '<S1>'   : 'Rider_Controls_Control/Limit on Battery Temp'
- * '<S2>'   : 'Rider_Controls_Control/Limit on RPM'
- * '<S3>'   : 'Rider_Controls_Control/Saturation Dynamic'
- * '<S4>'   : 'Rider_Controls_Control/Throttle Validity Check'
+ * '<S1>'   : 'Rider_Controls_Control/Filter'
+ * '<S2>'   : 'Rider_Controls_Control/Limit on Battery Temp'
+ * '<S3>'   : 'Rider_Controls_Control/Limit on RPM'
+ * '<S4>'   : 'Rider_Controls_Control/Saturation Dynamic'
+ * '<S5>'   : 'Rider_Controls_Control/Throttle Validity Check'
  */
 #endif                                 /* RTW_HEADER_Rider_Controls_Control_h_ */
 
